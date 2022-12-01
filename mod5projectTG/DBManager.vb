@@ -69,6 +69,7 @@ Public Class DBManager
             End With
 
             Me.connect.Close()
+            Me.connect.Dispose()
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
@@ -111,7 +112,9 @@ Public Class DBManager
 
             End With
 
+            cmd.ExecuteNonQuery()
             Me.connect.Close()
+            Me.connect.Dispose()
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
