@@ -76,5 +76,48 @@ Public Class DBManager
 
     End Sub
 
+    Public Sub CreateNewEmployee()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim cmd As New MySqlCommand()
+
+            With cmd
+
+                .CommandText = "INSERT INTO `users`(`employee_number`, `username`, `password`, `fname`, `lname`, `dob`, `address`, `city`, `province`, `postal_code`, `home_phone`, `cell_phone`, `start_date`, `sin`, `hourly_pay`, `education`, `level`, `status`) VALUES (@employee_number, @username, @password, @fname, @lname, @dob, @address, @city, @province, @postal_code, @home, @cell, @start_date, @sin, @hourly, @education, @level, @status)"
+                .CommandType = CommandType.Text
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@employee_number", addEmployee.txt_employeeno.Text)
+                .Parameters.AddWithValue("@username", addEmployee.txt_username.Text)
+                .Parameters.AddWithValue("@password", addEmployee.txt_password.Text)
+                .Parameters.AddWithValue("@fname", addEmployee.txt_fname.Text)
+                .Parameters.AddWithValue("@lname", addEmployee.txt_lname.Text)
+                .Parameters.AddWithValue("@dob", addEmployee.date_dob.Value)
+                .Parameters.AddWithValue("@address", addEmployee.txt_address.Text)
+                .Parameters.AddWithValue("@city", addEmployee.txt_city.Text)
+                .Parameters.AddWithValue("@province", addEmployee.txt_prov.Text)
+                .Parameters.AddWithValue("@postal_code", addEmployee.txt_postal.Text)
+                .Parameters.AddWithValue("@home", addEmployee.txt_home.Text)
+                .Parameters.AddWithValue("@cell", addEmployee.txt_cell.Text)
+                .Parameters.AddWithValue("@start_date", addEmployee.date_start.Value)
+                .Parameters.AddWithValue("@sin", addEmployee.txt_sin.Text)
+                .Parameters.AddWithValue("@hourly", addEmployee.txt_salary.Text)
+                .Parameters.AddWithValue("@education", addEmployee.combo_education.SelectedItem)
+                .Parameters.AddWithValue("@level", addEmployee.combo_access.SelectedItem)
+                .Parameters.AddWithValue("@status", addEmployee.check_active.Checked)
+
+            End With
+
+            Me.connect.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Sub
+
 
 End Class
