@@ -44,25 +44,25 @@ Partial Class addEmployee
         Me.lbl_lastname = New System.Windows.Forms.Label()
         Me.lbl_firstname = New System.Windows.Forms.Label()
         Me.grp_hr = New System.Windows.Forms.GroupBox()
+        Me.date_start = New System.Windows.Forms.DateTimePicker()
+        Me.lbl_start_date = New System.Windows.Forms.Label()
+        Me.combo_education = New System.Windows.Forms.ComboBox()
+        Me.txt_salary = New System.Windows.Forms.TextBox()
+        Me.txt_sin = New System.Windows.Forms.TextBox()
+        Me.txt_employeeno = New System.Windows.Forms.TextBox()
+        Me.lbl_education = New System.Windows.Forms.Label()
+        Me.lbl_salary = New System.Windows.Forms.Label()
+        Me.lbl_SIN = New System.Windows.Forms.Label()
         Me.lbl_emplyee_no = New System.Windows.Forms.Label()
         Me.grp_system = New System.Windows.Forms.GroupBox()
-        Me.lbl_SIN = New System.Windows.Forms.Label()
-        Me.lbl_salary = New System.Windows.Forms.Label()
-        Me.lbl_education = New System.Windows.Forms.Label()
-        Me.txt_employeeno = New System.Windows.Forms.TextBox()
-        Me.txt_sin = New System.Windows.Forms.TextBox()
-        Me.txt_salary = New System.Windows.Forms.TextBox()
-        Me.combo_education = New System.Windows.Forms.ComboBox()
-        Me.lbl_access = New System.Windows.Forms.Label()
-        Me.combo_access = New System.Windows.Forms.ComboBox()
-        Me.lbl_username = New System.Windows.Forms.Label()
-        Me.txt_username = New System.Windows.Forms.TextBox()
-        Me.lbl_password = New System.Windows.Forms.Label()
-        Me.txt_password = New System.Windows.Forms.TextBox()
-        Me.lbl_blank = New System.Windows.Forms.Label()
         Me.check_active = New System.Windows.Forms.CheckBox()
-        Me.lbl_start_date = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.lbl_blank = New System.Windows.Forms.Label()
+        Me.txt_password = New System.Windows.Forms.TextBox()
+        Me.lbl_password = New System.Windows.Forms.Label()
+        Me.txt_username = New System.Windows.Forms.TextBox()
+        Me.lbl_username = New System.Windows.Forms.Label()
+        Me.combo_access = New System.Windows.Forms.ComboBox()
+        Me.lbl_access = New System.Windows.Forms.Label()
         Me.grp_primary.SuspendLayout()
         Me.grp_hr.SuspendLayout()
         Me.grp_system.SuspendLayout()
@@ -259,7 +259,7 @@ Partial Class addEmployee
         '
         'grp_hr
         '
-        Me.grp_hr.Controls.Add(Me.DateTimePicker1)
+        Me.grp_hr.Controls.Add(Me.date_start)
         Me.grp_hr.Controls.Add(Me.lbl_start_date)
         Me.grp_hr.Controls.Add(Me.combo_education)
         Me.grp_hr.Controls.Add(Me.txt_salary)
@@ -275,6 +275,79 @@ Partial Class addEmployee
         Me.grp_hr.TabIndex = 3
         Me.grp_hr.TabStop = False
         Me.grp_hr.Text = "Human Resources"
+        '
+        'date_start
+        '
+        Me.date_start.Location = New System.Drawing.Point(78, 204)
+        Me.date_start.Name = "date_start"
+        Me.date_start.Size = New System.Drawing.Size(190, 23)
+        Me.date_start.TabIndex = 9
+        '
+        'lbl_start_date
+        '
+        Me.lbl_start_date.AutoSize = True
+        Me.lbl_start_date.Location = New System.Drawing.Point(11, 207)
+        Me.lbl_start_date.Name = "lbl_start_date"
+        Me.lbl_start_date.Size = New System.Drawing.Size(61, 15)
+        Me.lbl_start_date.TabIndex = 8
+        Me.lbl_start_date.Text = "Start Date:"
+        '
+        'combo_education
+        '
+        Me.combo_education.FormattingEnabled = True
+        Me.combo_education.Items.AddRange(New Object() {"DES", "AEC", "DEC", "BAC", "Master", "Doctorate"})
+        Me.combo_education.Location = New System.Drawing.Point(113, 173)
+        Me.combo_education.Name = "combo_education"
+        Me.combo_education.Size = New System.Drawing.Size(155, 23)
+        Me.combo_education.TabIndex = 7
+        '
+        'txt_salary
+        '
+        Me.txt_salary.Location = New System.Drawing.Point(113, 144)
+        Me.txt_salary.Name = "txt_salary"
+        Me.txt_salary.Size = New System.Drawing.Size(155, 23)
+        Me.txt_salary.TabIndex = 6
+        '
+        'txt_sin
+        '
+        Me.txt_sin.Location = New System.Drawing.Point(113, 115)
+        Me.txt_sin.Name = "txt_sin"
+        Me.txt_sin.Size = New System.Drawing.Size(155, 23)
+        Me.txt_sin.TabIndex = 5
+        '
+        'txt_employeeno
+        '
+        Me.txt_employeeno.Location = New System.Drawing.Point(113, 83)
+        Me.txt_employeeno.Name = "txt_employeeno"
+        Me.txt_employeeno.Size = New System.Drawing.Size(155, 23)
+        Me.txt_employeeno.TabIndex = 4
+        '
+        'lbl_education
+        '
+        Me.lbl_education.AutoSize = True
+        Me.lbl_education.Location = New System.Drawing.Point(11, 179)
+        Me.lbl_education.Name = "lbl_education"
+        Me.lbl_education.Size = New System.Drawing.Size(63, 15)
+        Me.lbl_education.TabIndex = 3
+        Me.lbl_education.Text = "Education:"
+        '
+        'lbl_salary
+        '
+        Me.lbl_salary.AutoSize = True
+        Me.lbl_salary.Location = New System.Drawing.Point(11, 151)
+        Me.lbl_salary.Name = "lbl_salary"
+        Me.lbl_salary.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_salary.TabIndex = 2
+        Me.lbl_salary.Text = "Salary:"
+        '
+        'lbl_SIN
+        '
+        Me.lbl_SIN.AutoSize = True
+        Me.lbl_SIN.Location = New System.Drawing.Point(11, 123)
+        Me.lbl_SIN.Name = "lbl_SIN"
+        Me.lbl_SIN.Size = New System.Drawing.Size(28, 15)
+        Me.lbl_SIN.TabIndex = 1
+        Me.lbl_SIN.Text = "SIN:"
         '
         'lbl_emplyee_no
         '
@@ -302,122 +375,6 @@ Partial Class addEmployee
         Me.grp_system.TabStop = False
         Me.grp_system.Text = "System Information"
         '
-        'lbl_SIN
-        '
-        Me.lbl_SIN.AutoSize = True
-        Me.lbl_SIN.Location = New System.Drawing.Point(11, 123)
-        Me.lbl_SIN.Name = "lbl_SIN"
-        Me.lbl_SIN.Size = New System.Drawing.Size(28, 15)
-        Me.lbl_SIN.TabIndex = 1
-        Me.lbl_SIN.Text = "SIN:"
-        '
-        'lbl_salary
-        '
-        Me.lbl_salary.AutoSize = True
-        Me.lbl_salary.Location = New System.Drawing.Point(11, 151)
-        Me.lbl_salary.Name = "lbl_salary"
-        Me.lbl_salary.Size = New System.Drawing.Size(41, 15)
-        Me.lbl_salary.TabIndex = 2
-        Me.lbl_salary.Text = "Salary:"
-        '
-        'lbl_education
-        '
-        Me.lbl_education.AutoSize = True
-        Me.lbl_education.Location = New System.Drawing.Point(11, 179)
-        Me.lbl_education.Name = "lbl_education"
-        Me.lbl_education.Size = New System.Drawing.Size(63, 15)
-        Me.lbl_education.TabIndex = 3
-        Me.lbl_education.Text = "Education:"
-        '
-        'txt_employeeno
-        '
-        Me.txt_employeeno.Location = New System.Drawing.Point(113, 83)
-        Me.txt_employeeno.Name = "txt_employeeno"
-        Me.txt_employeeno.Size = New System.Drawing.Size(155, 23)
-        Me.txt_employeeno.TabIndex = 4
-        '
-        'txt_sin
-        '
-        Me.txt_sin.Location = New System.Drawing.Point(113, 115)
-        Me.txt_sin.Name = "txt_sin"
-        Me.txt_sin.Size = New System.Drawing.Size(155, 23)
-        Me.txt_sin.TabIndex = 5
-        '
-        'txt_salary
-        '
-        Me.txt_salary.Location = New System.Drawing.Point(113, 144)
-        Me.txt_salary.Name = "txt_salary"
-        Me.txt_salary.Size = New System.Drawing.Size(155, 23)
-        Me.txt_salary.TabIndex = 6
-        '
-        'combo_education
-        '
-        Me.combo_education.FormattingEnabled = True
-        Me.combo_education.Items.AddRange(New Object() {"DES", "AEC", "DEC", "BAC", "Master", "Doctorate"})
-        Me.combo_education.Location = New System.Drawing.Point(113, 173)
-        Me.combo_education.Name = "combo_education"
-        Me.combo_education.Size = New System.Drawing.Size(155, 23)
-        Me.combo_education.TabIndex = 7
-        '
-        'lbl_access
-        '
-        Me.lbl_access.AutoSize = True
-        Me.lbl_access.Location = New System.Drawing.Point(18, 99)
-        Me.lbl_access.Name = "lbl_access"
-        Me.lbl_access.Size = New System.Drawing.Size(76, 15)
-        Me.lbl_access.TabIndex = 0
-        Me.lbl_access.Text = "Access Level:"
-        '
-        'combo_access
-        '
-        Me.combo_access.FormattingEnabled = True
-        Me.combo_access.Items.AddRange(New Object() {"Employee Level 1", "Employee Level 2", "Employee Level 3", "Administrator"})
-        Me.combo_access.Location = New System.Drawing.Point(113, 91)
-        Me.combo_access.Name = "combo_access"
-        Me.combo_access.Size = New System.Drawing.Size(155, 23)
-        Me.combo_access.TabIndex = 1
-        '
-        'lbl_username
-        '
-        Me.lbl_username.AutoSize = True
-        Me.lbl_username.Location = New System.Drawing.Point(18, 128)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(63, 15)
-        Me.lbl_username.TabIndex = 2
-        Me.lbl_username.Text = "Username:"
-        '
-        'txt_username
-        '
-        Me.txt_username.Location = New System.Drawing.Point(113, 120)
-        Me.txt_username.Name = "txt_username"
-        Me.txt_username.Size = New System.Drawing.Size(155, 23)
-        Me.txt_username.TabIndex = 3
-        '
-        'lbl_password
-        '
-        Me.lbl_password.AutoSize = True
-        Me.lbl_password.Location = New System.Drawing.Point(18, 154)
-        Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(60, 15)
-        Me.lbl_password.TabIndex = 4
-        Me.lbl_password.Text = "Password:"
-        '
-        'txt_password
-        '
-        Me.txt_password.Location = New System.Drawing.Point(113, 149)
-        Me.txt_password.Name = "txt_password"
-        Me.txt_password.Size = New System.Drawing.Size(155, 23)
-        Me.txt_password.TabIndex = 5
-        '
-        'lbl_blank
-        '
-        Me.lbl_blank.AutoSize = True
-        Me.lbl_blank.Location = New System.Drawing.Point(18, 196)
-        Me.lbl_blank.Name = "lbl_blank"
-        Me.lbl_blank.Size = New System.Drawing.Size(258, 15)
-        Me.lbl_blank.TabIndex = 6
-        Me.lbl_blank.Text = "Note: If left blank, default password is (herzing)."
-        '
         'check_active
         '
         Me.check_active.AutoSize = True
@@ -428,21 +385,64 @@ Partial Class addEmployee
         Me.check_active.Text = "Active Account"
         Me.check_active.UseVisualStyleBackColor = True
         '
-        'lbl_start_date
+        'lbl_blank
         '
-        Me.lbl_start_date.AutoSize = True
-        Me.lbl_start_date.Location = New System.Drawing.Point(11, 207)
-        Me.lbl_start_date.Name = "lbl_start_date"
-        Me.lbl_start_date.Size = New System.Drawing.Size(61, 15)
-        Me.lbl_start_date.TabIndex = 8
-        Me.lbl_start_date.Text = "Start Date:"
+        Me.lbl_blank.AutoSize = True
+        Me.lbl_blank.Location = New System.Drawing.Point(18, 196)
+        Me.lbl_blank.Name = "lbl_blank"
+        Me.lbl_blank.Size = New System.Drawing.Size(258, 15)
+        Me.lbl_blank.TabIndex = 6
+        Me.lbl_blank.Text = "Note: If left blank, default password is (herzing)."
         '
-        'DateTimePicker1
+        'txt_password
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(78, 204)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(190, 23)
-        Me.DateTimePicker1.TabIndex = 9
+        Me.txt_password.Location = New System.Drawing.Point(113, 149)
+        Me.txt_password.Name = "txt_password"
+        Me.txt_password.Size = New System.Drawing.Size(155, 23)
+        Me.txt_password.TabIndex = 5
+        '
+        'lbl_password
+        '
+        Me.lbl_password.AutoSize = True
+        Me.lbl_password.Location = New System.Drawing.Point(18, 154)
+        Me.lbl_password.Name = "lbl_password"
+        Me.lbl_password.Size = New System.Drawing.Size(60, 15)
+        Me.lbl_password.TabIndex = 4
+        Me.lbl_password.Text = "Password:"
+        '
+        'txt_username
+        '
+        Me.txt_username.Location = New System.Drawing.Point(113, 120)
+        Me.txt_username.Name = "txt_username"
+        Me.txt_username.Size = New System.Drawing.Size(155, 23)
+        Me.txt_username.TabIndex = 3
+        '
+        'lbl_username
+        '
+        Me.lbl_username.AutoSize = True
+        Me.lbl_username.Location = New System.Drawing.Point(18, 128)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(63, 15)
+        Me.lbl_username.TabIndex = 2
+        Me.lbl_username.Text = "Username:"
+        '
+        'combo_access
+        '
+        Me.combo_access.FormattingEnabled = True
+        Me.combo_access.Items.AddRange(New Object() {"Employee Level 1", "Employee Level 2", "Employee Level 3", "Administrator"})
+        Me.combo_access.Location = New System.Drawing.Point(113, 91)
+        Me.combo_access.Name = "combo_access"
+        Me.combo_access.Size = New System.Drawing.Size(155, 23)
+        Me.combo_access.TabIndex = 1
+        '
+        'lbl_access
+        '
+        Me.lbl_access.AutoSize = True
+        Me.lbl_access.Location = New System.Drawing.Point(18, 99)
+        Me.lbl_access.Name = "lbl_access"
+        Me.lbl_access.Size = New System.Drawing.Size(76, 15)
+        Me.lbl_access.TabIndex = 0
+        Me.lbl_access.Text = "Access Level:"
         '
         'addEmployee
         '
@@ -506,6 +506,6 @@ Partial Class addEmployee
     Friend WithEvents lbl_username As Label
     Friend WithEvents combo_access As ComboBox
     Friend WithEvents lbl_access As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents date_start As DateTimePicker
     Friend WithEvents lbl_start_date As Label
 End Class

@@ -214,4 +214,15 @@ Public Class User
         End Set
     End Property
 
+    'methods
+
+    'create new user
+    Function CreateEmployee()
+
+        Dim create As DBManager = New DBManager()
+
+        create.CreateNewEmployee()
+
+    End Function
+
 End Class

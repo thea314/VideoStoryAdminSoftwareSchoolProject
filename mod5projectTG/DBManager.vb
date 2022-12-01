@@ -107,7 +107,7 @@ Public Class DBManager
                 .Parameters.AddWithValue("@sin", addEmployee.txt_sin.Text)
                 .Parameters.AddWithValue("@hourly", addEmployee.txt_salary.Text)
                 .Parameters.AddWithValue("@education", addEmployee.combo_education.SelectedItem)
-                .Parameters.AddWithValue("@level", addEmployee.combo_access.SelectedItem)
+                .Parameters.AddWithValue("@level", addEmployee.intAccess)
                 .Parameters.AddWithValue("@status", addEmployee.check_active.Checked)
 
             End With
