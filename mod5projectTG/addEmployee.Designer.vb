@@ -25,8 +25,6 @@ Partial Class addEmployee
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_aaddnewEmployee = New System.Windows.Forms.Button()
         Me.grp_primary = New System.Windows.Forms.GroupBox()
-        Me.txt_cell = New System.Windows.Forms.TextBox()
-        Me.txt_home = New System.Windows.Forms.TextBox()
         Me.txt_postal = New System.Windows.Forms.TextBox()
         Me.txt_prov = New System.Windows.Forms.TextBox()
         Me.txt_city = New System.Windows.Forms.TextBox()
@@ -63,6 +61,8 @@ Partial Class addEmployee
         Me.lbl_username = New System.Windows.Forms.Label()
         Me.combo_access = New System.Windows.Forms.ComboBox()
         Me.lbl_access = New System.Windows.Forms.Label()
+        Me.mtxt_homephone = New System.Windows.Forms.MaskedTextBox()
+        Me.mtxt_cellphone = New System.Windows.Forms.MaskedTextBox()
         Me.grp_primary.SuspendLayout()
         Me.grp_hr.SuspendLayout()
         Me.grp_system.SuspendLayout()
@@ -88,8 +88,8 @@ Partial Class addEmployee
         '
         'grp_primary
         '
-        Me.grp_primary.Controls.Add(Me.txt_cell)
-        Me.grp_primary.Controls.Add(Me.txt_home)
+        Me.grp_primary.Controls.Add(Me.mtxt_cellphone)
+        Me.grp_primary.Controls.Add(Me.mtxt_homephone)
         Me.grp_primary.Controls.Add(Me.txt_postal)
         Me.grp_primary.Controls.Add(Me.txt_prov)
         Me.grp_primary.Controls.Add(Me.txt_city)
@@ -112,20 +112,6 @@ Partial Class addEmployee
         Me.grp_primary.TabIndex = 2
         Me.grp_primary.TabStop = False
         Me.grp_primary.Text = "Primary Information"
-        '
-        'txt_cell
-        '
-        Me.txt_cell.Location = New System.Drawing.Point(100, 265)
-        Me.txt_cell.Name = "txt_cell"
-        Me.txt_cell.Size = New System.Drawing.Size(168, 23)
-        Me.txt_cell.TabIndex = 17
-        '
-        'txt_home
-        '
-        Me.txt_home.Location = New System.Drawing.Point(100, 235)
-        Me.txt_home.Name = "txt_home"
-        Me.txt_home.Size = New System.Drawing.Size(168, 23)
-        Me.txt_home.TabIndex = 16
         '
         'txt_postal
         '
@@ -400,6 +386,7 @@ Partial Class addEmployee
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(155, 23)
         Me.txt_password.TabIndex = 5
+        Me.txt_password.UseSystemPasswordChar = True
         '
         'lbl_password
         '
@@ -443,6 +430,22 @@ Partial Class addEmployee
         Me.lbl_access.Size = New System.Drawing.Size(76, 15)
         Me.lbl_access.TabIndex = 0
         Me.lbl_access.Text = "Access Level:"
+        '
+        'mtxt_homephone
+        '
+        Me.mtxt_homephone.Location = New System.Drawing.Point(100, 235)
+        Me.mtxt_homephone.Mask = "(999) 000-0000"
+        Me.mtxt_homephone.Name = "mtxt_homephone"
+        Me.mtxt_homephone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_homephone.TabIndex = 16
+        '
+        'mtxt_cellphone
+        '
+        Me.mtxt_cellphone.Location = New System.Drawing.Point(100, 265)
+        Me.mtxt_cellphone.Mask = "(999) 000-0000"
+        Me.mtxt_cellphone.Name = "mtxt_cellphone"
+        Me.mtxt_cellphone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_cellphone.TabIndex = 17
         '
         'addEmployee
         '
@@ -488,8 +491,6 @@ Partial Class addEmployee
     Friend WithEvents date_dob As DateTimePicker
     Friend WithEvents txt_lname As TextBox
     Friend WithEvents txt_fname As TextBox
-    Friend WithEvents txt_cell As TextBox
-    Friend WithEvents txt_home As TextBox
     Friend WithEvents lbl_emplyee_no As Label
     Friend WithEvents combo_education As ComboBox
     Friend WithEvents txt_salary As TextBox
@@ -508,4 +509,6 @@ Partial Class addEmployee
     Friend WithEvents lbl_access As Label
     Friend WithEvents date_start As DateTimePicker
     Friend WithEvents lbl_start_date As Label
+    Friend WithEvents mtxt_cellphone As MaskedTextBox
+    Friend WithEvents mtxt_homephone As MaskedTextBox
 End Class

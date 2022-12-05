@@ -122,5 +122,202 @@ Public Class DBManager
 
     End Sub
 
+    Public Function EditEmployeeSubmit(ByVal userid As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "UPDATE `users` SET `employee_number`= @employee_number,`username`= @username,`password`= @password,`fname`= @fname,`lname`= @lname,`dob`= @dob,`address`= @address,`city`= @city,`province`= @province,`postal_code`= @postal_code,`home_phone`= @home,`cell_phone`= @cell,`start_date`= @start_date,`sin`= @sin,`hourly_pay`= @hourly,`education`= @education,`level`= @level,`status`= @status WHERE user_id = @user"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", userid)
+            .Parameters.AddWithValue("@employee_number", EditEmployee.txt_employeeno.Text)
+            .Parameters.AddWithValue("@username", EditEmployee.txt_username.Text)
+            .Parameters.AddWithValue("@password", EditEmployee.txt_password.Text)
+            .Parameters.AddWithValue("@fname", EditEmployee.txt_fname.Text)
+            .Parameters.AddWithValue("@lname", EditEmployee.txt_lname.Text)
+            .Parameters.AddWithValue("@dob", EditEmployee.date_dob.Value)
+            .Parameters.AddWithValue("@address", EditEmployee.txt_address.Text)
+            .Parameters.AddWithValue("@city", EditEmployee.txt_city.Text)
+            .Parameters.AddWithValue("@province", EditEmployee.txt_prov.Text)
+            .Parameters.AddWithValue("@postal_code", EditEmployee.txt_postal.Text)
+            .Parameters.AddWithValue("@home", EditEmployee.txt_home.Text)
+            .Parameters.AddWithValue("@cell", EditEmployee.txt_cell.Text)
+            .Parameters.AddWithValue("@start_date", EditEmployee.date_start.Value)
+            .Parameters.AddWithValue("@sin", EditEmployee.txt_sin.Text)
+            .Parameters.AddWithValue("@hourly", EditEmployee.txt_salary.Text)
+            .Parameters.AddWithValue("@education", EditEmployee.combo_education.SelectedItem)
+            .Parameters.AddWithValue("@level", EditEmployee.intAccess)
+            .Parameters.AddWithValue("@status", EditEmployee.check_active.Checked)
+        End With
+
+        cmd.ExecuteNonQuery()
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Public Function PopulateUserComboBox()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", user_id, employee_number, username, CONCAT_WS("" "",fname, lname))  AS identification, user_id FROM users;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+
+                EditEmployee.combo_employeePicker.DataSource = datatable
+                EditEmployee.combo_employeePicker.DisplayMember = "identification"
+                EditEmployee.combo_employeePicker.ValueMember = "user_id"
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Public Function PopulateUserComboBoxDelete()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", user_id, employee_number, username, CONCAT_WS("" "",fname, lname))  AS identification, user_id FROM users;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+
+                DeleteEmployee.combo_employeePicker.DataSource = datatable
+                DeleteEmployee.combo_employeePicker.DisplayMember = "identification"
+                DeleteEmployee.combo_employeePicker.ValueMember = "user_id"
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Function GetUser(ByVal userid As Integer) As User
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT employee_number, username, password, fname, lname, dob, address, city, province, postal_code,
+                home_phone, cell_phone, start_date, sin, hourly_pay, education, level, status 
+                FROM users WHERE user_id = @userid;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            cmd.Parameters.AddWithValue("@userid", userid)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            Dim user As New User(datatable.Rows(0))
+
+            Return user
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+            Return Nothing
+        End Try
+
+    End Function
+
+    Function UserExists(ByVal userid As Integer) As Boolean
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM users where user_id = @user;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", userid)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        'if user id exists, then return true
+        If (count <> 0) Then
+            Return True
+        Else
+            Return False
+            MsgBox("User does not exist, please try again!")
+        End If
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function DeleteEmployeeById(ByVal userid As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        Dim delete As String = MsgBox("Do you really want to delete this account?", MsgBoxStyle.YesNo)
+
+        If (delete = vbYes) Then
+            With cmd
+
+                .CommandText = "DELETE FROM `users` WHERE user_id = @user"
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@user", userid)
+
+            End With
+
+            cmd.ExecuteNonQuery()
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Else
+            Me.connect.Close()
+            Me.connect.Dispose()
+            Exit Function
+        End If
+
+    End Function
+
 
 End Class

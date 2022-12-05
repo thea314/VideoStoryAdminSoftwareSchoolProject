@@ -1,6 +1,38 @@
-﻿Public Class addEmployee
+﻿Public Class EditEmployee
 
     Public intAccess As Integer
+    Public chosenUser As Integer
+
+    Private Sub EditEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'populate selector combobox
+        Dim populateCombo As DBManager = New DBManager()
+
+        populateCombo.PopulateUserComboBox()
+
+    End Sub
+
+    Private Sub combo_employeePicker_SelectedValueChanged(sender As Object, e As EventArgs) Handles combo_employeePicker.SelectedValueChanged
+
+        If (IsNumeric(combo_employeePicker.SelectedValue)) Then
+
+            Dim checkIfExists As DBManager = New DBManager()
+
+            chosenUser = combo_employeePicker.SelectedValue
+
+            If (checkIfExists.UserExists(chosenUser)) Then
+
+                Dim accessUser As DBManager = New DBManager()
+
+                Dim user = accessUser.GetUser(chosenUser)
+
+                PopulateEmployeeData(user)
+
+            End If
+
+        End If
+
+    End Sub
 
     Private Sub btn_aaddnewEmployee_Click(sender As Object, e As EventArgs) Handles btn_aaddnewEmployee.Click
 
@@ -125,13 +157,13 @@
         End If
 
         If (Me.mtxt_homephone.Text = "" Or (Me.mtxt_homephone.Text.Length <> 10)) Then
-            MsgBox("Please enter a phone number of length ofn 10.")
+            MsgBox("Please enter a phone number of length of 10.")
             Me.mtxt_homephone.Text = ""
             Exit Sub
         End If
 
-        If (Me.mtxt_cellphone.Text = "" Or (Me.mtxt_cellphone.Text.Length > 12)) Then
-            MsgBox("Please enter a cell number of length less than 12.")
+        If (Me.mtxt_cellphone.Text = "" Or (Me.mtxt_cellphone.Text.Length <> 10)) Then
+            MsgBox("Please enter a cell number of length of 10.")
             Me.mtxt_cellphone.Text = ""
             Exit Sub
         End If
@@ -156,33 +188,35 @@
 
         End Select
 
-        Dim confirm As String = MsgBox("Confirm this new user?", MsgBoxStyle.YesNo)
+        Dim edit As DBManager = New DBManager()
 
-        If (confirm = vbYes) Then
+        edit.EditEmployeeSubmit(chosenUser)
 
-            Dim create As DBManager = New DBManager()
-
-            create.CreateNewEmployee()
-
-            MsgBox("New Employee created. Returning you to dashboard.")
-            Me.Hide()
-            dashboard.Show()
-
-        Else
-            MsgBox("Account creation canceled.")
-            Me.Hide()
-            dashboard.Show()
-        End If
 
     End Sub
 
-    Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Function PopulateEmployeeData(ByVal user As User)
 
-        'set default values for comboboxes
-        combo_access.SelectedIndex = 0
-        combo_education.SelectedIndex = 0
+        'populate edit form with data from user and database
+        Me.txt_employeeno.Text = user.EmployeeID
+        Me.txt_username.Text = user.Username
+        Me.txt_password.Text = user.Password
+        Me.txt_fname.Text = user.FirstName
+        Me.txt_lname.Text = user.LastName
+        Me.date_dob.Value = user.DoB
+        Me.txt_address.Text = user.Address
+        Me.txt_city.Text = user.City
+        Me.txt_prov.Text = user.Province
+        Me.txt_postal.Text = user.PostalCode
+        Me.mtxt_homephone.Text = user.HomePhone
+        Me.mtxt_cellphone.Text = user.CellPhone
+        Me.date_start.Value = user.StartDate
+        Me.txt_sin.Text = user.Sin
+        Me.txt_salary.Text = user.HourlyPay
+        Me.combo_education.Text = user.Education
+        Me.combo_access.Text = user.Level
 
-    End Sub
+    End Function
 
     Private Sub txt_fname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_fname.KeyPress
         'make sure it's a letter
@@ -222,6 +256,28 @@
         If (Char.IsNumber(e.KeyChar)) Then
 
             MsgBox("Please enter a letter.")
+            e.Handled = True
+            Exit Sub
+
+        End If
+    End Sub
+
+    Private Sub txt_home_KeyPress(sender As Object, e As KeyPressEventArgs)
+        'make sure it's a number
+        If (Not Char.IsNumber(e.KeyChar)) Then
+
+            MsgBox("Please enter a number.")
+            e.Handled = True
+            Exit Sub
+
+        End If
+    End Sub
+
+    Private Sub txt_cell_KeyPress(sender As Object, e As KeyPressEventArgs)
+        'make sure it's a number
+        If (Not Char.IsNumber(e.KeyChar)) Then
+
+            MsgBox("Please enter a number.")
             e.Handled = True
             Exit Sub
 

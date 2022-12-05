@@ -15,7 +15,7 @@ Public Class User
     Private _PostalCode As String
     Private _HomePhone As String
     Private _CellPhone As String
-    Private _StartDate As Timestamp
+    Private _StartDate As Date
     Private _SIN As String
     Private _HourlyPay As Double
     Private _Education As String
@@ -27,7 +27,7 @@ Public Class User
                    ByVal firstname As String, ByVal lastname As String, ByVal dob As Date,
                    ByVal address As String, ByVal city As String, ByVal province As String,
                    ByVal postalCode As String, ByVal homePhone As String, ByVal cellPhone As String,
-                   ByVal startDate As Timestamp, ByVal sin As String, ByVal hourlyPay As Double,
+                   ByVal startDate As Date, ByVal sin As String, ByVal hourlyPay As Double,
                    ByVal education As String, ByVal level As Integer, ByVal status As Integer)
 
         Me._EmployeeId = employeeId
@@ -48,6 +48,29 @@ Public Class User
         Me._Education = education
         Me._Level = level
         Me._Status = status
+
+    End Sub
+
+    Public Sub New(ByVal datarow As DataRow)
+
+        Me._EmployeeId = datarow("employee_number")
+        Me._Username = datarow("username")
+        Me._Password = datarow("password")
+        Me._FirstName = datarow("fname")
+        Me._LastName = datarow("lname")
+        Me._DOB = datarow("dob")
+        Me._Address = datarow("address")
+        Me._City = datarow("city")
+        Me._Province = datarow("province")
+        Me._PostalCode = datarow("postal_code")
+        Me._HomePhone = datarow("home_phone")
+        Me._CellPhone = datarow("cell_phone")
+        Me._StartDate = datarow("start_date")
+        Me._SIN = datarow("sin")
+        Me._HourlyPay = datarow("hourly_pay")
+        Me._Education = datarow("education")
+        Me._Level = datarow("level")
+        Me._Status = datarow("status")
 
     End Sub
 
@@ -160,11 +183,11 @@ Public Class User
         End Set
     End Property
 
-    Public Property StartDate() As Timestamp
+    Public Property StartDate() As Date
         Get
             Return _StartDate
         End Get
-        Set(value As Timestamp)
+        Set(value As Date)
             _StartDate = value
         End Set
     End Property
@@ -222,6 +245,14 @@ Public Class User
         Dim create As DBManager = New DBManager()
 
         create.CreateNewEmployee()
+
+    End Function
+
+    Function EditEmployeeForm()
+
+        Dim edit As DBManager = New DBManager()
+
+        'edit.EditEmployeePopulate()
 
     End Function
 
