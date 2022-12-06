@@ -44,8 +44,8 @@
         Me.txt_city.Text = user.City
         Me.txt_prov.Text = user.Province
         Me.txt_postal.Text = user.PostalCode
-        Me.txt_home.Text = user.HomePhone
-        Me.txt_cell.Text = user.CellPhone
+        Me.mtxt_homephone.Text = user.HomePhone
+        Me.mtxt_cellphone.Text = user.CellPhone
         Me.date_start.Value = user.StartDate
         Me.txt_sin.Text = user.Sin
         Me.txt_salary.Text = user.HourlyPay

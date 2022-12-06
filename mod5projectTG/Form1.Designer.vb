@@ -26,6 +26,9 @@ Partial Class Form1
         Me.btn_AddNewEmployee = New System.Windows.Forms.Button()
         Me.btn_edit = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_view_clients = New System.Windows.Forms.Button()
+        Me.btn_newclient = New System.Windows.Forms.Button()
+        Me.btn_editclient = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -64,11 +67,41 @@ Partial Class Form1
         Me.btn_delete.Text = "Delete"
         Me.btn_delete.UseVisualStyleBackColor = True
         '
+        'btn_view_clients
+        '
+        Me.btn_view_clients.Location = New System.Drawing.Point(434, 136)
+        Me.btn_view_clients.Name = "btn_view_clients"
+        Me.btn_view_clients.Size = New System.Drawing.Size(138, 23)
+        Me.btn_view_clients.TabIndex = 4
+        Me.btn_view_clients.Text = "View Clients"
+        Me.btn_view_clients.UseVisualStyleBackColor = True
+        '
+        'btn_newclient
+        '
+        Me.btn_newclient.Location = New System.Drawing.Point(461, 186)
+        Me.btn_newclient.Name = "btn_newclient"
+        Me.btn_newclient.Size = New System.Drawing.Size(193, 23)
+        Me.btn_newclient.TabIndex = 5
+        Me.btn_newclient.Text = "Add New Client"
+        Me.btn_newclient.UseVisualStyleBackColor = True
+        '
+        'btn_editclient
+        '
+        Me.btn_editclient.Location = New System.Drawing.Point(478, 226)
+        Me.btn_editclient.Name = "btn_editclient"
+        Me.btn_editclient.Size = New System.Drawing.Size(75, 23)
+        Me.btn_editclient.TabIndex = 6
+        Me.btn_editclient.Text = "Edit Client"
+        Me.btn_editclient.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_editclient)
+        Me.Controls.Add(Me.btn_view_clients)
+        Me.Controls.Add(Me.btn_newclient)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.btn_AddNewEmployee)
@@ -83,4 +116,7 @@ Partial Class Form1
     Friend WithEvents btn_AddNewEmployee As Button
     Friend WithEvents btn_edit As Button
     Friend WithEvents btn_delete As Button
+    Friend WithEvents btn_view_clients As Button
+    Friend WithEvents btn_newclient As Button
+    Friend WithEvents btn_editclient As Button
 End Class

@@ -4,13 +4,22 @@
     <Compile Update="addEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddNewClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DeleteEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DisplayClients.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="displayemployees.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditClient.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditEmployee.vb">

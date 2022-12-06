@@ -45,8 +45,6 @@ Partial Class DeleteEmployee
         Me.lbl_SIN = New System.Windows.Forms.Label()
         Me.lbl_emplyee_no = New System.Windows.Forms.Label()
         Me.grp_primary = New System.Windows.Forms.GroupBox()
-        Me.txt_cell = New System.Windows.Forms.TextBox()
-        Me.txt_home = New System.Windows.Forms.TextBox()
         Me.txt_postal = New System.Windows.Forms.TextBox()
         Me.txt_prov = New System.Windows.Forms.TextBox()
         Me.txt_city = New System.Windows.Forms.TextBox()
@@ -65,6 +63,8 @@ Partial Class DeleteEmployee
         Me.lbl_firstname = New System.Windows.Forms.Label()
         Me.btn_aaddnewEmployee = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.mtxt_homephone = New System.Windows.Forms.MaskedTextBox()
+        Me.mtxt_cellphone = New System.Windows.Forms.MaskedTextBox()
         Me.grp_system.SuspendLayout()
         Me.grp_hr.SuspendLayout()
         Me.grp_primary.SuspendLayout()
@@ -278,8 +278,8 @@ Partial Class DeleteEmployee
         '
         'grp_primary
         '
-        Me.grp_primary.Controls.Add(Me.txt_cell)
-        Me.grp_primary.Controls.Add(Me.txt_home)
+        Me.grp_primary.Controls.Add(Me.mtxt_cellphone)
+        Me.grp_primary.Controls.Add(Me.mtxt_homephone)
         Me.grp_primary.Controls.Add(Me.txt_postal)
         Me.grp_primary.Controls.Add(Me.txt_prov)
         Me.grp_primary.Controls.Add(Me.txt_city)
@@ -303,20 +303,6 @@ Partial Class DeleteEmployee
         Me.grp_primary.TabIndex = 13
         Me.grp_primary.TabStop = False
         Me.grp_primary.Text = "Primary Information"
-        '
-        'txt_cell
-        '
-        Me.txt_cell.Location = New System.Drawing.Point(100, 265)
-        Me.txt_cell.Name = "txt_cell"
-        Me.txt_cell.Size = New System.Drawing.Size(168, 23)
-        Me.txt_cell.TabIndex = 17
-        '
-        'txt_home
-        '
-        Me.txt_home.Location = New System.Drawing.Point(100, 235)
-        Me.txt_home.Name = "txt_home"
-        Me.txt_home.Size = New System.Drawing.Size(168, 23)
-        Me.txt_home.TabIndex = 16
         '
         'txt_postal
         '
@@ -466,6 +452,22 @@ Partial Class DeleteEmployee
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Delete Employee:"
         '
+        'mtxt_homephone
+        '
+        Me.mtxt_homephone.Location = New System.Drawing.Point(100, 235)
+        Me.mtxt_homephone.Mask = "(999) 000-0000"
+        Me.mtxt_homephone.Name = "mtxt_homephone"
+        Me.mtxt_homephone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_homephone.TabIndex = 16
+        '
+        'mtxt_cellphone
+        '
+        Me.mtxt_cellphone.Location = New System.Drawing.Point(100, 264)
+        Me.mtxt_cellphone.Mask = "(999) 000-0000"
+        Me.mtxt_cellphone.Name = "mtxt_cellphone"
+        Me.mtxt_cellphone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_cellphone.TabIndex = 17
+        '
         'DeleteEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -514,8 +516,6 @@ Partial Class DeleteEmployee
     Friend WithEvents lbl_SIN As Label
     Friend WithEvents lbl_emplyee_no As Label
     Friend WithEvents grp_primary As GroupBox
-    Friend WithEvents txt_cell As TextBox
-    Friend WithEvents txt_home As TextBox
     Friend WithEvents txt_postal As TextBox
     Friend WithEvents txt_prov As TextBox
     Friend WithEvents txt_city As TextBox
@@ -534,4 +534,6 @@ Partial Class DeleteEmployee
     Friend WithEvents lbl_firstname As Label
     Friend WithEvents btn_aaddnewEmployee As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents mtxt_cellphone As MaskedTextBox
+    Friend WithEvents mtxt_homephone As MaskedTextBox
 End Class
