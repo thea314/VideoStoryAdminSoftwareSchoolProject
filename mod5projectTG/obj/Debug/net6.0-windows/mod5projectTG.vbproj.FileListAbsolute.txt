@@ -34,3 +34,4 @@ C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5pro
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.EditClient.resources
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.DeleteClient.resources
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.DisplayVideos.resources
+C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.AddNewVideo.resources

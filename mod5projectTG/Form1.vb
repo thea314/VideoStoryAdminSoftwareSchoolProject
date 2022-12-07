@@ -50,4 +50,9 @@
         Me.Hide()
         displayemployees.Show()
     End Sub
+
+    Private Sub btn_addvideo_Click(sender As Object, e As EventArgs) Handles btn_addvideo.Click
+        Me.Hide()
+        AddNewVideo.Show()
+    End Sub
 End Class

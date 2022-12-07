@@ -23,24 +23,172 @@ Partial Class AddNewVideo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grp_videoInfo = New System.Windows.Forms.GroupBox()
+        Me.txt_director = New System.Windows.Forms.TextBox()
+        Me.num_length = New System.Windows.Forms.NumericUpDown()
+        Me.txt_country = New System.Windows.Forms.TextBox()
+        Me.date_year = New System.Windows.Forms.DateTimePicker()
+        Me.txt_genre = New System.Windows.Forms.TextBox()
+        Me.txt_title = New System.Windows.Forms.TextBox()
+        Me.rich_actors = New System.Windows.Forms.RichTextBox()
+        Me.lbl_actors = New System.Windows.Forms.Label()
+        Me.lbl_director = New System.Windows.Forms.Label()
+        Me.lbl_length = New System.Windows.Forms.Label()
+        Me.lbl_country = New System.Windows.Forms.Label()
+        Me.lbl_year = New System.Windows.Forms.Label()
+        Me.lbl_genre = New System.Windows.Forms.Label()
+        Me.lbl_title = New System.Windows.Forms.Label()
         Me.grp_videoDetails = New System.Windows.Forms.GroupBox()
-        Me.rich_resume = New System.Windows.Forms.RichTextBox()
-        Me.lbl_resume_text = New System.Windows.Forms.Label()
-        Me.lbl_url = New System.Windows.Forms.Label()
         Me.txt_url = New System.Windows.Forms.TextBox()
+        Me.lbl_url = New System.Windows.Forms.Label()
+        Me.lbl_resume_text = New System.Windows.Forms.Label()
+        Me.rich_resume = New System.Windows.Forms.RichTextBox()
         Me.btn_addNewVideo = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.lbl_language = New System.Windows.Forms.Label()
+        Me.txt_language = New System.Windows.Forms.TextBox()
+        Me.grp_videoInfo.SuspendLayout()
+        CType(Me.num_length, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_videoDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'grp_videoInfo
         '
+        Me.grp_videoInfo.Controls.Add(Me.txt_language)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_language)
+        Me.grp_videoInfo.Controls.Add(Me.txt_director)
+        Me.grp_videoInfo.Controls.Add(Me.num_length)
+        Me.grp_videoInfo.Controls.Add(Me.txt_country)
+        Me.grp_videoInfo.Controls.Add(Me.date_year)
+        Me.grp_videoInfo.Controls.Add(Me.txt_genre)
+        Me.grp_videoInfo.Controls.Add(Me.txt_title)
+        Me.grp_videoInfo.Controls.Add(Me.rich_actors)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_actors)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_director)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_length)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_country)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_year)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_genre)
+        Me.grp_videoInfo.Controls.Add(Me.lbl_title)
         Me.grp_videoInfo.Location = New System.Drawing.Point(12, 12)
         Me.grp_videoInfo.Name = "grp_videoInfo"
         Me.grp_videoInfo.Size = New System.Drawing.Size(308, 380)
         Me.grp_videoInfo.TabIndex = 0
         Me.grp_videoInfo.TabStop = False
         Me.grp_videoInfo.Text = "Video Information:"
+        '
+        'txt_director
+        '
+        Me.txt_director.Location = New System.Drawing.Point(91, 230)
+        Me.txt_director.Name = "txt_director"
+        Me.txt_director.Size = New System.Drawing.Size(200, 23)
+        Me.txt_director.TabIndex = 13
+        '
+        'num_length
+        '
+        Me.num_length.Location = New System.Drawing.Point(91, 191)
+        Me.num_length.Name = "num_length"
+        Me.num_length.Size = New System.Drawing.Size(199, 23)
+        Me.num_length.TabIndex = 12
+        '
+        'txt_country
+        '
+        Me.txt_country.Location = New System.Drawing.Point(91, 123)
+        Me.txt_country.Name = "txt_country"
+        Me.txt_country.Size = New System.Drawing.Size(199, 23)
+        Me.txt_country.TabIndex = 11
+        '
+        'date_year
+        '
+        Me.date_year.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.date_year.Location = New System.Drawing.Point(91, 94)
+        Me.date_year.Name = "date_year"
+        Me.date_year.Size = New System.Drawing.Size(200, 23)
+        Me.date_year.TabIndex = 10
+        '
+        'txt_genre
+        '
+        Me.txt_genre.Location = New System.Drawing.Point(91, 60)
+        Me.txt_genre.Name = "txt_genre"
+        Me.txt_genre.Size = New System.Drawing.Size(199, 23)
+        Me.txt_genre.TabIndex = 9
+        '
+        'txt_title
+        '
+        Me.txt_title.Location = New System.Drawing.Point(91, 24)
+        Me.txt_title.Name = "txt_title"
+        Me.txt_title.Size = New System.Drawing.Size(199, 23)
+        Me.txt_title.TabIndex = 8
+        '
+        'rich_actors
+        '
+        Me.rich_actors.Location = New System.Drawing.Point(56, 272)
+        Me.rich_actors.Name = "rich_actors"
+        Me.rich_actors.Size = New System.Drawing.Size(234, 102)
+        Me.rich_actors.TabIndex = 7
+        Me.rich_actors.Text = ""
+        '
+        'lbl_actors
+        '
+        Me.lbl_actors.AutoSize = True
+        Me.lbl_actors.Location = New System.Drawing.Point(6, 313)
+        Me.lbl_actors.Name = "lbl_actors"
+        Me.lbl_actors.Size = New System.Drawing.Size(44, 15)
+        Me.lbl_actors.TabIndex = 6
+        Me.lbl_actors.Text = "Actors:"
+        '
+        'lbl_director
+        '
+        Me.lbl_director.AutoSize = True
+        Me.lbl_director.Location = New System.Drawing.Point(13, 238)
+        Me.lbl_director.Name = "lbl_director"
+        Me.lbl_director.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_director.TabIndex = 5
+        Me.lbl_director.Text = "Director:"
+        '
+        'lbl_length
+        '
+        Me.lbl_length.AutoSize = True
+        Me.lbl_length.Location = New System.Drawing.Point(6, 199)
+        Me.lbl_length.Name = "lbl_length"
+        Me.lbl_length.Size = New System.Drawing.Size(79, 15)
+        Me.lbl_length.TabIndex = 4
+        Me.lbl_length.Text = "Length (min):"
+        '
+        'lbl_country
+        '
+        Me.lbl_country.AutoSize = True
+        Me.lbl_country.Location = New System.Drawing.Point(12, 131)
+        Me.lbl_country.Name = "lbl_country"
+        Me.lbl_country.Size = New System.Drawing.Size(53, 15)
+        Me.lbl_country.TabIndex = 3
+        Me.lbl_country.Text = "Country:"
+        '
+        'lbl_year
+        '
+        Me.lbl_year.AutoSize = True
+        Me.lbl_year.Location = New System.Drawing.Point(13, 100)
+        Me.lbl_year.Name = "lbl_year"
+        Me.lbl_year.Size = New System.Drawing.Size(32, 15)
+        Me.lbl_year.TabIndex = 2
+        Me.lbl_year.Text = "Year:"
+        '
+        'lbl_genre
+        '
+        Me.lbl_genre.AutoSize = True
+        Me.lbl_genre.Location = New System.Drawing.Point(13, 68)
+        Me.lbl_genre.Name = "lbl_genre"
+        Me.lbl_genre.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_genre.TabIndex = 1
+        Me.lbl_genre.Text = "Genre:"
+        '
+        'lbl_title
+        '
+        Me.lbl_title.AutoSize = True
+        Me.lbl_title.Location = New System.Drawing.Point(13, 32)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(32, 15)
+        Me.lbl_title.TabIndex = 0
+        Me.lbl_title.Text = "Title:"
         '
         'grp_videoDetails
         '
@@ -55,22 +203,12 @@ Partial Class AddNewVideo
         Me.grp_videoDetails.TabStop = False
         Me.grp_videoDetails.Text = "Video Details:"
         '
-        'rich_resume
+        'txt_url
         '
-        Me.rich_resume.Location = New System.Drawing.Point(6, 46)
-        Me.rich_resume.Name = "rich_resume"
-        Me.rich_resume.Size = New System.Drawing.Size(288, 270)
-        Me.rich_resume.TabIndex = 0
-        Me.rich_resume.Text = ""
-        '
-        'lbl_resume_text
-        '
-        Me.lbl_resume_text.AutoSize = True
-        Me.lbl_resume_text.Location = New System.Drawing.Point(6, 28)
-        Me.lbl_resume_text.Name = "lbl_resume_text"
-        Me.lbl_resume_text.Size = New System.Drawing.Size(85, 15)
-        Me.lbl_resume_text.TabIndex = 1
-        Me.lbl_resume_text.Text = "Video Resume:"
+        Me.txt_url.Location = New System.Drawing.Point(79, 328)
+        Me.txt_url.Name = "txt_url"
+        Me.txt_url.Size = New System.Drawing.Size(215, 23)
+        Me.txt_url.TabIndex = 3
         '
         'lbl_url
         '
@@ -81,12 +219,22 @@ Partial Class AddNewVideo
         Me.lbl_url.TabIndex = 2
         Me.lbl_url.Text = "Poster URL:"
         '
-        'txt_url
+        'lbl_resume_text
         '
-        Me.txt_url.Location = New System.Drawing.Point(79, 328)
-        Me.txt_url.Name = "txt_url"
-        Me.txt_url.Size = New System.Drawing.Size(215, 23)
-        Me.txt_url.TabIndex = 3
+        Me.lbl_resume_text.AutoSize = True
+        Me.lbl_resume_text.Location = New System.Drawing.Point(6, 28)
+        Me.lbl_resume_text.Name = "lbl_resume_text"
+        Me.lbl_resume_text.Size = New System.Drawing.Size(85, 15)
+        Me.lbl_resume_text.TabIndex = 1
+        Me.lbl_resume_text.Text = "Video Resume:"
+        '
+        'rich_resume
+        '
+        Me.rich_resume.Location = New System.Drawing.Point(6, 46)
+        Me.rich_resume.Name = "rich_resume"
+        Me.rich_resume.Size = New System.Drawing.Size(288, 270)
+        Me.rich_resume.TabIndex = 0
+        Me.rich_resume.Text = ""
         '
         'btn_addNewVideo
         '
@@ -106,6 +254,22 @@ Partial Class AddNewVideo
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
+        'lbl_language
+        '
+        Me.lbl_language.AutoSize = True
+        Me.lbl_language.Location = New System.Drawing.Point(13, 165)
+        Me.lbl_language.Name = "lbl_language"
+        Me.lbl_language.Size = New System.Drawing.Size(62, 15)
+        Me.lbl_language.TabIndex = 14
+        Me.lbl_language.Text = "Language:"
+        '
+        'txt_language
+        '
+        Me.txt_language.Location = New System.Drawing.Point(91, 157)
+        Me.txt_language.Name = "txt_language"
+        Me.txt_language.Size = New System.Drawing.Size(199, 23)
+        Me.txt_language.TabIndex = 15
+        '
         'AddNewVideo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -117,6 +281,9 @@ Partial Class AddNewVideo
         Me.Controls.Add(Me.grp_videoInfo)
         Me.Name = "AddNewVideo"
         Me.Text = "AddNewVideo"
+        Me.grp_videoInfo.ResumeLayout(False)
+        Me.grp_videoInfo.PerformLayout()
+        CType(Me.num_length, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grp_videoDetails.ResumeLayout(False)
         Me.grp_videoDetails.PerformLayout()
         Me.ResumeLayout(False)
@@ -131,4 +298,20 @@ Partial Class AddNewVideo
     Friend WithEvents rich_resume As RichTextBox
     Friend WithEvents btn_addNewVideo As Button
     Friend WithEvents btn_cancel As Button
+    Friend WithEvents txt_genre As TextBox
+    Friend WithEvents txt_title As TextBox
+    Friend WithEvents rich_actors As RichTextBox
+    Friend WithEvents lbl_actors As Label
+    Friend WithEvents lbl_director As Label
+    Friend WithEvents lbl_length As Label
+    Friend WithEvents lbl_country As Label
+    Friend WithEvents lbl_year As Label
+    Friend WithEvents lbl_genre As Label
+    Friend WithEvents lbl_title As Label
+    Friend WithEvents date_year As DateTimePicker
+    Friend WithEvents txt_director As TextBox
+    Friend WithEvents num_length As NumericUpDown
+    Friend WithEvents txt_country As TextBox
+    Friend WithEvents txt_language As TextBox
+    Friend WithEvents lbl_language As Label
 End Class

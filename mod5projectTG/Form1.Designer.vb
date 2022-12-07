@@ -32,6 +32,7 @@ Partial Class Form1
         Me.btn_displayEmployee = New System.Windows.Forms.Button()
         Me.btn_delete_client = New System.Windows.Forms.Button()
         Me.btn_viewvideos = New System.Windows.Forms.Button()
+        Me.btn_addvideo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -124,11 +125,21 @@ Partial Class Form1
         Me.btn_viewvideos.Text = "View Videos"
         Me.btn_viewvideos.UseVisualStyleBackColor = True
         '
+        'btn_addvideo
+        '
+        Me.btn_addvideo.Location = New System.Drawing.Point(525, 94)
+        Me.btn_addvideo.Name = "btn_addvideo"
+        Me.btn_addvideo.Size = New System.Drawing.Size(103, 23)
+        Me.btn_addvideo.TabIndex = 10
+        Me.btn_addvideo.Text = "Add Video"
+        Me.btn_addvideo.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_addvideo)
         Me.Controls.Add(Me.btn_viewvideos)
         Me.Controls.Add(Me.btn_delete_client)
         Me.Controls.Add(Me.btn_displayEmployee)
@@ -155,4 +166,5 @@ Partial Class Form1
     Friend WithEvents btn_displayEmployee As Button
     Friend WithEvents btn_delete_client As Button
     Friend WithEvents btn_viewvideos As Button
+    Friend WithEvents btn_addvideo As Button
 End Class

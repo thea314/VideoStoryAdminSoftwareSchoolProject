@@ -7,6 +7,9 @@
     <Compile Update="AddNewClient.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddNewVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="dashboard.vb">
       <SubType>Form</SubType>
     </Compile>

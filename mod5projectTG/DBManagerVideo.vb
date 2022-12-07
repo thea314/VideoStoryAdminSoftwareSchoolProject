@@ -64,4 +64,45 @@ Public Class DBManagerVideo
         End Try
 
     End Sub
+
+    Function CreateNewVideo()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim cmd As New MySqlCommand()
+
+            With cmd
+
+                .CommandText =
+                    "INSERT INTO `videos`(`photo`, `title`, `year`, `country`,
+                    `language`, `length`, `resume`, `genre`, `actors`, `director`)
+                    VALUES (@photo, @title, @year, @country,
+                    @language, @length, @resume, @genre, @actors, @director);"
+                .CommandType = CommandType.Text
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@photo", AddNewVideo.txt_url.Text)
+                .Parameters.AddWithValue("@title", AddNewVideo.txt_title.Text)
+                .Parameters.AddWithValue("@year", AddNewVideo.date_year.Value)
+                .Parameters.AddWithValue("@country", AddNewVideo.txt_country.Text)
+                .Parameters.AddWithValue("@language", AddNewVideo.txt_language.Text)
+                .Parameters.AddWithValue("@length", AddNewVideo.num_length.Value)
+                .Parameters.AddWithValue("@resume", AddNewVideo.rich_resume.Text)
+                .Parameters.AddWithValue("@genre", AddNewVideo.txt_genre.Text)
+                .Parameters.AddWithValue("@actors", AddNewVideo.rich_actors.Text)
+                .Parameters.AddWithValue("@director", AddNewVideo.txt_director.Text)
+
+            End With
+
+            cmd.ExecuteNonQuery()
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
 End Class
