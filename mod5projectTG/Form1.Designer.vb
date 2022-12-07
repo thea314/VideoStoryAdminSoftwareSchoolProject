@@ -29,11 +29,14 @@ Partial Class Form1
         Me.btn_view_clients = New System.Windows.Forms.Button()
         Me.btn_newclient = New System.Windows.Forms.Button()
         Me.btn_editclient = New System.Windows.Forms.Button()
+        Me.btn_displayEmployee = New System.Windows.Forms.Button()
+        Me.btn_delete_client = New System.Windows.Forms.Button()
+        Me.btn_viewvideos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
         '
-        Me.btn_dashboard.Location = New System.Drawing.Point(208, 173)
+        Me.btn_dashboard.Location = New System.Drawing.Point(331, 12)
         Me.btn_dashboard.Name = "btn_dashboard"
         Me.btn_dashboard.Size = New System.Drawing.Size(75, 23)
         Me.btn_dashboard.TabIndex = 0
@@ -42,34 +45,34 @@ Partial Class Form1
         '
         'btn_AddNewEmployee
         '
-        Me.btn_AddNewEmployee.Location = New System.Drawing.Point(191, 240)
+        Me.btn_AddNewEmployee.Location = New System.Drawing.Point(33, 94)
         Me.btn_AddNewEmployee.Name = "btn_AddNewEmployee"
         Me.btn_AddNewEmployee.Size = New System.Drawing.Size(92, 41)
         Me.btn_AddNewEmployee.TabIndex = 1
-        Me.btn_AddNewEmployee.Text = "Add New"
+        Me.btn_AddNewEmployee.Text = "Add New Employee"
         Me.btn_AddNewEmployee.UseVisualStyleBackColor = True
         '
         'btn_edit
         '
-        Me.btn_edit.Location = New System.Drawing.Point(206, 315)
+        Me.btn_edit.Location = New System.Drawing.Point(33, 149)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(105, 49)
         Me.btn_edit.TabIndex = 2
-        Me.btn_edit.Text = "edit"
+        Me.btn_edit.Text = "edit employee"
         Me.btn_edit.UseVisualStyleBackColor = True
         '
         'btn_delete
         '
-        Me.btn_delete.Location = New System.Drawing.Point(385, 328)
+        Me.btn_delete.Location = New System.Drawing.Point(33, 224)
         Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Size = New System.Drawing.Size(75, 23)
+        Me.btn_delete.Size = New System.Drawing.Size(105, 23)
         Me.btn_delete.TabIndex = 3
-        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.Text = "Delete employee"
         Me.btn_delete.UseVisualStyleBackColor = True
         '
         'btn_view_clients
         '
-        Me.btn_view_clients.Location = New System.Drawing.Point(434, 136)
+        Me.btn_view_clients.Location = New System.Drawing.Point(256, 55)
         Me.btn_view_clients.Name = "btn_view_clients"
         Me.btn_view_clients.Size = New System.Drawing.Size(138, 23)
         Me.btn_view_clients.TabIndex = 4
@@ -78,27 +81,57 @@ Partial Class Form1
         '
         'btn_newclient
         '
-        Me.btn_newclient.Location = New System.Drawing.Point(461, 186)
+        Me.btn_newclient.Location = New System.Drawing.Point(256, 95)
         Me.btn_newclient.Name = "btn_newclient"
-        Me.btn_newclient.Size = New System.Drawing.Size(193, 23)
+        Me.btn_newclient.Size = New System.Drawing.Size(138, 23)
         Me.btn_newclient.TabIndex = 5
         Me.btn_newclient.Text = "Add New Client"
         Me.btn_newclient.UseVisualStyleBackColor = True
         '
         'btn_editclient
         '
-        Me.btn_editclient.Location = New System.Drawing.Point(478, 226)
+        Me.btn_editclient.Location = New System.Drawing.Point(256, 132)
         Me.btn_editclient.Name = "btn_editclient"
         Me.btn_editclient.Size = New System.Drawing.Size(75, 23)
         Me.btn_editclient.TabIndex = 6
         Me.btn_editclient.Text = "Edit Client"
         Me.btn_editclient.UseVisualStyleBackColor = True
         '
+        'btn_displayEmployee
+        '
+        Me.btn_displayEmployee.Location = New System.Drawing.Point(33, 55)
+        Me.btn_displayEmployee.Name = "btn_displayEmployee"
+        Me.btn_displayEmployee.Size = New System.Drawing.Size(116, 23)
+        Me.btn_displayEmployee.TabIndex = 7
+        Me.btn_displayEmployee.Text = "Display Employees"
+        Me.btn_displayEmployee.UseVisualStyleBackColor = True
+        '
+        'btn_delete_client
+        '
+        Me.btn_delete_client.Location = New System.Drawing.Point(256, 175)
+        Me.btn_delete_client.Name = "btn_delete_client"
+        Me.btn_delete_client.Size = New System.Drawing.Size(106, 23)
+        Me.btn_delete_client.TabIndex = 8
+        Me.btn_delete_client.Text = "Delete Client"
+        Me.btn_delete_client.UseVisualStyleBackColor = True
+        '
+        'btn_viewvideos
+        '
+        Me.btn_viewvideos.Location = New System.Drawing.Point(525, 55)
+        Me.btn_viewvideos.Name = "btn_viewvideos"
+        Me.btn_viewvideos.Size = New System.Drawing.Size(103, 23)
+        Me.btn_viewvideos.TabIndex = 9
+        Me.btn_viewvideos.Text = "View Videos"
+        Me.btn_viewvideos.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_viewvideos)
+        Me.Controls.Add(Me.btn_delete_client)
+        Me.Controls.Add(Me.btn_displayEmployee)
         Me.Controls.Add(Me.btn_editclient)
         Me.Controls.Add(Me.btn_view_clients)
         Me.Controls.Add(Me.btn_newclient)
@@ -119,4 +152,7 @@ Partial Class Form1
     Friend WithEvents btn_view_clients As Button
     Friend WithEvents btn_newclient As Button
     Friend WithEvents btn_editclient As Button
+    Friend WithEvents btn_displayEmployee As Button
+    Friend WithEvents btn_delete_client As Button
+    Friend WithEvents btn_viewvideos As Button
 End Class

@@ -36,7 +36,17 @@
     'alternate constructor from db values
     Public Sub New(ByVal datarow As DataRow)
 
-
+        Me._ClientNo = datarow("client_number")
+        Me._FirstName = datarow("fname")
+        Me._LastName = datarow("lname")
+        Me._Email = datarow("email")
+        Me._Phone = datarow("phone")
+        Me._DOB = datarow("dob")
+        Me._Address = datarow("address")
+        Me._City = datarow("city")
+        Me._Province = datarow("province")
+        Me._Postal_Code = datarow("postal_code")
+        Me._Status = datarow("status")
 
     End Sub
 
@@ -59,7 +69,7 @@
         End Set
     End Property
 
-    Public Property lname() As String
+    Public Property Lname() As String
         Get
             Return _LastName
         End Get

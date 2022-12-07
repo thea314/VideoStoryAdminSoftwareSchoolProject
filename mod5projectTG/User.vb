@@ -237,23 +237,4 @@ Public Class User
         End Set
     End Property
 
-    'methods
-
-    'create new user
-    Function CreateEmployee()
-
-        Dim create As DBManager = New DBManager()
-
-        create.CreateNewEmployee()
-
-    End Function
-
-    Function EditEmployeeForm()
-
-        Dim edit As DBManager = New DBManager()
-
-        'edit.EditEmployeePopulate()
-
-    End Function
-
 End Class

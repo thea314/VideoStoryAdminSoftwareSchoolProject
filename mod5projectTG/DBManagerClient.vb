@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.VisualBasic.ApplicationServices
+Imports MySql.Data.MySqlClient
 
 Public Class DBManagerClient
 
@@ -116,7 +117,7 @@ Public Class DBManagerClient
             Me.connect = New MySqlConnection(connectionString)
             Me.connect.Open()
 
-            Dim query As String = "SELECT CONCAT_WS("" | "", client_number, CONCAT_WS("" "",fname, lname))  AS identification, client_number FROM clients;"
+            Dim query As String = "SELECT CONCAT_WS("" | "", client_number, CONCAT_WS("" "",fname, lname))  AS identification, client_id FROM clients;"
 
             Dim datatable As New DataTable()
             Dim cmd As New MySqlCommand(query, Me.connect)
@@ -128,7 +129,39 @@ Public Class DBManagerClient
 
                 EditClient.combo_clientpicker.DataSource = datatable
                 EditClient.combo_clientpicker.DisplayMember = "identification"
-                EditClient.combo_clientpicker.ValueMember = "client_number"
+                EditClient.combo_clientpicker.ValueMember = "client_id"
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Public Function PopulateClientComboBoxDelete()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", client_number, CONCAT_WS("" "",fname, lname))  AS identification, client_id FROM clients;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+                DeleteClient.combo_clientpicker.DataSource = datatable
+                DeleteClient.combo_clientpicker.DisplayMember = "identification"
+                DeleteClient.combo_clientpicker.ValueMember = "client_id"
 
             End With
 
@@ -172,7 +205,7 @@ Public Class DBManagerClient
 
     End Function
 
-    Function GetUser(ByVal clientid As Integer) As User
+    Function GetUser(ByVal clientid As Integer) As Client
 
         Try
 
@@ -192,13 +225,83 @@ Public Class DBManagerClient
 
             adapter.Fill(datatable)
 
-            Dim user As New User(datatable.Rows(0))
+            Dim client As New Client(datatable.Rows(0))
 
-            Return user
+            Return client
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
+
+    End Function
+
+    Public Function EditClientInfo(ByVal client As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText =
+                "UPDATE `clients` SET `client_number`= @clientNo, `fname`= @fname,
+                `lname`= @lname,`email`= @email,`phone`= @phone, `dob`= @dob,
+                `address`= @address,`city`= @city,`province`= @province,
+                `postal_code`= @postal_code,`status`= @status 
+                WHERE client_id = @client;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@client", client)
+            .Parameters.AddWithValue("@clientNo", EditClient.txt_client_no.Text)
+            .Parameters.AddWithValue("@fname", EditClient.txt_fname.Text)
+            .Parameters.AddWithValue("@lname", EditClient.txt_lname.Text)
+            .Parameters.AddWithValue("@email", EditClient.txt_email.Text)
+            .Parameters.AddWithValue("@phone", EditClient.mtxt_phone.Text)
+            .Parameters.AddWithValue("@dob", EditClient.date_dob.Value)
+            .Parameters.AddWithValue("@address", EditClient.txt_address.Text)
+            .Parameters.AddWithValue("@city", EditClient.txt_city.Text)
+            .Parameters.AddWithValue("@province", EditClient.txt_prov.Text)
+            .Parameters.AddWithValue("@postal_code", EditClient.txt_postal.Text)
+            .Parameters.AddWithValue("@status", EditClient.CheckBox_active.Checked)
+
+        End With
+
+        cmd.ExecuteNonQuery()
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function DeleteClientById(ByVal clientId As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        Dim delete As String = MsgBox("Do you really want to delete this account?", MsgBoxStyle.YesNo)
+
+        If (delete = vbYes) Then
+
+            With cmd
+
+                .CommandText = "DELETE FROM `clients` WHERE client_id = @client;"
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@client", clientId)
+
+            End With
+
+            cmd.ExecuteNonQuery()
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Else
+            Me.connect.Close()
+            Me.connect.Dispose()
+            Exit Function
+
+        End If
 
     End Function
 

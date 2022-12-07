@@ -18,7 +18,8 @@ Public Class DBManager
 
             Dim query As String =
                 "SELECT employee_number, fname, lname, dob, address, city, province, postal_code,
-                home_phone, cell_phone, start_date, sin, hourly_pay, education, level, status 
+                home_phone, cell_phone, start_date, sin, hourly_pay, education, level, 
+                CASE WHEN `status` = 1 THEN 'Activated' ELSE 'Not Activated' END AS `status`
                 FROM users;"
 
             Dim datatable As New DataTable()
@@ -64,7 +65,7 @@ Public Class DBManager
                 .Columns(12).Width = 50
                 .Columns(13).Width = 50
                 .Columns(14).Width = 50
-                .Columns(15).Width = 50
+                .Columns(15).Width = 100
 
             End With
 

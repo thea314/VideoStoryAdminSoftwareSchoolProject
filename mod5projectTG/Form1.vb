@@ -35,4 +35,19 @@
         Me.Hide()
         EditClient.Show()
     End Sub
+
+    Private Sub btn_delete_client_Click(sender As Object, e As EventArgs) Handles btn_delete_client.Click
+        Me.Hide()
+        DeleteClient.Show()
+    End Sub
+
+    Private Sub btn_viewvideos_Click(sender As Object, e As EventArgs) Handles btn_viewvideos.Click
+        Me.Hide()
+        DisplayVideos.Show()
+    End Sub
+
+    Private Sub btn_displayEmployee_Click(sender As Object, e As EventArgs) Handles btn_displayEmployee.Click
+        Me.Hide()
+        displayemployees.Show()
+    End Sub
 End Class

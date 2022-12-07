@@ -10,6 +10,9 @@
     <Compile Update="dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DeleteClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DeleteEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="displayemployees.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DisplayVideos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditClient.vb">

@@ -8,14 +8,14 @@
             Exit Sub
         End If
 
-        If (Me.txt_fname.Text = "" Or (Me.txt_fname.Text.Length < 4)) Then
-            MsgBox("Please enter a first name of length greater than 4.")
+        If (Me.txt_fname.Text = "" Or (Me.txt_fname.Text.Length < 3)) Then
+            MsgBox("Please enter a first name of length greater than 3.")
             Me.txt_fname.Text = ""
             Exit Sub
         End If
 
-        If (Me.txt_lname.Text = "" Or (Me.txt_lname.Text.Length < 4)) Then
-            MsgBox("Please enter a last name of length greater than 4.")
+        If (Me.txt_lname.Text = "" Or (Me.txt_lname.Text.Length < 3)) Then
+            MsgBox("Please enter a last name of length greater than 3.")
             Me.txt_lname.Text = ""
             Exit Sub
         End If
@@ -191,5 +191,9 @@
             Exit Sub
 
         End If
+    End Sub
+
+    Private Sub AddNewClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
