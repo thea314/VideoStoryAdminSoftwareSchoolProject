@@ -34,6 +34,9 @@
     <Compile Update="EditEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EmployeePicker.vb">
       <SubType>Form</SubType>
     </Compile>

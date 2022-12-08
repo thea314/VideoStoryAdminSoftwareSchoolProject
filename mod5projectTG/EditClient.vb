@@ -34,7 +34,7 @@
 
     Function PopulateClientData(ByVal client As Client)
 
-        'populate edit form with data from user and database
+        'populate edit form with data from client and database
         Me.txt_client_no.Text = client.ClientNumber
         Me.txt_fname.Text = client.Fname
         Me.txt_lname.Text = client.Lname

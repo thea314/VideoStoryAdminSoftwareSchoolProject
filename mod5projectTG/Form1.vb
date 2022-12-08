@@ -55,4 +55,9 @@
         Me.Hide()
         AddNewVideo.Show()
     End Sub
+
+    Private Sub btn_editvideo_Click(sender As Object, e As EventArgs) Handles btn_editvideo.Click
+        Me.Hide()
+        EditVideo.Show()
+    End Sub
 End Class

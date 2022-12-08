@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI
 
 Public Class DBManagerVideo
 
@@ -79,7 +80,7 @@ Public Class DBManagerVideo
                 .CommandText =
                     "INSERT INTO `videos`(`photo`, `title`, `year`, `country`,
                     `language`, `length`, `resume`, `genre`, `actors`, `director`)
-                    VALUES (@photo, @title, @year, @country,
+                    VALUES (@photo, @title, YEAR(@year), @country,
                     @language, @length, @resume, @genre, @actors, @director);"
                 .CommandType = CommandType.Text
                 .Connection = Me.connect
@@ -100,9 +101,106 @@ Public Class DBManagerVideo
             Me.connect.Close()
             Me.connect.Dispose()
 
+            MsgBox("New video created. Returning you to dashboard.")
+            AddNewClient.Hide()
+            dashboard.Show()
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
 
     End Function
+
+    Public Function PopulateVideoCombobox()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", video_id, title) AS identification, video_id
+                                    FROM videos;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+                EditVideo.combo_editpicker.DataSource = datatable
+                EditVideo.combo_editpicker.DisplayMember = "identification"
+                EditVideo.combo_editpicker.ValueMember = "video_id"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Function VideoExists(ByVal video As Integer) As Boolean
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM videos where video_id = @video;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@video", video)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        'if video id exists, then return true
+        If (count <> 0) Then
+            Return True
+        Else
+            Return False
+            MsgBox("Video does not exist, please try again!")
+        End If
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function GetVideo(ByVal videoid As Integer) As VideoItem
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT `video_id`, `photo`, `title`, `year`, `country`, `language`,
+                `length`, `resume`, `genre`, `actors`, `director`, `status` 
+                FROM `videos` 
+                WHERE video_id = @videoid;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            cmd.Parameters.AddWithValue("@videoid", videoid)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            Dim requestedVideo As New VideoItem(datatable.Rows(0))
+
+            Return requestedVideo
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
 End Class

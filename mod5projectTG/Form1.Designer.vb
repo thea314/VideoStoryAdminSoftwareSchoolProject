@@ -33,6 +33,7 @@ Partial Class Form1
         Me.btn_delete_client = New System.Windows.Forms.Button()
         Me.btn_viewvideos = New System.Windows.Forms.Button()
         Me.btn_addvideo = New System.Windows.Forms.Button()
+        Me.btn_editvideo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -134,11 +135,21 @@ Partial Class Form1
         Me.btn_addvideo.Text = "Add Video"
         Me.btn_addvideo.UseVisualStyleBackColor = True
         '
+        'btn_editvideo
+        '
+        Me.btn_editvideo.Location = New System.Drawing.Point(525, 132)
+        Me.btn_editvideo.Name = "btn_editvideo"
+        Me.btn_editvideo.Size = New System.Drawing.Size(103, 23)
+        Me.btn_editvideo.TabIndex = 11
+        Me.btn_editvideo.Text = "Edit Video"
+        Me.btn_editvideo.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_editvideo)
         Me.Controls.Add(Me.btn_addvideo)
         Me.Controls.Add(Me.btn_viewvideos)
         Me.Controls.Add(Me.btn_delete_client)
@@ -167,4 +178,5 @@ Partial Class Form1
     Friend WithEvents btn_delete_client As Button
     Friend WithEvents btn_viewvideos As Button
     Friend WithEvents btn_addvideo As Button
+    Friend WithEvents btn_editvideo As Button
 End Class
