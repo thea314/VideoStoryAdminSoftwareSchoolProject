@@ -169,6 +169,10 @@
 
             edit.EditClientInfo(chosenUser)
 
+            MsgBox("Client edited. Returning you to dashboard.")
+            Me.Hide()
+            dashboard.Show()
+
         Else
             MsgBox("Client creation canceled.")
             Me.Hide()

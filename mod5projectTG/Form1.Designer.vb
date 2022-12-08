@@ -34,6 +34,7 @@ Partial Class Form1
         Me.btn_viewvideos = New System.Windows.Forms.Button()
         Me.btn_addvideo = New System.Windows.Forms.Button()
         Me.btn_editvideo = New System.Windows.Forms.Button()
+        Me.btn_deletevideo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -47,25 +48,25 @@ Partial Class Form1
         '
         'btn_AddNewEmployee
         '
-        Me.btn_AddNewEmployee.Location = New System.Drawing.Point(33, 94)
+        Me.btn_AddNewEmployee.Location = New System.Drawing.Point(33, 86)
         Me.btn_AddNewEmployee.Name = "btn_AddNewEmployee"
-        Me.btn_AddNewEmployee.Size = New System.Drawing.Size(92, 41)
+        Me.btn_AddNewEmployee.Size = New System.Drawing.Size(116, 41)
         Me.btn_AddNewEmployee.TabIndex = 1
         Me.btn_AddNewEmployee.Text = "Add New Employee"
         Me.btn_AddNewEmployee.UseVisualStyleBackColor = True
         '
         'btn_edit
         '
-        Me.btn_edit.Location = New System.Drawing.Point(33, 149)
+        Me.btn_edit.Location = New System.Drawing.Point(33, 133)
         Me.btn_edit.Name = "btn_edit"
-        Me.btn_edit.Size = New System.Drawing.Size(105, 49)
+        Me.btn_edit.Size = New System.Drawing.Size(116, 24)
         Me.btn_edit.TabIndex = 2
         Me.btn_edit.Text = "edit employee"
         Me.btn_edit.UseVisualStyleBackColor = True
         '
         'btn_delete
         '
-        Me.btn_delete.Location = New System.Drawing.Point(33, 224)
+        Me.btn_delete.Location = New System.Drawing.Point(33, 175)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(105, 23)
         Me.btn_delete.TabIndex = 3
@@ -144,11 +145,21 @@ Partial Class Form1
         Me.btn_editvideo.Text = "Edit Video"
         Me.btn_editvideo.UseVisualStyleBackColor = True
         '
+        'btn_deletevideo
+        '
+        Me.btn_deletevideo.Location = New System.Drawing.Point(525, 175)
+        Me.btn_deletevideo.Name = "btn_deletevideo"
+        Me.btn_deletevideo.Size = New System.Drawing.Size(103, 23)
+        Me.btn_deletevideo.TabIndex = 12
+        Me.btn_deletevideo.Text = "Delete Video"
+        Me.btn_deletevideo.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_deletevideo)
         Me.Controls.Add(Me.btn_editvideo)
         Me.Controls.Add(Me.btn_addvideo)
         Me.Controls.Add(Me.btn_viewvideos)
@@ -179,4 +190,5 @@ Partial Class Form1
     Friend WithEvents btn_viewvideos As Button
     Friend WithEvents btn_addvideo As Button
     Friend WithEvents btn_editvideo As Button
+    Friend WithEvents btn_deletevideo As Button
 End Class

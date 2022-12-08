@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class EditVideo
+Partial Class DeleteVideo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,10 @@ Partial Class EditVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.combo_editpicker = New System.Windows.Forms.ComboBox()
+        Me.lbl_picker = New System.Windows.Forms.Label()
         Me.btn_cancel = New System.Windows.Forms.Button()
-        Me.btn_editVideo = New System.Windows.Forms.Button()
+        Me.btn_deleteVideo = New System.Windows.Forms.Button()
         Me.grp_videoDetails = New System.Windows.Forms.GroupBox()
         Me.txt_url = New System.Windows.Forms.TextBox()
         Me.lbl_url = New System.Windows.Forms.Label()
@@ -46,30 +48,45 @@ Partial Class EditVideo
         Me.lbl_year = New System.Windows.Forms.Label()
         Me.lbl_genre = New System.Windows.Forms.Label()
         Me.lbl_title = New System.Windows.Forms.Label()
-        Me.lbl_picker = New System.Windows.Forms.Label()
-        Me.combo_editpicker = New System.Windows.Forms.ComboBox()
         Me.grp_videoDetails.SuspendLayout()
         Me.grp_videoInfo.SuspendLayout()
         CType(Me.num_length, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'combo_editpicker
+        '
+        Me.combo_editpicker.FormattingEnabled = True
+        Me.combo_editpicker.Location = New System.Drawing.Point(103, 17)
+        Me.combo_editpicker.Name = "combo_editpicker"
+        Me.combo_editpicker.Size = New System.Drawing.Size(522, 23)
+        Me.combo_editpicker.TabIndex = 15
+        '
+        'lbl_picker
+        '
+        Me.lbl_picker.AutoSize = True
+        Me.lbl_picker.Location = New System.Drawing.Point(12, 25)
+        Me.lbl_picker.Name = "lbl_picker"
+        Me.lbl_picker.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_picker.TabIndex = 14
+        Me.lbl_picker.Text = "Choose Video:"
+        '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(340, 440)
+        Me.btn_cancel.Location = New System.Drawing.Point(344, 460)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cancel.TabIndex = 7
+        Me.btn_cancel.TabIndex = 13
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
-        'btn_editVideo
+        'btn_deleteVideo
         '
-        Me.btn_editVideo.Location = New System.Drawing.Point(245, 440)
-        Me.btn_editVideo.Name = "btn_editVideo"
-        Me.btn_editVideo.Size = New System.Drawing.Size(75, 23)
-        Me.btn_editVideo.TabIndex = 6
-        Me.btn_editVideo.Text = "Edit Video"
-        Me.btn_editVideo.UseVisualStyleBackColor = True
+        Me.btn_deleteVideo.Location = New System.Drawing.Point(245, 460)
+        Me.btn_deleteVideo.Name = "btn_deleteVideo"
+        Me.btn_deleteVideo.Size = New System.Drawing.Size(75, 23)
+        Me.btn_deleteVideo.TabIndex = 12
+        Me.btn_deleteVideo.Text = "Delete Video"
+        Me.btn_deleteVideo.UseVisualStyleBackColor = True
         '
         'grp_videoDetails
         '
@@ -77,10 +94,11 @@ Partial Class EditVideo
         Me.grp_videoDetails.Controls.Add(Me.lbl_url)
         Me.grp_videoDetails.Controls.Add(Me.lbl_resume_text)
         Me.grp_videoDetails.Controls.Add(Me.rich_resume)
-        Me.grp_videoDetails.Location = New System.Drawing.Point(342, 49)
+        Me.grp_videoDetails.Enabled = False
+        Me.grp_videoDetails.Location = New System.Drawing.Point(344, 68)
         Me.grp_videoDetails.Name = "grp_videoDetails"
         Me.grp_videoDetails.Size = New System.Drawing.Size(300, 380)
-        Me.grp_videoDetails.TabIndex = 5
+        Me.grp_videoDetails.TabIndex = 11
         Me.grp_videoDetails.TabStop = False
         Me.grp_videoDetails.Text = "Video Details:"
         '
@@ -135,10 +153,11 @@ Partial Class EditVideo
         Me.grp_videoInfo.Controls.Add(Me.lbl_year)
         Me.grp_videoInfo.Controls.Add(Me.lbl_genre)
         Me.grp_videoInfo.Controls.Add(Me.lbl_title)
-        Me.grp_videoInfo.Location = New System.Drawing.Point(12, 49)
+        Me.grp_videoInfo.Enabled = False
+        Me.grp_videoInfo.Location = New System.Drawing.Point(12, 68)
         Me.grp_videoInfo.Name = "grp_videoInfo"
         Me.grp_videoInfo.Size = New System.Drawing.Size(308, 380)
-        Me.grp_videoInfo.TabIndex = 4
+        Me.grp_videoInfo.TabIndex = 10
         Me.grp_videoInfo.TabStop = False
         Me.grp_videoInfo.Text = "Video Information:"
         '
@@ -268,42 +287,25 @@ Partial Class EditVideo
         'lbl_title
         '
         Me.lbl_title.AutoSize = True
-        Me.lbl_title.Location = New System.Drawing.Point(13, 32)
+        Me.lbl_title.Location = New System.Drawing.Point(12, 32)
         Me.lbl_title.Name = "lbl_title"
         Me.lbl_title.Size = New System.Drawing.Size(32, 15)
         Me.lbl_title.TabIndex = 0
         Me.lbl_title.Text = "Title:"
         '
-        'lbl_picker
-        '
-        Me.lbl_picker.AutoSize = True
-        Me.lbl_picker.Location = New System.Drawing.Point(18, 14)
-        Me.lbl_picker.Name = "lbl_picker"
-        Me.lbl_picker.Size = New System.Drawing.Size(83, 15)
-        Me.lbl_picker.TabIndex = 8
-        Me.lbl_picker.Text = "Choose Video:"
-        '
-        'combo_editpicker
-        '
-        Me.combo_editpicker.FormattingEnabled = True
-        Me.combo_editpicker.Location = New System.Drawing.Point(114, 6)
-        Me.combo_editpicker.Name = "combo_editpicker"
-        Me.combo_editpicker.Size = New System.Drawing.Size(522, 23)
-        Me.combo_editpicker.TabIndex = 9
-        '
-        'EditVideo
+        'DeleteVideo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(658, 475)
+        Me.ClientSize = New System.Drawing.Size(654, 495)
         Me.Controls.Add(Me.combo_editpicker)
         Me.Controls.Add(Me.lbl_picker)
         Me.Controls.Add(Me.btn_cancel)
-        Me.Controls.Add(Me.btn_editVideo)
+        Me.Controls.Add(Me.btn_deleteVideo)
         Me.Controls.Add(Me.grp_videoDetails)
         Me.Controls.Add(Me.grp_videoInfo)
-        Me.Name = "EditVideo"
-        Me.Text = "EditVideo"
+        Me.Name = "DeleteVideo"
+        Me.Text = "DeleteVideo"
         Me.grp_videoDetails.ResumeLayout(False)
         Me.grp_videoDetails.PerformLayout()
         Me.grp_videoInfo.ResumeLayout(False)
@@ -314,14 +316,17 @@ Partial Class EditVideo
 
     End Sub
 
+    Friend WithEvents combo_editpicker As ComboBox
+    Friend WithEvents lbl_picker As Label
     Friend WithEvents btn_cancel As Button
-    Friend WithEvents btn_editVideo As Button
+    Friend WithEvents btn_deleteVideo As Button
     Friend WithEvents grp_videoDetails As GroupBox
     Friend WithEvents txt_url As TextBox
     Friend WithEvents lbl_url As Label
     Friend WithEvents lbl_resume_text As Label
     Friend WithEvents rich_resume As RichTextBox
     Friend WithEvents grp_videoInfo As GroupBox
+    Friend WithEvents txt_year As TextBox
     Friend WithEvents txt_language As TextBox
     Friend WithEvents lbl_language As Label
     Friend WithEvents txt_director As TextBox
@@ -337,7 +342,4 @@ Partial Class EditVideo
     Friend WithEvents lbl_year As Label
     Friend WithEvents lbl_genre As Label
     Friend WithEvents lbl_title As Label
-    Friend WithEvents lbl_picker As Label
-    Friend WithEvents combo_editpicker As ComboBox
-    Friend WithEvents txt_year As TextBox
 End Class

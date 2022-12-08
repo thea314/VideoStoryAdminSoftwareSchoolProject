@@ -23,12 +23,12 @@ Partial Class AddNewVideo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grp_videoInfo = New System.Windows.Forms.GroupBox()
+        Me.txt_year = New System.Windows.Forms.TextBox()
         Me.txt_language = New System.Windows.Forms.TextBox()
         Me.lbl_language = New System.Windows.Forms.Label()
         Me.txt_director = New System.Windows.Forms.TextBox()
         Me.num_length = New System.Windows.Forms.NumericUpDown()
         Me.txt_country = New System.Windows.Forms.TextBox()
-        Me.date_year = New System.Windows.Forms.DateTimePicker()
         Me.txt_genre = New System.Windows.Forms.TextBox()
         Me.txt_title = New System.Windows.Forms.TextBox()
         Me.rich_actors = New System.Windows.Forms.RichTextBox()
@@ -53,12 +53,12 @@ Partial Class AddNewVideo
         '
         'grp_videoInfo
         '
+        Me.grp_videoInfo.Controls.Add(Me.txt_year)
         Me.grp_videoInfo.Controls.Add(Me.txt_language)
         Me.grp_videoInfo.Controls.Add(Me.lbl_language)
         Me.grp_videoInfo.Controls.Add(Me.txt_director)
         Me.grp_videoInfo.Controls.Add(Me.num_length)
         Me.grp_videoInfo.Controls.Add(Me.txt_country)
-        Me.grp_videoInfo.Controls.Add(Me.date_year)
         Me.grp_videoInfo.Controls.Add(Me.txt_genre)
         Me.grp_videoInfo.Controls.Add(Me.txt_title)
         Me.grp_videoInfo.Controls.Add(Me.rich_actors)
@@ -75,6 +75,13 @@ Partial Class AddNewVideo
         Me.grp_videoInfo.TabIndex = 0
         Me.grp_videoInfo.TabStop = False
         Me.grp_videoInfo.Text = "Video Information:"
+        '
+        'txt_year
+        '
+        Me.txt_year.Location = New System.Drawing.Point(91, 93)
+        Me.txt_year.Name = "txt_year"
+        Me.txt_year.Size = New System.Drawing.Size(199, 23)
+        Me.txt_year.TabIndex = 16
         '
         'txt_language
         '
@@ -114,14 +121,6 @@ Partial Class AddNewVideo
         Me.txt_country.Name = "txt_country"
         Me.txt_country.Size = New System.Drawing.Size(199, 23)
         Me.txt_country.TabIndex = 11
-        '
-        'date_year
-        '
-        Me.date_year.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.date_year.Location = New System.Drawing.Point(91, 94)
-        Me.date_year.Name = "date_year"
-        Me.date_year.Size = New System.Drawing.Size(200, 23)
-        Me.date_year.TabIndex = 10
         '
         'txt_genre
         '
@@ -310,10 +309,10 @@ Partial Class AddNewVideo
     Friend WithEvents lbl_year As Label
     Friend WithEvents lbl_genre As Label
     Friend WithEvents lbl_title As Label
-    Friend WithEvents date_year As DateTimePicker
     Friend WithEvents txt_director As TextBox
     Friend WithEvents num_length As NumericUpDown
     Friend WithEvents txt_country As TextBox
     Friend WithEvents txt_language As TextBox
     Friend WithEvents lbl_language As Label
+    Friend WithEvents txt_year As TextBox
 End Class

@@ -192,6 +192,9 @@
 
         edit.EditEmployeeSubmit(chosenUser)
 
+        MsgBox("Employee edited. Returning you to dashboard.")
+        Me.Hide()
+        dashboard.Show()
 
     End Sub
 

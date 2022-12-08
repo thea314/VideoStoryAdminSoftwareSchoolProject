@@ -80,13 +80,13 @@ Public Class DBManagerVideo
                 .CommandText =
                     "INSERT INTO `videos`(`photo`, `title`, `year`, `country`,
                     `language`, `length`, `resume`, `genre`, `actors`, `director`)
-                    VALUES (@photo, @title, YEAR(@year), @country,
+                    VALUES (@photo, @title, @year, @country,
                     @language, @length, @resume, @genre, @actors, @director);"
                 .CommandType = CommandType.Text
                 .Connection = Me.connect
                 .Parameters.AddWithValue("@photo", AddNewVideo.txt_url.Text)
                 .Parameters.AddWithValue("@title", AddNewVideo.txt_title.Text)
-                .Parameters.AddWithValue("@year", AddNewVideo.date_year.Value)
+                .Parameters.AddWithValue("@year", AddNewVideo.txt_year.Text)
                 .Parameters.AddWithValue("@country", AddNewVideo.txt_country.Text)
                 .Parameters.AddWithValue("@language", AddNewVideo.txt_language.Text)
                 .Parameters.AddWithValue("@length", AddNewVideo.num_length.Value)
@@ -132,6 +132,36 @@ Public Class DBManagerVideo
                 EditVideo.combo_editpicker.DataSource = datatable
                 EditVideo.combo_editpicker.DisplayMember = "identification"
                 EditVideo.combo_editpicker.ValueMember = "video_id"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Public Function PopulateVideoComboboxDelete()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", video_id, title) AS identification, video_id
+                                    FROM videos;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+                DeleteVideo.combo_editpicker.DataSource = datatable
+                DeleteVideo.combo_editpicker.DisplayMember = "identification"
+                DeleteVideo.combo_editpicker.ValueMember = "video_id"
 
             End With
 
@@ -200,6 +230,75 @@ Public Class DBManagerVideo
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
+
+    End Function
+
+    Public Function EditVideoInfo(ByVal videoid As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText =
+                "UPDATE `videos` SET `photo`= @photo, `title`= @title,
+                `year`= @year,`country`= @country,`language`= @language,
+                `length`= @length,`resume`= @resume,`genre`= @genre,
+                `actors`= @actors,`director`= @director 
+                WHERE video_id = @videoid;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@videoid", videoid)
+            .Parameters.AddWithValue("@photo", EditVideo.txt_url.Text)
+            .Parameters.AddWithValue("@title", EditVideo.txt_title.Text)
+            .Parameters.AddWithValue("@year", EditVideo.txt_year.Text)
+            .Parameters.AddWithValue("@country", EditVideo.txt_country.Text)
+            .Parameters.AddWithValue("@language", EditVideo.txt_language.Text)
+            .Parameters.AddWithValue("@length", EditVideo.num_length.Value)
+            .Parameters.AddWithValue("@resume", EditVideo.rich_resume.Text)
+            .Parameters.AddWithValue("@genre", EditVideo.txt_genre.Text)
+            .Parameters.AddWithValue("@actors", EditVideo.rich_actors.Text)
+            .Parameters.AddWithValue("@director", EditVideo.txt_director.Text)
+
+        End With
+
+        cmd.ExecuteNonQuery()
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function DeleteVideoById(ByVal videoid As Integer)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        Dim delete As String = MsgBox("Do you really want to delete this account?", MsgBoxStyle.YesNo)
+
+        If (delete = vbYes) Then
+
+            With cmd
+
+                .CommandText = "DELETE FROM `videos` WHERE video_id = @videoid;"
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@videoid", videoid)
+
+            End With
+
+            cmd.ExecuteNonQuery()
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Else
+            Me.connect.Close()
+            Me.connect.Dispose()
+            Exit Function
+
+        End If
 
     End Function
 

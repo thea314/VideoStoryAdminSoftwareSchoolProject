@@ -1,17 +1,15 @@
 ﻿Public Class AddNewVideo
     Private Sub AddNewVideo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.date_year.CustomFormat = "yyyy"
-        date_year.Format = DateTimePickerFormat.Custom
-        date_year.ShowUpDown = True
+
 
     End Sub
 
     Private Sub btn_addNewVideo_Click(sender As Object, e As EventArgs) Handles btn_addNewVideo.Click
 
         'set minimum lengths of input
-        If (Me.txt_title.Text = "" Or (Me.txt_title.Text.Length < 3)) Then
-            MsgBox("Please enter a title of length greater than 3.")
+        If (Me.txt_title.Text = "") Then
+            MsgBox("Please enter a title.")
             Me.txt_title.Text = ""
             Exit Sub
         End If
@@ -49,6 +47,12 @@
         If (Me.txt_url.Text = "" Or (Me.txt_url.Text.Length < 10)) Then
             MsgBox("Please enter a poster URL of length greater than 10.")
             Me.txt_url.Text = ""
+            Exit Sub
+        End If
+
+        If (Me.txt_year.Text = "" Or (Me.txt_year.Text.Length <> 4)) Then
+            MsgBox("Please enter a year of length equal to 4.")
+            Me.txt_year.Text = ""
             Exit Sub
         End If
 
@@ -149,6 +153,17 @@
         If (Char.IsNumber(e.KeyChar)) Then
 
             MsgBox("Please enter a letter.")
+            e.Handled = True
+            Exit Sub
+
+        End If
+    End Sub
+
+    Private Sub txt_year_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_year.KeyPress
+        'make sure it's a number
+        If (Not Char.IsNumber(e.KeyChar)) Then
+
+            MsgBox("Please enter a number.")
             e.Handled = True
             Exit Sub
 

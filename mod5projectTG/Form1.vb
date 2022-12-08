@@ -60,4 +60,9 @@
         Me.Hide()
         EditVideo.Show()
     End Sub
+
+    Private Sub btn_deletevideo_Click(sender As Object, e As EventArgs) Handles btn_deletevideo.Click
+        Me.Hide()
+        DeleteVideo.ShowDialog()
+    End Sub
 End Class

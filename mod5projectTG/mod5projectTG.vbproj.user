@@ -19,6 +19,9 @@
     <Compile Update="DeleteEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DeleteVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DisplayClients.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -41,6 +44,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QuickSearch.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
