@@ -7,46 +7,80 @@ Public Class DBManagerSearch
 
     Private connect As MySqlConnection
 
-    Public Function SearchVideoID(ByVal videoid As Integer) As VideoItem
+    Public Function SearchVideoID(ByVal videoid As Integer)
 
+        'populate datagridview on results page
         Try
 
             Me.connect = New MySqlConnection(connectionString)
             Me.connect.Open()
 
             Dim query As String =
-            "`video_id`, `title`, `photo`, `year`, `country`, `language`, `length`, `resume`,
-                `genre`, `actors`, `director`, 
-                CASE WHEN `status` = 1 THEN 'Available' ELSE 'Rented' END AS `status`
+                "SELECT `video_id`, `title` 
                 FROM videos
-                WHERE video_id = @videoid"
+                WHERE video_id = @videoid;"
 
             Dim datatable As New DataTable()
 
             Dim cmd As New MySqlCommand(query, Me.connect)
-
             cmd.Parameters.AddWithValue("@videoid", videoid)
-
             Dim adapter As New MySqlDataAdapter(cmd)
 
             adapter.Fill(datatable)
 
-            Dim video As Integer = datatable.Rows(0)("video_id")
-            Dim title As String = datatable.Rows(0)("title")
-            Dim photo As String = datatable.Rows(0)("photo")
-            Dim year As Integer = datatable.Rows(0)("year")
-            Dim country As String = datatable.Rows(0)("country")
-            Dim language As String = datatable.Rows(0)("language")
-            Dim length As Integer = datatable.Rows(0)("length")
-            Dim resumeVideo As String = datatable.Rows(0)("resume")
-            Dim actors As String = datatable.Rows(0)("actors")
-            Dim director As String = datatable.Rows(0)("director")
-            Dim status As Integer = datatable.Rows(0)("status")
+            With QuickSearch.data_resultViewer
 
-            Dim searchedVideo As VideoItem = New VideoItem(video, photo, title, year, country, language, length, resumeVideo,
-                                                actors, director, status)
+                .DataSource = datatable
 
-            Return searchedVideo
+                .Columns(0).HeaderText = "Video Number"
+                .Columns(1).HeaderText = "Title"
+
+                .Columns(0).Width = 75
+                .Columns(1).Width = 260
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Public Function QuickSearchByTitle(ByVal title As String)
+
+        'populate datagridview on results page
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT `video_id`, `title` 
+                FROM videos
+                WHERE title LIKE @title;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            cmd.Parameters.AddWithValue("@title", "%" & title & "%")
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With QuickSearch.data_resultViewer
+
+                .DataSource = datatable
+
+                .Columns(0).HeaderText = "Video Number"
+                .Columns(1).HeaderText = "Title"
+
+                .Columns(0).Width = 75
+                .Columns(1).Width = 260
+
+            End With
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")

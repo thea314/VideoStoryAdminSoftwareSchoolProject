@@ -65,4 +65,9 @@
         Me.Hide()
         DeleteVideo.ShowDialog()
     End Sub
+
+    Private Sub btn_quick_Click(sender As Object, e As EventArgs) Handles btn_quick.Click
+        Me.Hide()
+        QuickSearch.Show()
+    End Sub
 End Class

@@ -35,6 +35,7 @@ Partial Class Form1
         Me.btn_addvideo = New System.Windows.Forms.Button()
         Me.btn_editvideo = New System.Windows.Forms.Button()
         Me.btn_deletevideo = New System.Windows.Forms.Button()
+        Me.btn_quick = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -154,11 +155,21 @@ Partial Class Form1
         Me.btn_deletevideo.Text = "Delete Video"
         Me.btn_deletevideo.UseVisualStyleBackColor = True
         '
+        'btn_quick
+        '
+        Me.btn_quick.Location = New System.Drawing.Point(39, 327)
+        Me.btn_quick.Name = "btn_quick"
+        Me.btn_quick.Size = New System.Drawing.Size(110, 23)
+        Me.btn_quick.TabIndex = 13
+        Me.btn_quick.Text = "Quick Search"
+        Me.btn_quick.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_quick)
         Me.Controls.Add(Me.btn_deletevideo)
         Me.Controls.Add(Me.btn_editvideo)
         Me.Controls.Add(Me.btn_addvideo)
@@ -191,4 +202,5 @@ Partial Class Form1
     Friend WithEvents btn_addvideo As Button
     Friend WithEvents btn_editvideo As Button
     Friend WithEvents btn_deletevideo As Button
+    Friend WithEvents btn_quick As Button
 End Class
