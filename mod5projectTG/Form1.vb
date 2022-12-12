@@ -70,4 +70,9 @@
         Me.Hide()
         QuickSearch.Show()
     End Sub
+
+    Private Sub btn_advancedSearch_Click(sender As Object, e As EventArgs) Handles btn_advancedSearch.Click
+        Me.Hide()
+        AdvancedSearch.Show()
+    End Sub
 End Class

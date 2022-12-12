@@ -34,6 +34,7 @@
 
         End If
 
+        'if title is entered, populate datagridview
         If (txt_title.Text <> "") Then
 
             Dim searchByTitle As DBManagerSearch = New DBManagerSearch()
@@ -82,4 +83,15 @@
         LoadImageFromUrl(videoid.Photo, pic_poster)
 
     End Function
+
+    Private Sub txt_videoid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_videoid.KeyPress
+        'make sure it's a number
+        If (Not Char.IsNumber(e.KeyChar)) Then
+
+            MsgBox("Please enter a number.")
+            e.Handled = True
+            Exit Sub
+
+        End If
+    End Sub
 End Class

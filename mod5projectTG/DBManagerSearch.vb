@@ -1,4 +1,5 @@
 ﻿Imports System.Reflection
+Imports System.Security.Cryptography.X509Certificates
 Imports MySql.Data.MySqlClient
 
 Public Class DBManagerSearch
@@ -90,5 +91,62 @@ Public Class DBManagerSearch
         Me.connect.Dispose()
 
     End Function
+
+    Function AdvancedSearch()
+
+        'populate datagridview on results page
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = 
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With AdvancedSearchResults.data_advancedResults
+
+                .DataSource = datatable
+
+                .Columns(0).HeaderText = "Video Number"
+                .Columns(1).HeaderText = "Title"
+                .Columns(2).HeaderText = "Year"
+                .Columns(3).HeaderText = "Country"
+                .Columns(4).HeaderText = "Language"
+                .Columns(5).HeaderText = "Length"
+                .Columns(6).HeaderText = "Resume"
+                .Columns(7).HeaderText = "Genre"
+                .Columns(8).HeaderText = "Actors"
+                .Columns(9).HeaderText = "Director"
+
+                .Columns(0).Width = 60
+                .Columns(1).Width = 150
+                .Columns(2).Width = 40
+                .Columns(3).Width = 60
+                .Columns(4).Width = 50
+                .Columns(5).Width = 50
+                .Columns(6).Width = 300
+                .Columns(7).Width = 125
+                .Columns(8).Width = 250
+                .Columns(9).Width = 100
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+
 
 End Class
