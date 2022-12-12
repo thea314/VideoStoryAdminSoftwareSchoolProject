@@ -1,24 +1,18 @@
 ﻿Public Class AdvancedSearch
 
     Dim queryList As New List(Of AdvancedSearchClass)
-    Dim builtQuery As String
+    Public builtQuery As String
+
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
 
         AdvanceSearchQueryBuilder()
 
-        builtQuery = "SELECT `video_id`, `title`, `year`, `country`, `language`, `length`, `resume`, `genre`, `actors`, `director` FROM videos WHERE "
+        Dim dbManagerSearch As New DBManagerSearch()
 
-        For i As Integer = 0 To queryList.Count - 1
+        dbManagerSearch.AdvancedSearch(queryList)
 
-            builtQuery = builtQuery & queryList(i).ValueName & " LIKE " & queryList(i).ValueField
-
-            If (i = queryList.Count - 1) Then
-                    builtQuery = builtQuery & ";"
-                Else
-                    builtQuery = builtQuery & " OR "
-            End If
-
-        Next
+        Me.Hide()
+        AdvancedSearchResults.Show()
 
     End Sub
 

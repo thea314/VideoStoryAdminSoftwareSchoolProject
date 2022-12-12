@@ -92,19 +92,45 @@ Public Class DBManagerSearch
 
     End Function
 
-    Function AdvancedSearch()
+    Private Function GenerateQuery(ByVal queryList As List(Of AdvancedSearchClass)) As String
 
+        Dim builtQuery As String = "SELECT `video_id`, `title`, `year`, `country`, `language`, `length`, `resume`, `genre`, `actors`, `director` FROM videos WHERE "
+
+        For i As Integer = 0 To queryList.Count - 1
+
+            builtQuery = builtQuery & queryList(i).ValueName & " LIKE '%" & queryList(i).ValueField & "%'"
+
+            If (i = queryList.Count - 1) Then
+                builtQuery = builtQuery & ";"
+            Else
+                builtQuery = builtQuery & " OR "
+            End If
+
+        Next
+
+        Return builtQuery
+
+    End Function
+
+    Function AdvancedSearch(ByVal queryList As List(Of AdvancedSearchClass))
+        Dim cmd As MySqlCommand
         'populate datagridview on results page
         Try
 
             Me.connect = New MySqlConnection(connectionString)
             Me.connect.Open()
 
-            Dim query As String = 
+            Dim query As String = GenerateQuery(queryList)
 
             Dim datatable As New DataTable()
 
-            Dim cmd As New MySqlCommand(query, Me.connect)
+            cmd = New MySqlCommand(query, Me.connect)
+
+            For Each row In queryList
+
+                cmd.Parameters.AddWithValue(row.ValueName, row.ValueField)
+
+            Next
 
             Dim adapter As New MySqlDataAdapter(cmd)
 
