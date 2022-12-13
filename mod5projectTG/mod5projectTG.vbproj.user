@@ -55,5 +55,8 @@
     <Compile Update="QuickSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RentVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

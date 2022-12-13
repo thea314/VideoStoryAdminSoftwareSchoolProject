@@ -174,6 +174,38 @@ Public Class DBManagerClient
 
     End Function
 
+    Public Function PopulateClientComboBoxRent()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", client_number, CONCAT_WS("" "",fname, lname))  AS identification, client_id FROM clients;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+                RentVideo.combo_clientid.DataSource = datatable
+                RentVideo.combo_clientid.DisplayMember = "identification"
+                RentVideo.combo_clientid.ValueMember = "client_id"
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
     Function UserExists(ByVal clientid As Integer) As Boolean
 
         Me.connect = New MySqlConnection(connectionString)

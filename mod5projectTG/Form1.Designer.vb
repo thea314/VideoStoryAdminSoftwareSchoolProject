@@ -37,6 +37,7 @@ Partial Class Form1
         Me.btn_deletevideo = New System.Windows.Forms.Button()
         Me.btn_quick = New System.Windows.Forms.Button()
         Me.btn_advancedSearch = New System.Windows.Forms.Button()
+        Me.btn_rent = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -174,11 +175,21 @@ Partial Class Form1
         Me.btn_advancedSearch.Text = "Advanced Search"
         Me.btn_advancedSearch.UseVisualStyleBackColor = True
         '
+        'btn_rent
+        '
+        Me.btn_rent.Location = New System.Drawing.Point(331, 327)
+        Me.btn_rent.Name = "btn_rent"
+        Me.btn_rent.Size = New System.Drawing.Size(75, 23)
+        Me.btn_rent.TabIndex = 15
+        Me.btn_rent.Text = "Rent"
+        Me.btn_rent.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_rent)
         Me.Controls.Add(Me.btn_advancedSearch)
         Me.Controls.Add(Me.btn_quick)
         Me.Controls.Add(Me.btn_deletevideo)
@@ -215,4 +226,5 @@ Partial Class Form1
     Friend WithEvents btn_deletevideo As Button
     Friend WithEvents btn_quick As Button
     Friend WithEvents btn_advancedSearch As Button
+    Friend WithEvents btn_rent As Button
 End Class

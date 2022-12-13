@@ -171,6 +171,36 @@ Public Class DBManagerVideo
 
     End Function
 
+    Public Function PopulateVideoComboboxRent()
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String = "SELECT CONCAT_WS("" | "", video_id, title) AS identification, video_id
+                                    FROM videos;"
+
+            Dim datatable As New DataTable()
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With cmd
+
+                RentVideo.combo_videoid.DataSource = datatable
+                RentVideo.combo_videoid.DisplayMember = "identification"
+                RentVideo.combo_videoid.ValueMember = "video_id"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
     Function VideoExists(ByVal video As Integer) As Boolean
 
         Me.connect = New MySqlConnection(connectionString)

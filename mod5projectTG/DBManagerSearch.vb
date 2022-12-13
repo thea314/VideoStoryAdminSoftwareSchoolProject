@@ -1,6 +1,7 @@
 ﻿Imports System.Reflection
 Imports System.Security.Cryptography.X509Certificates
 Imports MySql.Data.MySqlClient
+Imports Org.BouncyCastle.Cmp
 
 Public Class DBManagerSearch
 
@@ -94,7 +95,7 @@ Public Class DBManagerSearch
 
     Private Function GenerateQuery(ByVal queryList As List(Of AdvancedSearchClass)) As String
 
-        Dim builtQuery As String = "SELECT `video_id`, `title`, `year`, `country`, `language`, `length`, `resume`, `genre`, `actors`, `director` FROM videos WHERE "
+        Dim builtQuery As String = "SELECT `video_id`, `title`, `year`, `country`, `language`, `length`, `resume`, `genre`, `actors`, `director`, CASE WHEN `status` = 1 THEN 'Available' ELSE 'Rented' END AS `status` FROM videos WHERE "
 
         For i As Integer = 0 To queryList.Count - 1
 
@@ -150,6 +151,7 @@ Public Class DBManagerSearch
                 .Columns(7).HeaderText = "Genre"
                 .Columns(8).HeaderText = "Actors"
                 .Columns(9).HeaderText = "Director"
+                .Columns(10).HeaderText = "Status"
 
                 .Columns(0).Width = 60
                 .Columns(1).Width = 150
@@ -157,10 +159,11 @@ Public Class DBManagerSearch
                 .Columns(3).Width = 60
                 .Columns(4).Width = 50
                 .Columns(5).Width = 50
-                .Columns(6).Width = 300
+                .Columns(6).Width = 400
                 .Columns(7).Width = 125
-                .Columns(8).Width = 250
+                .Columns(8).Width = 400
                 .Columns(9).Width = 100
+                .Columns(10).Width = 60
 
             End With
 
@@ -172,7 +175,5 @@ Public Class DBManagerSearch
         Me.connect.Dispose()
 
     End Function
-
-
 
 End Class

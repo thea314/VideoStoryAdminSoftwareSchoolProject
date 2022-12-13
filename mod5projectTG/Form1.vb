@@ -75,4 +75,9 @@
         Me.Hide()
         AdvancedSearch.Show()
     End Sub
+
+    Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
+        Me.Hide()
+        RentVideo.Show()
+    End Sub
 End Class

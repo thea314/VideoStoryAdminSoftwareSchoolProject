@@ -3,6 +3,7 @@
     Dim queryList As New List(Of AdvancedSearchClass)
     Public builtQuery As String
 
+
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
 
         AdvanceSearchQueryBuilder()
