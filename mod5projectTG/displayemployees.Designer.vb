@@ -31,35 +31,42 @@ Partial Class displayemployees
         'lbl_listemployeetext
         '
         Me.lbl_listemployeetext.AutoSize = True
-        Me.lbl_listemployeetext.Location = New System.Drawing.Point(8, 8)
+        Me.lbl_listemployeetext.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_listemployeetext.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_listemployeetext.Location = New System.Drawing.Point(12, 9)
         Me.lbl_listemployeetext.Name = "lbl_listemployeetext"
-        Me.lbl_listemployeetext.Size = New System.Drawing.Size(102, 15)
+        Me.lbl_listemployeetext.Size = New System.Drawing.Size(220, 32)
         Me.lbl_listemployeetext.TabIndex = 0
         Me.lbl_listemployeetext.Text = "List of Employees:"
         '
         'data_displayemp
         '
         Me.data_displayemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_displayemp.Location = New System.Drawing.Point(14, 33)
+        Me.data_displayemp.Location = New System.Drawing.Point(14, 52)
         Me.data_displayemp.Name = "data_displayemp"
         Me.data_displayemp.RowTemplate.Height = 25
-        Me.data_displayemp.Size = New System.Drawing.Size(774, 378)
+        Me.data_displayemp.Size = New System.Drawing.Size(774, 359)
         Me.data_displayemp.TabIndex = 1
         '
         'btn_close
         '
+        Me.btn_close.BackColor = System.Drawing.Color.Maroon
+        Me.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_close.Location = New System.Drawing.Point(363, 417)
         Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.Size = New System.Drawing.Size(75, 32)
         Me.btn_close.TabIndex = 2
         Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
+        Me.btn_close.UseVisualStyleBackColor = False
         '
         'displayemployees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(800, 458)
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_displayemp)
         Me.Controls.Add(Me.lbl_listemployeetext)

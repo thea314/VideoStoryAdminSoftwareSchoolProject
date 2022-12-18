@@ -31,35 +31,42 @@ Partial Class DisplayClients
         'lbl_list
         '
         Me.lbl_list.AutoSize = True
-        Me.lbl_list.Location = New System.Drawing.Point(9, 6)
+        Me.lbl_list.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_list.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_list.Location = New System.Drawing.Point(12, 9)
         Me.lbl_list.Name = "lbl_list"
-        Me.lbl_list.Size = New System.Drawing.Size(81, 15)
+        Me.lbl_list.Size = New System.Drawing.Size(175, 32)
         Me.lbl_list.TabIndex = 0
         Me.lbl_list.Text = "List of Clients:"
         '
         'data_clients
         '
         Me.data_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_clients.Location = New System.Drawing.Point(13, 25)
+        Me.data_clients.Location = New System.Drawing.Point(13, 44)
         Me.data_clients.Name = "data_clients"
         Me.data_clients.RowTemplate.Height = 25
-        Me.data_clients.Size = New System.Drawing.Size(775, 383)
+        Me.data_clients.Size = New System.Drawing.Size(775, 399)
         Me.data_clients.TabIndex = 1
         '
         'btn_close
         '
-        Me.btn_close.Location = New System.Drawing.Point(362, 415)
+        Me.btn_close.BackColor = System.Drawing.Color.Maroon
+        Me.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_close.Location = New System.Drawing.Point(362, 449)
         Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.Size = New System.Drawing.Size(75, 30)
         Me.btn_close.TabIndex = 2
         Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
+        Me.btn_close.UseVisualStyleBackColor = False
         '
         'DisplayClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(800, 486)
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_clients)
         Me.Controls.Add(Me.lbl_list)

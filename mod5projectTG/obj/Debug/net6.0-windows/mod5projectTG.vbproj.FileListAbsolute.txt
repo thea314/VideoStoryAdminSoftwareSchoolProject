@@ -42,3 +42,4 @@ C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5pro
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.AdvancedSearchResults.resources
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.RentVideo.resources
 C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.ReturnVideo.resources
+C:\Users\Dell\Dropbox\thea_gregory\Block 3\Mod 5\myproject\mod5projectTG\mod5projectTG\obj\Debug\net6.0-windows\mod5projectTG.Resources.resources

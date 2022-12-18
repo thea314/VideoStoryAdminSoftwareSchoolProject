@@ -37,6 +37,7 @@ Partial Class ReturnVideo
         Me.data_videosout = New System.Windows.Forms.DataGridView()
         Me.btn_return = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.lbl_returnvideo = New System.Windows.Forms.Label()
         Me.grp_return.SuspendLayout()
         CType(Me.pic_poster, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.data_videosout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +57,9 @@ Partial Class ReturnVideo
         Me.grp_return.Controls.Add(Me.txt_videoid)
         Me.grp_return.Controls.Add(Me.lvl_videoid)
         Me.grp_return.Controls.Add(Me.data_videosout)
-        Me.grp_return.Location = New System.Drawing.Point(14, 15)
+        Me.grp_return.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.grp_return.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.grp_return.Location = New System.Drawing.Point(12, 54)
         Me.grp_return.Name = "grp_return"
         Me.grp_return.Size = New System.Drawing.Size(521, 383)
         Me.grp_return.TabIndex = 1
@@ -65,12 +68,14 @@ Partial Class ReturnVideo
         '
         'btn_clear
         '
+        Me.btn_clear.BackColor = System.Drawing.Color.Navy
+        Me.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_clear.Location = New System.Drawing.Point(401, 29)
         Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(104, 23)
+        Me.btn_clear.Size = New System.Drawing.Size(83, 29)
         Me.btn_clear.TabIndex = 11
         Me.btn_clear.Text = "Clear Selection"
-        Me.btn_clear.UseVisualStyleBackColor = True
+        Me.btn_clear.UseVisualStyleBackColor = False
         '
         'pic_poster
         '
@@ -82,35 +87,38 @@ Partial Class ReturnVideo
         '
         'btn_search
         '
-        Me.btn_search.Location = New System.Drawing.Point(318, 29)
+        Me.btn_search.BackColor = System.Drawing.Color.Green
+        Me.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_search.Location = New System.Drawing.Point(313, 29)
+        Me.btn_search.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_search.Name = "btn_search"
-        Me.btn_search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_search.Size = New System.Drawing.Size(75, 29)
         Me.btn_search.TabIndex = 9
         Me.btn_search.Text = "Search"
-        Me.btn_search.UseVisualStyleBackColor = True
+        Me.btn_search.UseVisualStyleBackColor = False
         '
         'txt_rentedOn
         '
         Me.txt_rentedOn.Enabled = False
-        Me.txt_rentedOn.Location = New System.Drawing.Point(100, 328)
+        Me.txt_rentedOn.Location = New System.Drawing.Point(112, 328)
         Me.txt_rentedOn.Name = "txt_rentedOn"
-        Me.txt_rentedOn.Size = New System.Drawing.Size(200, 23)
+        Me.txt_rentedOn.Size = New System.Drawing.Size(200, 25)
         Me.txt_rentedOn.TabIndex = 8
         '
         'txt_clientName
         '
         Me.txt_clientName.Enabled = False
-        Me.txt_clientName.Location = New System.Drawing.Point(100, 293)
+        Me.txt_clientName.Location = New System.Drawing.Point(112, 293)
         Me.txt_clientName.Name = "txt_clientName"
-        Me.txt_clientName.Size = New System.Drawing.Size(200, 23)
+        Me.txt_clientName.Size = New System.Drawing.Size(200, 25)
         Me.txt_clientName.TabIndex = 7
         '
         'txt_clientNo
         '
         Me.txt_clientNo.Enabled = False
-        Me.txt_clientNo.Location = New System.Drawing.Point(100, 255)
+        Me.txt_clientNo.Location = New System.Drawing.Point(112, 255)
         Me.txt_clientNo.Name = "txt_clientNo"
-        Me.txt_clientNo.Size = New System.Drawing.Size(200, 23)
+        Me.txt_clientNo.Size = New System.Drawing.Size(200, 25)
         Me.txt_clientNo.TabIndex = 6
         '
         'lbl_renteddate
@@ -118,7 +126,7 @@ Partial Class ReturnVideo
         Me.lbl_renteddate.AutoSize = True
         Me.lbl_renteddate.Location = New System.Drawing.Point(6, 336)
         Me.lbl_renteddate.Name = "lbl_renteddate"
-        Me.lbl_renteddate.Size = New System.Drawing.Size(66, 15)
+        Me.lbl_renteddate.Size = New System.Drawing.Size(76, 17)
         Me.lbl_renteddate.TabIndex = 5
         Me.lbl_renteddate.Text = "Rented On:"
         '
@@ -127,7 +135,7 @@ Partial Class ReturnVideo
         Me.lbl_clientNo.AutoSize = True
         Me.lbl_clientNo.Location = New System.Drawing.Point(6, 263)
         Me.lbl_clientNo.Name = "lbl_clientNo"
-        Me.lbl_clientNo.Size = New System.Drawing.Size(88, 15)
+        Me.lbl_clientNo.Size = New System.Drawing.Size(100, 17)
         Me.lbl_clientNo.TabIndex = 4
         Me.lbl_clientNo.Text = "Client Number:"
         '
@@ -136,7 +144,7 @@ Partial Class ReturnVideo
         Me.lbl_clientName.AutoSize = True
         Me.lbl_clientName.Location = New System.Drawing.Point(6, 301)
         Me.lbl_clientName.Name = "lbl_clientName"
-        Me.lbl_clientName.Size = New System.Drawing.Size(76, 15)
+        Me.lbl_clientName.Size = New System.Drawing.Size(85, 17)
         Me.lbl_clientName.TabIndex = 3
         Me.lbl_clientName.Text = "Client Name:"
         '
@@ -144,7 +152,7 @@ Partial Class ReturnVideo
         '
         Me.txt_videoid.Location = New System.Drawing.Point(74, 29)
         Me.txt_videoid.Name = "txt_videoid"
-        Me.txt_videoid.Size = New System.Drawing.Size(226, 23)
+        Me.txt_videoid.Size = New System.Drawing.Size(226, 25)
         Me.txt_videoid.TabIndex = 2
         '
         'lvl_videoid
@@ -152,7 +160,7 @@ Partial Class ReturnVideo
         Me.lvl_videoid.AutoSize = True
         Me.lvl_videoid.Location = New System.Drawing.Point(6, 37)
         Me.lvl_videoid.Name = "lvl_videoid"
-        Me.lvl_videoid.Size = New System.Drawing.Size(53, 15)
+        Me.lvl_videoid.Size = New System.Drawing.Size(61, 17)
         Me.lvl_videoid.TabIndex = 1
         Me.lvl_videoid.Text = "Video Id:"
         '
@@ -170,7 +178,7 @@ Partial Class ReturnVideo
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(207, 415)
+        Me.btn_return.Location = New System.Drawing.Point(205, 454)
         Me.btn_return.Name = "btn_return"
         Me.btn_return.Size = New System.Drawing.Size(75, 23)
         Me.btn_return.TabIndex = 2
@@ -179,18 +187,31 @@ Partial Class ReturnVideo
         '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(299, 415)
+        Me.btn_cancel.Location = New System.Drawing.Point(297, 454)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel.TabIndex = 3
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = True
         '
+        'lbl_returnvideo
+        '
+        Me.lbl_returnvideo.AutoSize = True
+        Me.lbl_returnvideo.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_returnvideo.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_returnvideo.Location = New System.Drawing.Point(12, 9)
+        Me.lbl_returnvideo.Name = "lbl_returnvideo"
+        Me.lbl_returnvideo.Size = New System.Drawing.Size(171, 32)
+        Me.lbl_returnvideo.TabIndex = 4
+        Me.lbl_returnvideo.Text = "Return Video:"
+        '
         'ReturnVideo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(546, 485)
+        Me.Controls.Add(Me.lbl_returnvideo)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.grp_return)
@@ -201,6 +222,7 @@ Partial Class ReturnVideo
         CType(Me.pic_poster, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.data_videosout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents grp_return As GroupBox
@@ -218,4 +240,5 @@ Partial Class ReturnVideo
     Friend WithEvents btn_return As Button
     Friend WithEvents btn_cancel As Button
     Friend WithEvents btn_clear As Button
+    Friend WithEvents lbl_returnvideo As Label
 End Class

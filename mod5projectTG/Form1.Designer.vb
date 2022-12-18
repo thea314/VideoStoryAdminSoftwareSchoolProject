@@ -22,195 +22,30 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btn_dashboard = New System.Windows.Forms.Button()
-        Me.btn_AddNewEmployee = New System.Windows.Forms.Button()
-        Me.btn_edit = New System.Windows.Forms.Button()
-        Me.btn_delete = New System.Windows.Forms.Button()
-        Me.btn_view_clients = New System.Windows.Forms.Button()
-        Me.btn_newclient = New System.Windows.Forms.Button()
-        Me.btn_editclient = New System.Windows.Forms.Button()
-        Me.btn_displayEmployee = New System.Windows.Forms.Button()
-        Me.btn_delete_client = New System.Windows.Forms.Button()
-        Me.btn_viewvideos = New System.Windows.Forms.Button()
-        Me.btn_addvideo = New System.Windows.Forms.Button()
-        Me.btn_editvideo = New System.Windows.Forms.Button()
-        Me.btn_deletevideo = New System.Windows.Forms.Button()
-        Me.btn_quick = New System.Windows.Forms.Button()
-        Me.btn_advancedSearch = New System.Windows.Forms.Button()
-        Me.btn_rent = New System.Windows.Forms.Button()
-        Me.btn_return = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.lbl_username = New System.Windows.Forms.Label()
         Me.txt_username = New System.Windows.Forms.TextBox()
         Me.lbl_password = New System.Windows.Forms.Label()
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.btn_login = New System.Windows.Forms.Button()
+        Me.pic_logo = New System.Windows.Forms.PictureBox()
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btn_dashboard
-        '
-        Me.btn_dashboard.Location = New System.Drawing.Point(331, 12)
-        Me.btn_dashboard.Name = "btn_dashboard"
-        Me.btn_dashboard.Size = New System.Drawing.Size(75, 23)
-        Me.btn_dashboard.TabIndex = 0
-        Me.btn_dashboard.Text = "dashboard"
-        Me.btn_dashboard.UseVisualStyleBackColor = True
-        '
-        'btn_AddNewEmployee
-        '
-        Me.btn_AddNewEmployee.Location = New System.Drawing.Point(33, 86)
-        Me.btn_AddNewEmployee.Name = "btn_AddNewEmployee"
-        Me.btn_AddNewEmployee.Size = New System.Drawing.Size(116, 41)
-        Me.btn_AddNewEmployee.TabIndex = 1
-        Me.btn_AddNewEmployee.Text = "Add New Employee"
-        Me.btn_AddNewEmployee.UseVisualStyleBackColor = True
-        '
-        'btn_edit
-        '
-        Me.btn_edit.Location = New System.Drawing.Point(33, 133)
-        Me.btn_edit.Name = "btn_edit"
-        Me.btn_edit.Size = New System.Drawing.Size(116, 24)
-        Me.btn_edit.TabIndex = 2
-        Me.btn_edit.Text = "edit employee"
-        Me.btn_edit.UseVisualStyleBackColor = True
-        '
-        'btn_delete
-        '
-        Me.btn_delete.Location = New System.Drawing.Point(33, 175)
-        Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Size = New System.Drawing.Size(105, 23)
-        Me.btn_delete.TabIndex = 3
-        Me.btn_delete.Text = "Delete employee"
-        Me.btn_delete.UseVisualStyleBackColor = True
-        '
-        'btn_view_clients
-        '
-        Me.btn_view_clients.Location = New System.Drawing.Point(256, 55)
-        Me.btn_view_clients.Name = "btn_view_clients"
-        Me.btn_view_clients.Size = New System.Drawing.Size(138, 23)
-        Me.btn_view_clients.TabIndex = 4
-        Me.btn_view_clients.Text = "View Clients"
-        Me.btn_view_clients.UseVisualStyleBackColor = True
-        '
-        'btn_newclient
-        '
-        Me.btn_newclient.Location = New System.Drawing.Point(256, 95)
-        Me.btn_newclient.Name = "btn_newclient"
-        Me.btn_newclient.Size = New System.Drawing.Size(138, 23)
-        Me.btn_newclient.TabIndex = 5
-        Me.btn_newclient.Text = "Add New Client"
-        Me.btn_newclient.UseVisualStyleBackColor = True
-        '
-        'btn_editclient
-        '
-        Me.btn_editclient.Location = New System.Drawing.Point(256, 132)
-        Me.btn_editclient.Name = "btn_editclient"
-        Me.btn_editclient.Size = New System.Drawing.Size(75, 23)
-        Me.btn_editclient.TabIndex = 6
-        Me.btn_editclient.Text = "Edit Client"
-        Me.btn_editclient.UseVisualStyleBackColor = True
-        '
-        'btn_displayEmployee
-        '
-        Me.btn_displayEmployee.Location = New System.Drawing.Point(33, 55)
-        Me.btn_displayEmployee.Name = "btn_displayEmployee"
-        Me.btn_displayEmployee.Size = New System.Drawing.Size(116, 23)
-        Me.btn_displayEmployee.TabIndex = 7
-        Me.btn_displayEmployee.Text = "Display Employees"
-        Me.btn_displayEmployee.UseVisualStyleBackColor = True
-        '
-        'btn_delete_client
-        '
-        Me.btn_delete_client.Location = New System.Drawing.Point(256, 175)
-        Me.btn_delete_client.Name = "btn_delete_client"
-        Me.btn_delete_client.Size = New System.Drawing.Size(106, 23)
-        Me.btn_delete_client.TabIndex = 8
-        Me.btn_delete_client.Text = "Delete Client"
-        Me.btn_delete_client.UseVisualStyleBackColor = True
-        '
-        'btn_viewvideos
-        '
-        Me.btn_viewvideos.Location = New System.Drawing.Point(525, 55)
-        Me.btn_viewvideos.Name = "btn_viewvideos"
-        Me.btn_viewvideos.Size = New System.Drawing.Size(103, 23)
-        Me.btn_viewvideos.TabIndex = 9
-        Me.btn_viewvideos.Text = "View Videos"
-        Me.btn_viewvideos.UseVisualStyleBackColor = True
-        '
-        'btn_addvideo
-        '
-        Me.btn_addvideo.Location = New System.Drawing.Point(525, 94)
-        Me.btn_addvideo.Name = "btn_addvideo"
-        Me.btn_addvideo.Size = New System.Drawing.Size(103, 23)
-        Me.btn_addvideo.TabIndex = 10
-        Me.btn_addvideo.Text = "Add Video"
-        Me.btn_addvideo.UseVisualStyleBackColor = True
-        '
-        'btn_editvideo
-        '
-        Me.btn_editvideo.Location = New System.Drawing.Point(525, 132)
-        Me.btn_editvideo.Name = "btn_editvideo"
-        Me.btn_editvideo.Size = New System.Drawing.Size(103, 23)
-        Me.btn_editvideo.TabIndex = 11
-        Me.btn_editvideo.Text = "Edit Video"
-        Me.btn_editvideo.UseVisualStyleBackColor = True
-        '
-        'btn_deletevideo
-        '
-        Me.btn_deletevideo.Location = New System.Drawing.Point(525, 175)
-        Me.btn_deletevideo.Name = "btn_deletevideo"
-        Me.btn_deletevideo.Size = New System.Drawing.Size(103, 23)
-        Me.btn_deletevideo.TabIndex = 12
-        Me.btn_deletevideo.Text = "Delete Video"
-        Me.btn_deletevideo.UseVisualStyleBackColor = True
-        '
-        'btn_quick
-        '
-        Me.btn_quick.Location = New System.Drawing.Point(39, 327)
-        Me.btn_quick.Name = "btn_quick"
-        Me.btn_quick.Size = New System.Drawing.Size(110, 23)
-        Me.btn_quick.TabIndex = 13
-        Me.btn_quick.Text = "Quick Search"
-        Me.btn_quick.UseVisualStyleBackColor = True
-        '
-        'btn_advancedSearch
-        '
-        Me.btn_advancedSearch.Location = New System.Drawing.Point(39, 365)
-        Me.btn_advancedSearch.Name = "btn_advancedSearch"
-        Me.btn_advancedSearch.Size = New System.Drawing.Size(123, 23)
-        Me.btn_advancedSearch.TabIndex = 14
-        Me.btn_advancedSearch.Text = "Advanced Search"
-        Me.btn_advancedSearch.UseVisualStyleBackColor = True
-        '
-        'btn_rent
-        '
-        Me.btn_rent.Location = New System.Drawing.Point(331, 327)
-        Me.btn_rent.Name = "btn_rent"
-        Me.btn_rent.Size = New System.Drawing.Size(75, 23)
-        Me.btn_rent.TabIndex = 15
-        Me.btn_rent.Text = "Rent"
-        Me.btn_rent.UseVisualStyleBackColor = True
-        '
-        'btn_return
-        '
-        Me.btn_return.Location = New System.Drawing.Point(331, 365)
-        Me.btn_return.Name = "btn_return"
-        Me.btn_return.Size = New System.Drawing.Size(75, 23)
-        Me.btn_return.TabIndex = 16
-        Me.btn_return.Text = "Return"
-        Me.btn_return.UseVisualStyleBackColor = True
         '
         'lbl_username
         '
         Me.lbl_username.AutoSize = True
-        Me.lbl_username.Location = New System.Drawing.Point(525, 308)
+        Me.lbl_username.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_username.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbl_username.Location = New System.Drawing.Point(53, 191)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(63, 15)
+        Me.lbl_username.Size = New System.Drawing.Size(72, 17)
         Me.lbl_username.TabIndex = 17
         Me.lbl_username.Text = "Username:"
         '
         'txt_username
         '
-        Me.txt_username.Location = New System.Drawing.Point(612, 300)
+        Me.txt_username.Location = New System.Drawing.Point(140, 183)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(154, 23)
         Me.txt_username.TabIndex = 18
@@ -218,82 +53,67 @@ Partial Class Form1
         'lbl_password
         '
         Me.lbl_password.AutoSize = True
-        Me.lbl_password.Location = New System.Drawing.Point(525, 354)
+        Me.lbl_password.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_password.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbl_password.Location = New System.Drawing.Point(53, 237)
         Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(60, 15)
+        Me.lbl_password.Size = New System.Drawing.Size(69, 17)
         Me.lbl_password.TabIndex = 19
         Me.lbl_password.Text = "Password:"
         '
         'txt_password
         '
-        Me.txt_password.Location = New System.Drawing.Point(612, 346)
+        Me.txt_password.Location = New System.Drawing.Point(140, 229)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(154, 23)
         Me.txt_password.TabIndex = 20
         '
         'btn_login
         '
-        Me.btn_login.Location = New System.Drawing.Point(649, 385)
+        Me.btn_login.BackColor = System.Drawing.Color.Purple
+        Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_login.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_login.Location = New System.Drawing.Point(177, 268)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(75, 23)
+        Me.btn_login.Size = New System.Drawing.Size(75, 30)
         Me.btn_login.TabIndex = 21
         Me.btn_login.Text = "Login"
-        Me.btn_login.UseVisualStyleBackColor = True
+        Me.btn_login.UseVisualStyleBackColor = False
+        '
+        'pic_logo
+        '
+        Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
+        Me.pic_logo.Location = New System.Drawing.Point(73, 33)
+        Me.pic_logo.Name = "pic_logo"
+        Me.pic_logo.Size = New System.Drawing.Size(273, 110)
+        Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_logo.TabIndex = 22
+        Me.pic_logo.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(428, 359)
+        Me.Controls.Add(Me.pic_logo)
         Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.txt_password)
         Me.Controls.Add(Me.lbl_password)
         Me.Controls.Add(Me.txt_username)
         Me.Controls.Add(Me.lbl_username)
-        Me.Controls.Add(Me.btn_return)
-        Me.Controls.Add(Me.btn_rent)
-        Me.Controls.Add(Me.btn_advancedSearch)
-        Me.Controls.Add(Me.btn_quick)
-        Me.Controls.Add(Me.btn_deletevideo)
-        Me.Controls.Add(Me.btn_editvideo)
-        Me.Controls.Add(Me.btn_addvideo)
-        Me.Controls.Add(Me.btn_viewvideos)
-        Me.Controls.Add(Me.btn_delete_client)
-        Me.Controls.Add(Me.btn_displayEmployee)
-        Me.Controls.Add(Me.btn_editclient)
-        Me.Controls.Add(Me.btn_view_clients)
-        Me.Controls.Add(Me.btn_newclient)
-        Me.Controls.Add(Me.btn_delete)
-        Me.Controls.Add(Me.btn_edit)
-        Me.Controls.Add(Me.btn_AddNewEmployee)
-        Me.Controls.Add(Me.btn_dashboard)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btn_dashboard As Button
-    Friend WithEvents btn_AddNewEmployee As Button
-    Friend WithEvents btn_edit As Button
-    Friend WithEvents btn_delete As Button
-    Friend WithEvents btn_view_clients As Button
-    Friend WithEvents btn_newclient As Button
-    Friend WithEvents btn_editclient As Button
-    Friend WithEvents btn_displayEmployee As Button
-    Friend WithEvents btn_delete_client As Button
-    Friend WithEvents btn_viewvideos As Button
-    Friend WithEvents btn_addvideo As Button
-    Friend WithEvents btn_editvideo As Button
-    Friend WithEvents btn_deletevideo As Button
-    Friend WithEvents btn_quick As Button
-    Friend WithEvents btn_advancedSearch As Button
-    Friend WithEvents btn_rent As Button
-    Friend WithEvents btn_return As Button
     Friend WithEvents lbl_username As Label
     Friend WithEvents txt_username As TextBox
     Friend WithEvents lbl_password As Label
     Friend WithEvents txt_password As TextBox
     Friend WithEvents btn_login As Button
+    Friend WithEvents pic_logo As PictureBox
 End Class

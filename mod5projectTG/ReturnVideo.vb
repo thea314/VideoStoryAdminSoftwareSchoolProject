@@ -47,8 +47,9 @@
     Function PopulateClientData(ByVal clientid As Client)
 
         'populate text fields with info from database
-        'Me.txt_clientNo.Text = clientid.ClientNumber
-        'Me.txt_clientName.Text = clientid.Fname & clientid.Lname
+        Me.txt_clientNo.Text = clientid.ClientNumber
+        Me.txt_clientName.Text = clientid.Fname & clientid.Lname
+
 
     End Function
 
@@ -84,21 +85,25 @@
 
     Private Sub data_videosout_SelectionChanged(sender As Object, e As EventArgs) Handles data_videosout.SelectionChanged
 
-        'define row value
-        Dim checkRowVideoId As Integer = data_videosout.SelectedRows(0).Cells(0).Value
-
         'make sure selection is valid
-        If ((data_videosout.Rows.Count > 0) And (IsNumeric(checkRowVideoId)) And (checkRowVideoId <> Nothing)) Then
+        If (data_videosout.SelectedRows.Count > 0) Then
 
-            'Dim selectedVideoValue As Object = checkRowVideoId
+            'define row value
+            Dim checkRowVideoId As Integer = data_videosout.SelectedRows(0).Cells(0).Value
 
-            'Dim accessClient As DBManagerRent = New DBManagerRent()
+            If ((IsNumeric(checkRowVideoId)) And (checkRowVideoId <> Nothing)) Then
 
-            'Dim pickedVideoFromGrid = accessClient.GetClient(selectedVideo)
+                Dim accessClient As DBManagerRent = New DBManagerRent()
 
-            'PopulateClientData(pickedVideoFromGrid)
+                Dim pickedClientFromGrid As Client = accessClient.GetClientFromRentedVideoId(checkRowVideoId)
 
-            ''PopulateRentalData()
+                PopulateClientData(pickedClientFromGrid)
+
+                Dim accessVideoRentalDate As DBManagerRent = New DBManagerRent()
+
+                accessVideoRentalDate.GetRentalDate(checkRowVideoId)
+
+            End If
 
         End If
 

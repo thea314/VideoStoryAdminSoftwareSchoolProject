@@ -47,6 +47,7 @@ Partial Class AddNewClient
         Me.lbl_lname = New System.Windows.Forms.Label()
         Me.lbl_fname = New System.Windows.Forms.Label()
         Me.lbl_client_number = New System.Windows.Forms.Label()
+        Me.lbl_title = New System.Windows.Forms.Label()
         Me.grp_addnewclient.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,9 +77,11 @@ Partial Class AddNewClient
         Me.grp_addnewclient.Controls.Add(Me.lbl_lname)
         Me.grp_addnewclient.Controls.Add(Me.lbl_fname)
         Me.grp_addnewclient.Controls.Add(Me.lbl_client_number)
-        Me.grp_addnewclient.Location = New System.Drawing.Point(12, 12)
+        Me.grp_addnewclient.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.grp_addnewclient.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.grp_addnewclient.Location = New System.Drawing.Point(12, 53)
         Me.grp_addnewclient.Name = "grp_addnewclient"
-        Me.grp_addnewclient.Size = New System.Drawing.Size(299, 392)
+        Me.grp_addnewclient.Size = New System.Drawing.Size(299, 404)
         Me.grp_addnewclient.TabIndex = 0
         Me.grp_addnewclient.TabStop = False
         Me.grp_addnewclient.Text = "Add New Client:"
@@ -87,7 +90,7 @@ Partial Class AddNewClient
         '
         Me.date_dob.Location = New System.Drawing.Point(82, 175)
         Me.date_dob.Name = "date_dob"
-        Me.date_dob.Size = New System.Drawing.Size(200, 23)
+        Me.date_dob.Size = New System.Drawing.Size(200, 25)
         Me.date_dob.TabIndex = 25
         '
         'mtxt_phone
@@ -95,89 +98,95 @@ Partial Class AddNewClient
         Me.mtxt_phone.Location = New System.Drawing.Point(120, 146)
         Me.mtxt_phone.Mask = "999-000-0000"
         Me.mtxt_phone.Name = "mtxt_phone"
-        Me.mtxt_phone.Size = New System.Drawing.Size(162, 23)
+        Me.mtxt_phone.Size = New System.Drawing.Size(162, 25)
         Me.mtxt_phone.TabIndex = 24
         '
         'txt_postal
         '
         Me.txt_postal.Location = New System.Drawing.Point(120, 293)
         Me.txt_postal.Name = "txt_postal"
-        Me.txt_postal.Size = New System.Drawing.Size(162, 23)
+        Me.txt_postal.Size = New System.Drawing.Size(162, 25)
         Me.txt_postal.TabIndex = 23
         '
         'txt_prov
         '
         Me.txt_prov.Location = New System.Drawing.Point(120, 263)
         Me.txt_prov.Name = "txt_prov"
-        Me.txt_prov.Size = New System.Drawing.Size(162, 23)
+        Me.txt_prov.Size = New System.Drawing.Size(162, 25)
         Me.txt_prov.TabIndex = 22
         '
         'txt_city
         '
         Me.txt_city.Location = New System.Drawing.Point(120, 233)
         Me.txt_city.Name = "txt_city"
-        Me.txt_city.Size = New System.Drawing.Size(162, 23)
+        Me.txt_city.Size = New System.Drawing.Size(162, 25)
         Me.txt_city.TabIndex = 21
         '
         'txt_address
         '
         Me.txt_address.Location = New System.Drawing.Point(120, 204)
         Me.txt_address.Name = "txt_address"
-        Me.txt_address.Size = New System.Drawing.Size(162, 23)
+        Me.txt_address.Size = New System.Drawing.Size(162, 25)
         Me.txt_address.TabIndex = 20
         '
         'txt_email
         '
         Me.txt_email.Location = New System.Drawing.Point(120, 117)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(162, 23)
+        Me.txt_email.Size = New System.Drawing.Size(162, 25)
         Me.txt_email.TabIndex = 17
         '
         'txt_lname
         '
         Me.txt_lname.Location = New System.Drawing.Point(120, 89)
         Me.txt_lname.Name = "txt_lname"
-        Me.txt_lname.Size = New System.Drawing.Size(162, 23)
+        Me.txt_lname.Size = New System.Drawing.Size(162, 25)
         Me.txt_lname.TabIndex = 16
         '
         'txt_fname
         '
         Me.txt_fname.Location = New System.Drawing.Point(120, 58)
         Me.txt_fname.Name = "txt_fname"
-        Me.txt_fname.Size = New System.Drawing.Size(162, 23)
+        Me.txt_fname.Size = New System.Drawing.Size(162, 25)
         Me.txt_fname.TabIndex = 15
         '
         'txt_client_no
         '
         Me.txt_client_no.Location = New System.Drawing.Point(120, 27)
         Me.txt_client_no.Name = "txt_client_no"
-        Me.txt_client_no.Size = New System.Drawing.Size(162, 23)
+        Me.txt_client_no.Size = New System.Drawing.Size(162, 25)
         Me.txt_client_no.TabIndex = 14
         '
         'btn_cancelnewclient
         '
+        Me.btn_cancelnewclient.BackColor = System.Drawing.Color.Maroon
+        Me.btn_cancelnewclient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancelnewclient.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_cancelnewclient.Location = New System.Drawing.Point(207, 363)
         Me.btn_cancelnewclient.Name = "btn_cancelnewclient"
-        Me.btn_cancelnewclient.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cancelnewclient.Size = New System.Drawing.Size(75, 27)
         Me.btn_cancelnewclient.TabIndex = 13
         Me.btn_cancelnewclient.Text = "Cancel"
-        Me.btn_cancelnewclient.UseVisualStyleBackColor = True
+        Me.btn_cancelnewclient.UseVisualStyleBackColor = False
         '
         'btn_createnewclient
         '
+        Me.btn_createnewclient.BackColor = System.Drawing.Color.Green
+        Me.btn_createnewclient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_createnewclient.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_createnewclient.Location = New System.Drawing.Point(21, 363)
         Me.btn_createnewclient.Name = "btn_createnewclient"
-        Me.btn_createnewclient.Size = New System.Drawing.Size(118, 23)
+        Me.btn_createnewclient.Size = New System.Drawing.Size(118, 27)
         Me.btn_createnewclient.TabIndex = 12
         Me.btn_createnewclient.Text = "Create New Client"
-        Me.btn_createnewclient.UseVisualStyleBackColor = True
+        Me.btn_createnewclient.UseVisualStyleBackColor = False
         '
         'CheckBox_active
         '
         Me.CheckBox_active.AutoSize = True
         Me.CheckBox_active.Location = New System.Drawing.Point(56, 328)
         Me.CheckBox_active.Name = "CheckBox_active"
-        Me.CheckBox_active.Size = New System.Drawing.Size(59, 19)
+        Me.CheckBox_active.Size = New System.Drawing.Size(64, 21)
         Me.CheckBox_active.TabIndex = 11
         Me.CheckBox_active.Text = "Active"
         Me.CheckBox_active.UseVisualStyleBackColor = True
@@ -187,7 +196,7 @@ Partial Class AddNewClient
         Me.lbl_status.AutoSize = True
         Me.lbl_status.Location = New System.Drawing.Point(8, 328)
         Me.lbl_status.Name = "lbl_status"
-        Me.lbl_status.Size = New System.Drawing.Size(42, 15)
+        Me.lbl_status.Size = New System.Drawing.Size(49, 17)
         Me.lbl_status.TabIndex = 10
         Me.lbl_status.Text = "Status:"
         '
@@ -196,7 +205,7 @@ Partial Class AddNewClient
         Me.lbl_postal.AutoSize = True
         Me.lbl_postal.Location = New System.Drawing.Point(8, 301)
         Me.lbl_postal.Name = "lbl_postal"
-        Me.lbl_postal.Size = New System.Drawing.Size(73, 15)
+        Me.lbl_postal.Size = New System.Drawing.Size(83, 17)
         Me.lbl_postal.TabIndex = 9
         Me.lbl_postal.Text = "Postal Code:"
         '
@@ -205,7 +214,7 @@ Partial Class AddNewClient
         Me.lbl_prov.AutoSize = True
         Me.lbl_prov.Location = New System.Drawing.Point(8, 271)
         Me.lbl_prov.Name = "lbl_prov"
-        Me.lbl_prov.Size = New System.Drawing.Size(56, 15)
+        Me.lbl_prov.Size = New System.Drawing.Size(63, 17)
         Me.lbl_prov.TabIndex = 8
         Me.lbl_prov.Text = "Province:"
         '
@@ -214,7 +223,7 @@ Partial Class AddNewClient
         Me.lbl_city.AutoSize = True
         Me.lbl_city.Location = New System.Drawing.Point(8, 241)
         Me.lbl_city.Name = "lbl_city"
-        Me.lbl_city.Size = New System.Drawing.Size(31, 15)
+        Me.lbl_city.Size = New System.Drawing.Size(34, 17)
         Me.lbl_city.TabIndex = 7
         Me.lbl_city.Text = "City:"
         '
@@ -223,7 +232,7 @@ Partial Class AddNewClient
         Me.lbl_address.AutoSize = True
         Me.lbl_address.Location = New System.Drawing.Point(8, 212)
         Me.lbl_address.Name = "lbl_address"
-        Me.lbl_address.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_address.Size = New System.Drawing.Size(60, 17)
         Me.lbl_address.TabIndex = 6
         Me.lbl_address.Text = "Address:"
         '
@@ -232,7 +241,7 @@ Partial Class AddNewClient
         Me.lbl_dob.AutoSize = True
         Me.lbl_dob.Location = New System.Drawing.Point(8, 183)
         Me.lbl_dob.Name = "lbl_dob"
-        Me.lbl_dob.Size = New System.Drawing.Size(34, 15)
+        Me.lbl_dob.Size = New System.Drawing.Size(38, 17)
         Me.lbl_dob.TabIndex = 5
         Me.lbl_dob.Text = "DOB:"
         '
@@ -241,7 +250,7 @@ Partial Class AddNewClient
         Me.lbl_phone.AutoSize = True
         Me.lbl_phone.Location = New System.Drawing.Point(8, 154)
         Me.lbl_phone.Name = "lbl_phone"
-        Me.lbl_phone.Size = New System.Drawing.Size(44, 15)
+        Me.lbl_phone.Size = New System.Drawing.Size(50, 17)
         Me.lbl_phone.TabIndex = 4
         Me.lbl_phone.Text = "Phone:"
         '
@@ -250,7 +259,7 @@ Partial Class AddNewClient
         Me.lbl_email.AutoSize = True
         Me.lbl_email.Location = New System.Drawing.Point(8, 125)
         Me.lbl_email.Name = "lbl_email"
-        Me.lbl_email.Size = New System.Drawing.Size(39, 15)
+        Me.lbl_email.Size = New System.Drawing.Size(43, 17)
         Me.lbl_email.TabIndex = 3
         Me.lbl_email.Text = "Email:"
         '
@@ -259,7 +268,7 @@ Partial Class AddNewClient
         Me.lbl_lname.AutoSize = True
         Me.lbl_lname.Location = New System.Drawing.Point(8, 97)
         Me.lbl_lname.Name = "lbl_lname"
-        Me.lbl_lname.Size = New System.Drawing.Size(66, 15)
+        Me.lbl_lname.Size = New System.Drawing.Size(75, 17)
         Me.lbl_lname.TabIndex = 2
         Me.lbl_lname.Text = "Last Name:"
         '
@@ -268,7 +277,7 @@ Partial Class AddNewClient
         Me.lbl_fname.AutoSize = True
         Me.lbl_fname.Location = New System.Drawing.Point(8, 66)
         Me.lbl_fname.Name = "lbl_fname"
-        Me.lbl_fname.Size = New System.Drawing.Size(67, 15)
+        Me.lbl_fname.Size = New System.Drawing.Size(77, 17)
         Me.lbl_fname.TabIndex = 1
         Me.lbl_fname.Text = "First Name:"
         '
@@ -277,21 +286,35 @@ Partial Class AddNewClient
         Me.lbl_client_number.AutoSize = True
         Me.lbl_client_number.Location = New System.Drawing.Point(8, 35)
         Me.lbl_client_number.Name = "lbl_client_number"
-        Me.lbl_client_number.Size = New System.Drawing.Size(88, 15)
+        Me.lbl_client_number.Size = New System.Drawing.Size(100, 17)
         Me.lbl_client_number.TabIndex = 0
         Me.lbl_client_number.Text = "Client Number:"
+        '
+        'lbl_title
+        '
+        Me.lbl_title.AutoSize = True
+        Me.lbl_title.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_title.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_title.Location = New System.Drawing.Point(12, 9)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(199, 32)
+        Me.lbl_title.TabIndex = 1
+        Me.lbl_title.Text = "Add New Client:"
         '
         'AddNewClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 416)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(324, 469)
+        Me.Controls.Add(Me.lbl_title)
         Me.Controls.Add(Me.grp_addnewclient)
         Me.Name = "AddNewClient"
         Me.Text = "AddNewClient"
         Me.grp_addnewclient.ResumeLayout(False)
         Me.grp_addnewclient.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -320,4 +343,5 @@ Partial Class AddNewClient
     Friend WithEvents txt_client_no As TextBox
     Friend WithEvents mtxt_phone As MaskedTextBox
     Friend WithEvents date_dob As DateTimePicker
+    Friend WithEvents lbl_title As Label
 End Class

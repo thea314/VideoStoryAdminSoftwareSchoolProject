@@ -31,34 +31,41 @@ Partial Class DisplayVideos
         'lbl_videoslist
         '
         Me.lbl_videoslist.AutoSize = True
-        Me.lbl_videoslist.Location = New System.Drawing.Point(7, 4)
+        Me.lbl_videoslist.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_videoslist.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_videoslist.Location = New System.Drawing.Point(12, 9)
         Me.lbl_videoslist.Name = "lbl_videoslist"
-        Me.lbl_videoslist.Size = New System.Drawing.Size(80, 15)
+        Me.lbl_videoslist.Size = New System.Drawing.Size(175, 32)
         Me.lbl_videoslist.TabIndex = 0
         Me.lbl_videoslist.Text = "List of Videos:"
         '
         'data_videos
         '
         Me.data_videos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_videos.Location = New System.Drawing.Point(12, 22)
+        Me.data_videos.Location = New System.Drawing.Point(12, 44)
         Me.data_videos.Name = "data_videos"
         Me.data_videos.RowTemplate.Height = 25
-        Me.data_videos.Size = New System.Drawing.Size(1010, 509)
+        Me.data_videos.Size = New System.Drawing.Size(1010, 478)
         Me.data_videos.TabIndex = 1
         '
         'btn_close
         '
-        Me.btn_close.Location = New System.Drawing.Point(478, 537)
+        Me.btn_close.BackColor = System.Drawing.Color.Maroon
+        Me.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_close.Location = New System.Drawing.Point(478, 528)
         Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.Size = New System.Drawing.Size(75, 32)
         Me.btn_close.TabIndex = 2
         Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
+        Me.btn_close.UseVisualStyleBackColor = False
         '
         'DisplayVideos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1034, 571)
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_videos)

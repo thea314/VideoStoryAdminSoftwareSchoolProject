@@ -1,7 +1,9 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
+﻿Imports System.Windows.Forms.ComponentModel.Com2Interop
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
 Imports MySql.Data.Authentication
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI
+Imports Org.BouncyCastle.Crypto.Operators
 
 Public Class DBManagerRent
 
@@ -269,7 +271,7 @@ Public Class DBManagerRent
 
     End Function
 
-    Function GetClient(ByVal videoid As Integer) As VideoItem
+    Function GetClientFromRentedVideoId(ByVal videoid As Integer) As Client
 
         'display client info when video is clicked on before returning film.
         Try
@@ -278,7 +280,7 @@ Public Class DBManagerRent
             Me.connect.Open()
 
             Dim query As String =
-                "SELECT rents.rent_date, clients.client_number, CONCAT_WS("" "", clients.fname, clients.lname) AS ClientName
+                "SELECT clients.client_number, CONCAT_WS("" "", clients.fname, clients.lname) AS ClientName
                                     FROM rents 
                                     INNER JOIN videos ON rents.video_fk = videos.video_id 
                                     INNER JOIN clients ON rents.client_fk = clients.client_id 
@@ -292,7 +294,9 @@ Public Class DBManagerRent
 
             adapter.Fill(datatable)
 
-            Dim requestedClient As New VideoItem(datatable.Rows(0))
+            Dim requestedClient As New Client(datatable.Rows(0)("client_number"), datatable.Rows(0)("fname"),
+                                              datatable.Rows(0)("lname"), "asdf@asdf.com",
+                                              "5", "1999-12-12", "123 Fake St", "Hull", "QC", "h8h8h8", 0)
 
             Me.connect.Close()
             Me.connect.Dispose()
@@ -305,7 +309,7 @@ Public Class DBManagerRent
 
     End Function
 
-    Function GetRentalDate(ByVal videoid As VideoItem) As Rent
+    Function GetRentalDate(ByVal videoid As Integer) As Rent
 
         Try
 
@@ -313,11 +317,9 @@ Public Class DBManagerRent
             Me.connect.Open()
 
             Dim query As String =
-                "SELECT rents.rent_id, rents.video_fk, rents.rent_date, 
-                                    clients.client_number 
-                                    FROM rents 
-                                    INNER JOIN videos ON rents.video_fk = videos.video_id                                    
-                                    WHERE rent_id = @videoid;"
+                "SELECT rents.rent_date,                                     
+                 FROM rents                                                                         
+                 WHERE video_fk = @videoid;"
 
             Dim datatable As New DataTable()
 

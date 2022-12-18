@@ -43,6 +43,7 @@ Partial Class AdvancedSearch
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.btn_search = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.lbl_advanced = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,7 +67,9 @@ Partial Class AdvancedSearch
         Me.GroupBox1.Controls.Add(Me.lbl_year)
         Me.GroupBox1.Controls.Add(Me.lbl_genre)
         Me.GroupBox1.Controls.Add(Me.lbl_title)
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 12)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox1.Location = New System.Drawing.Point(31, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(366, 542)
         Me.GroupBox1.TabIndex = 1
@@ -77,14 +80,14 @@ Partial Class AdvancedSearch
         '
         Me.txt_length.Location = New System.Drawing.Point(112, 261)
         Me.txt_length.Name = "txt_length"
-        Me.txt_length.Size = New System.Drawing.Size(239, 23)
+        Me.txt_length.Size = New System.Drawing.Size(239, 25)
         Me.txt_length.TabIndex = 19
         '
         'txt_year
         '
         Me.txt_year.Location = New System.Drawing.Point(112, 130)
         Me.txt_year.Name = "txt_year"
-        Me.txt_year.Size = New System.Drawing.Size(239, 23)
+        Me.txt_year.Size = New System.Drawing.Size(239, 25)
         Me.txt_year.TabIndex = 18
         '
         'rich_resume
@@ -107,35 +110,35 @@ Partial Class AdvancedSearch
         '
         Me.txt_director.Location = New System.Drawing.Point(112, 306)
         Me.txt_director.Name = "txt_director"
-        Me.txt_director.Size = New System.Drawing.Size(239, 23)
+        Me.txt_director.Size = New System.Drawing.Size(239, 25)
         Me.txt_director.TabIndex = 15
         '
         'txt_language
         '
         Me.txt_language.Location = New System.Drawing.Point(112, 219)
         Me.txt_language.Name = "txt_language"
-        Me.txt_language.Size = New System.Drawing.Size(239, 23)
+        Me.txt_language.Size = New System.Drawing.Size(239, 25)
         Me.txt_language.TabIndex = 13
         '
         'txt_country
         '
         Me.txt_country.Location = New System.Drawing.Point(112, 174)
         Me.txt_country.Name = "txt_country"
-        Me.txt_country.Size = New System.Drawing.Size(239, 23)
+        Me.txt_country.Size = New System.Drawing.Size(239, 25)
         Me.txt_country.TabIndex = 12
         '
         'txt_genre
         '
         Me.txt_genre.Location = New System.Drawing.Point(112, 87)
         Me.txt_genre.Name = "txt_genre"
-        Me.txt_genre.Size = New System.Drawing.Size(239, 23)
+        Me.txt_genre.Size = New System.Drawing.Size(239, 25)
         Me.txt_genre.TabIndex = 10
         '
         'txt_title
         '
         Me.txt_title.Location = New System.Drawing.Point(112, 44)
         Me.txt_title.Name = "txt_title"
-        Me.txt_title.Size = New System.Drawing.Size(239, 23)
+        Me.txt_title.Size = New System.Drawing.Size(239, 25)
         Me.txt_title.TabIndex = 9
         '
         'lbl_resume
@@ -143,7 +146,7 @@ Partial Class AdvancedSearch
         Me.lbl_resume.AutoSize = True
         Me.lbl_resume.Location = New System.Drawing.Point(21, 475)
         Me.lbl_resume.Name = "lbl_resume"
-        Me.lbl_resume.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_resume.Size = New System.Drawing.Size(59, 17)
         Me.lbl_resume.TabIndex = 8
         Me.lbl_resume.Text = "Resume:"
         '
@@ -152,7 +155,7 @@ Partial Class AdvancedSearch
         Me.lbl_actors.AutoSize = True
         Me.lbl_actors.Location = New System.Drawing.Point(21, 380)
         Me.lbl_actors.Name = "lbl_actors"
-        Me.lbl_actors.Size = New System.Drawing.Size(44, 15)
+        Me.lbl_actors.Size = New System.Drawing.Size(50, 17)
         Me.lbl_actors.TabIndex = 7
         Me.lbl_actors.Text = "Actors:"
         '
@@ -161,7 +164,7 @@ Partial Class AdvancedSearch
         Me.lbl_director.AutoSize = True
         Me.lbl_director.Location = New System.Drawing.Point(21, 314)
         Me.lbl_director.Name = "lbl_director"
-        Me.lbl_director.Size = New System.Drawing.Size(52, 15)
+        Me.lbl_director.Size = New System.Drawing.Size(60, 17)
         Me.lbl_director.TabIndex = 6
         Me.lbl_director.Text = "Director:"
         '
@@ -170,7 +173,7 @@ Partial Class AdvancedSearch
         Me.lbl_length.AutoSize = True
         Me.lbl_length.Location = New System.Drawing.Point(21, 269)
         Me.lbl_length.Name = "lbl_length"
-        Me.lbl_length.Size = New System.Drawing.Size(47, 15)
+        Me.lbl_length.Size = New System.Drawing.Size(53, 17)
         Me.lbl_length.TabIndex = 5
         Me.lbl_length.Text = "Length:"
         '
@@ -179,7 +182,7 @@ Partial Class AdvancedSearch
         Me.lbl_language.AutoSize = True
         Me.lbl_language.Location = New System.Drawing.Point(21, 227)
         Me.lbl_language.Name = "lbl_language"
-        Me.lbl_language.Size = New System.Drawing.Size(62, 15)
+        Me.lbl_language.Size = New System.Drawing.Size(70, 17)
         Me.lbl_language.TabIndex = 4
         Me.lbl_language.Text = "Language:"
         '
@@ -188,7 +191,7 @@ Partial Class AdvancedSearch
         Me.lbl_country.AutoSize = True
         Me.lbl_country.Location = New System.Drawing.Point(21, 182)
         Me.lbl_country.Name = "lbl_country"
-        Me.lbl_country.Size = New System.Drawing.Size(53, 15)
+        Me.lbl_country.Size = New System.Drawing.Size(61, 17)
         Me.lbl_country.TabIndex = 3
         Me.lbl_country.Text = "Country:"
         '
@@ -197,7 +200,7 @@ Partial Class AdvancedSearch
         Me.lbl_year.AutoSize = True
         Me.lbl_year.Location = New System.Drawing.Point(21, 138)
         Me.lbl_year.Name = "lbl_year"
-        Me.lbl_year.Size = New System.Drawing.Size(32, 15)
+        Me.lbl_year.Size = New System.Drawing.Size(38, 17)
         Me.lbl_year.TabIndex = 2
         Me.lbl_year.Text = "Year:"
         '
@@ -206,7 +209,7 @@ Partial Class AdvancedSearch
         Me.lbl_genre.AutoSize = True
         Me.lbl_genre.Location = New System.Drawing.Point(21, 95)
         Me.lbl_genre.Name = "lbl_genre"
-        Me.lbl_genre.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_genre.Size = New System.Drawing.Size(47, 17)
         Me.lbl_genre.TabIndex = 1
         Me.lbl_genre.Text = "Genre:"
         '
@@ -215,33 +218,54 @@ Partial Class AdvancedSearch
         Me.lbl_title.AutoSize = True
         Me.lbl_title.Location = New System.Drawing.Point(21, 52)
         Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(32, 15)
+        Me.lbl_title.Size = New System.Drawing.Size(36, 17)
         Me.lbl_title.TabIndex = 0
         Me.lbl_title.Text = "Title:"
         '
         'btn_search
         '
-        Me.btn_search.Location = New System.Drawing.Point(143, 577)
+        Me.btn_search.BackColor = System.Drawing.Color.Navy
+        Me.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_search.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_search.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_search.Location = New System.Drawing.Point(143, 592)
         Me.btn_search.Name = "btn_search"
-        Me.btn_search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_search.Size = New System.Drawing.Size(75, 34)
         Me.btn_search.TabIndex = 2
         Me.btn_search.Text = "Search"
-        Me.btn_search.UseVisualStyleBackColor = True
+        Me.btn_search.UseVisualStyleBackColor = False
         '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(243, 577)
+        Me.btn_cancel.BackColor = System.Drawing.Color.Maroon
+        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_cancel.Location = New System.Drawing.Point(243, 592)
         Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cancel.Size = New System.Drawing.Size(75, 34)
         Me.btn_cancel.TabIndex = 3
         Me.btn_cancel.Text = "Cancel"
-        Me.btn_cancel.UseVisualStyleBackColor = True
+        Me.btn_cancel.UseVisualStyleBackColor = False
+        '
+        'lbl_advanced
+        '
+        Me.lbl_advanced.AutoSize = True
+        Me.lbl_advanced.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_advanced.ForeColor = System.Drawing.Color.LightCoral
+        Me.lbl_advanced.Location = New System.Drawing.Point(31, 9)
+        Me.lbl_advanced.Name = "lbl_advanced"
+        Me.lbl_advanced.Size = New System.Drawing.Size(216, 32)
+        Me.lbl_advanced.TabIndex = 4
+        Me.lbl_advanced.Text = "Advanced Search:"
         '
         'AdvancedSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(433, 612)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(433, 638)
+        Me.Controls.Add(Me.lbl_advanced)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_search)
         Me.Controls.Add(Me.GroupBox1)
@@ -250,6 +274,7 @@ Partial Class AdvancedSearch
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -274,4 +299,5 @@ Partial Class AdvancedSearch
     Friend WithEvents txt_director As TextBox
     Friend WithEvents txt_length As TextBox
     Friend WithEvents txt_year As TextBox
+    Friend WithEvents lbl_advanced As Label
 End Class

@@ -2,89 +2,89 @@
 
     Public loggedUser As User
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_dashboard.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Hide()
         dashboard.Show()
     End Sub
 
-    Private Sub btn_AddNewEmployee_Click(sender As Object, e As EventArgs) Handles btn_AddNewEmployee.Click
+    Private Sub btn_AddNewEmployee_Click(sender As Object, e As EventArgs)
         Me.Hide()
         addEmployee.ShowDialog()
     End Sub
 
-    Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+    Private Sub btn_edit_Click(sender As Object, e As EventArgs)
 
         Me.Hide()
         EditEmployee.Show()
 
     End Sub
 
-    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DeleteEmployee.Show()
     End Sub
 
-    Private Sub btn_view_clients_Click(sender As Object, e As EventArgs) Handles btn_view_clients.Click
+    Private Sub btn_view_clients_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DisplayClients.Show()
     End Sub
 
-    Private Sub btn_newclient_Click(sender As Object, e As EventArgs) Handles btn_newclient.Click
+    Private Sub btn_newclient_Click(sender As Object, e As EventArgs)
         Me.Hide()
         AddNewClient.Show()
     End Sub
 
-    Private Sub btn_editclient_Click(sender As Object, e As EventArgs) Handles btn_editclient.Click
+    Private Sub btn_editclient_Click(sender As Object, e As EventArgs)
         Me.Hide()
         EditClient.Show()
     End Sub
 
-    Private Sub btn_delete_client_Click(sender As Object, e As EventArgs) Handles btn_delete_client.Click
+    Private Sub btn_delete_client_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DeleteClient.Show()
     End Sub
 
-    Private Sub btn_viewvideos_Click(sender As Object, e As EventArgs) Handles btn_viewvideos.Click
+    Private Sub btn_viewvideos_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DisplayVideos.Show()
     End Sub
 
-    Private Sub btn_displayEmployee_Click(sender As Object, e As EventArgs) Handles btn_displayEmployee.Click
+    Private Sub btn_displayEmployee_Click(sender As Object, e As EventArgs)
         Me.Hide()
         displayemployees.Show()
     End Sub
 
-    Private Sub btn_addvideo_Click(sender As Object, e As EventArgs) Handles btn_addvideo.Click
+    Private Sub btn_addvideo_Click(sender As Object, e As EventArgs)
         Me.Hide()
         AddNewVideo.Show()
     End Sub
 
-    Private Sub btn_editvideo_Click(sender As Object, e As EventArgs) Handles btn_editvideo.Click
+    Private Sub btn_editvideo_Click(sender As Object, e As EventArgs)
         Me.Hide()
         EditVideo.Show()
     End Sub
 
-    Private Sub btn_deletevideo_Click(sender As Object, e As EventArgs) Handles btn_deletevideo.Click
+    Private Sub btn_deletevideo_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DeleteVideo.ShowDialog()
     End Sub
 
-    Private Sub btn_quick_Click(sender As Object, e As EventArgs) Handles btn_quick.Click
+    Private Sub btn_quick_Click(sender As Object, e As EventArgs)
         Me.Hide()
         QuickSearch.Show()
     End Sub
 
-    Private Sub btn_advancedSearch_Click(sender As Object, e As EventArgs) Handles btn_advancedSearch.Click
+    Private Sub btn_advancedSearch_Click(sender As Object, e As EventArgs)
         Me.Hide()
         AdvancedSearch.Show()
     End Sub
 
-    Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
+    Private Sub btn_rent_Click(sender As Object, e As EventArgs)
         Me.Hide()
         RentVideo.Show()
     End Sub
 
-    Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click
+    Private Sub btn_return_Click(sender As Object, e As EventArgs)
         Me.Hide()
         ReturnVideo.Show()
     End Sub

@@ -32,16 +32,18 @@ Partial Class AdvancedSearchResults
         'lbl_searchResults
         '
         Me.lbl_searchResults.AutoSize = True
+        Me.lbl_searchResults.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_searchResults.ForeColor = System.Drawing.Color.LightCoral
         Me.lbl_searchResults.Location = New System.Drawing.Point(12, 9)
         Me.lbl_searchResults.Name = "lbl_searchResults"
-        Me.lbl_searchResults.Size = New System.Drawing.Size(141, 15)
+        Me.lbl_searchResults.Size = New System.Drawing.Size(304, 32)
         Me.lbl_searchResults.TabIndex = 0
         Me.lbl_searchResults.Text = "Advanced Search Results:"
         '
         'data_advancedResults
         '
         Me.data_advancedResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_advancedResults.Location = New System.Drawing.Point(12, 38)
+        Me.data_advancedResults.Location = New System.Drawing.Point(12, 52)
         Me.data_advancedResults.Name = "data_advancedResults"
         Me.data_advancedResults.RowTemplate.Height = 25
         Me.data_advancedResults.Size = New System.Drawing.Size(1025, 244)
@@ -49,28 +51,37 @@ Partial Class AdvancedSearchResults
         '
         'btn_rent
         '
+        Me.btn_rent.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_rent.Enabled = False
-        Me.btn_rent.Location = New System.Drawing.Point(871, 288)
+        Me.btn_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_rent.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_rent.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_rent.Location = New System.Drawing.Point(871, 302)
         Me.btn_rent.Name = "btn_rent"
-        Me.btn_rent.Size = New System.Drawing.Size(75, 23)
+        Me.btn_rent.Size = New System.Drawing.Size(75, 34)
         Me.btn_rent.TabIndex = 2
         Me.btn_rent.Text = "Rent"
-        Me.btn_rent.UseVisualStyleBackColor = True
+        Me.btn_rent.UseVisualStyleBackColor = False
         '
         'btn_close
         '
-        Me.btn_close.Location = New System.Drawing.Point(962, 288)
+        Me.btn_close.BackColor = System.Drawing.Color.Maroon
+        Me.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_close.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_close.Location = New System.Drawing.Point(962, 302)
         Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.Size = New System.Drawing.Size(75, 34)
         Me.btn_close.TabIndex = 3
         Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
+        Me.btn_close.UseVisualStyleBackColor = False
         '
         'AdvancedSearchResults
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1049, 323)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1049, 343)
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.btn_rent)
         Me.Controls.Add(Me.data_advancedResults)

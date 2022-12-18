@@ -22,6 +22,7 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
         Me.mainMenu = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,9 +55,11 @@ Partial Class dashboard
         Me.dgv_videos = New System.Windows.Forms.DataGridView()
         Me.lbl_clienttext = New System.Windows.Forms.Label()
         Me.lbl_videostext = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.mainMenu.SuspendLayout()
         CType(Me.dgv_clients, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_videos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mainMenu
@@ -240,7 +243,7 @@ Partial Class dashboard
         'dgv_clients
         '
         Me.dgv_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_clients.Location = New System.Drawing.Point(40, 77)
+        Me.dgv_clients.Location = New System.Drawing.Point(47, 228)
         Me.dgv_clients.Name = "dgv_clients"
         Me.dgv_clients.RowTemplate.Height = 25
         Me.dgv_clients.Size = New System.Drawing.Size(240, 290)
@@ -249,7 +252,7 @@ Partial Class dashboard
         'dgv_videos
         '
         Me.dgv_videos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_videos.Location = New System.Drawing.Point(330, 77)
+        Me.dgv_videos.Location = New System.Drawing.Point(337, 228)
         Me.dgv_videos.Name = "dgv_videos"
         Me.dgv_videos.RowTemplate.Height = 25
         Me.dgv_videos.Size = New System.Drawing.Size(240, 290)
@@ -258,26 +261,42 @@ Partial Class dashboard
         'lbl_clienttext
         '
         Me.lbl_clienttext.AutoSize = True
-        Me.lbl_clienttext.Location = New System.Drawing.Point(47, 46)
+        Me.lbl_clienttext.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_clienttext.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbl_clienttext.Location = New System.Drawing.Point(54, 197)
         Me.lbl_clienttext.Name = "lbl_clienttext"
-        Me.lbl_clienttext.Size = New System.Drawing.Size(109, 15)
+        Me.lbl_clienttext.Size = New System.Drawing.Size(124, 17)
         Me.lbl_clienttext.TabIndex = 3
         Me.lbl_clienttext.Text = "Clients with videos:"
         '
         'lbl_videostext
         '
         Me.lbl_videostext.AutoSize = True
-        Me.lbl_videostext.Location = New System.Drawing.Point(349, 46)
+        Me.lbl_videostext.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lbl_videostext.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lbl_videostext.Location = New System.Drawing.Point(356, 197)
         Me.lbl_videostext.Name = "lbl_videostext"
-        Me.lbl_videostext.Size = New System.Drawing.Size(66, 15)
+        Me.lbl_videostext.Size = New System.Drawing.Size(76, 17)
         Me.lbl_videostext.TabIndex = 4
         Me.lbl_videostext.Text = "Videos out:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(166, 41)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(280, 129)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 400)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(616, 544)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl_videostext)
         Me.Controls.Add(Me.lbl_clienttext)
         Me.Controls.Add(Me.dgv_videos)
@@ -290,6 +309,7 @@ Partial Class dashboard
         Me.mainMenu.PerformLayout()
         CType(Me.dgv_clients, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_videos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -327,4 +347,5 @@ Partial Class dashboard
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
