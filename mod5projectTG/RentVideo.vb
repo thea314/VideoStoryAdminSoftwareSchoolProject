@@ -5,13 +5,36 @@
 
     Private Sub RentVideo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        'populate client combobox
+        Dim populateCllientCombo As DBManagerClient = New DBManagerClient()
+
+        populateCllientCombo.PopulateClientComboBoxRent()
+
+        'populate video combobox
         Dim populateVideoCombo As DBManagerVideo = New DBManagerVideo()
 
         populateVideoCombo.PopulateVideoComboboxRent()
 
-        Dim populateCllientCombo As DBManagerClient = New DBManagerClient()
+        'populate videocombobox depending on if page was referred to by advanced search
+        'loop through contents of combobox to find the one clicked on in previous datagridview
+        If (AdvancedSearchResults.pickedVideoFromGrid Is Nothing) Then
 
-        populateCllientCombo.PopulateClientComboBoxRent()
+        Else
+
+            For Each item As System.Data.DataRowView In combo_videoid.Items
+
+                If (item.Row(1) = AdvancedSearchResults.pickedVideoFromGrid.VideoID) Then
+
+                    combo_videoid.SelectedItem = item
+                    Exit For
+
+                End If
+
+            Next
+
+            PopulateVideoData(AdvancedSearchResults.pickedVideoFromGrid)
+        End If
 
     End Sub
 
@@ -34,12 +57,26 @@
 
     Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
 
+        'change status of video to rented
+        Dim rentVideo As DBManagerRent = New DBManagerRent()
+
+        rentVideo.RentChangeStatus(chosenVideo)
+
+        'add rental to rents table
+        rentVideo.NewRental(chosenVideo)
+
+        'show confirmation
+        MsgBox("Movie rented, returning you to main screen")
+
+        Me.Hide()
+        dashboard.Show()
 
 
     End Sub
 
     Private Sub combo_videoid_SelectedValueChanged(sender As Object, e As EventArgs) Handles combo_videoid.SelectedValueChanged
 
+        'populate video combobox
         If (IsNumeric(combo_videoid.SelectedValue)) Then
 
             Dim checkIfExists As DBManagerVideo = New DBManagerVideo()
@@ -68,12 +105,30 @@
         Me.rich_resume.Text = videoid.VideoResume
         Me.txt_director.Text = videoid.Director
 
+        If (videoid.Status = 0) Then
+            Me.txt_status.Text = "Rented"
+        End If
+
+        If (videoid.Status = 1) Then
+            Me.txt_status.Text = "Avaialble"
+        End If
+
         LoadImageFromUrl(videoid.Photo, pic_poster)
+
+        'check to see if video is available before enabling rent button
+        Dim checkVideo As DBManagerRent = New DBManagerRent()
+
+        Dim videoRented As Boolean = checkVideo.VideoAvailable(chosenVideo)
+
+        If (videoRented) Then
+            Me.btn_rent.Enabled = True
+        End If
 
     End Function
 
     Private Sub combo_clientid_SelectedValueChanged(sender As Object, e As EventArgs) Handles combo_clientid.SelectedValueChanged
 
+        'populate client combobox
         If (IsNumeric(combo_clientid.SelectedValue)) Then
 
             Dim checkIfExists As DBManagerClient = New DBManagerClient()
@@ -102,4 +157,14 @@
         Me.txt_address.Text = client.Address & " " & client.City & " " & client.Province & " " & client.Postal_Code
 
     End Function
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub RentVideo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
+    End Sub
 End Class

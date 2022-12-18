@@ -24,6 +24,7 @@ Partial Class DisplayVideos
     Private Sub InitializeComponent()
         Me.lbl_videoslist = New System.Windows.Forms.Label()
         Me.data_videos = New System.Windows.Forms.DataGridView()
+        Me.btn_close = New System.Windows.Forms.Button()
         CType(Me.data_videos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,14 +43,24 @@ Partial Class DisplayVideos
         Me.data_videos.Location = New System.Drawing.Point(12, 22)
         Me.data_videos.Name = "data_videos"
         Me.data_videos.RowTemplate.Height = 25
-        Me.data_videos.Size = New System.Drawing.Size(1010, 537)
+        Me.data_videos.Size = New System.Drawing.Size(1010, 509)
         Me.data_videos.TabIndex = 1
+        '
+        'btn_close
+        '
+        Me.btn_close.Location = New System.Drawing.Point(478, 537)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.TabIndex = 2
+        Me.btn_close.Text = "Close"
+        Me.btn_close.UseVisualStyleBackColor = True
         '
         'DisplayVideos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1034, 571)
+        Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_videos)
         Me.Controls.Add(Me.lbl_videoslist)
         Me.Name = "DisplayVideos"
@@ -62,4 +73,5 @@ Partial Class DisplayVideos
 
     Friend WithEvents lbl_videoslist As Label
     Friend WithEvents data_videos As DataGridView
+    Friend WithEvents btn_close As Button
 End Class

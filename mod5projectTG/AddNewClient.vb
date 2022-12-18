@@ -26,8 +26,8 @@
             Exit Sub
         End If
 
-        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length < 10)) Then
-            MsgBox("Please enter a phone of length greater than 10.")
+        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length < 7)) Then
+            MsgBox("Please enter a phone of length 10.")
             Me.mtxt_phone.Text = ""
             Exit Sub
         End If
@@ -51,7 +51,7 @@
         End If
 
         If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length < 5)) Then
-            MsgBox("Please enter a postal code of length greater than 5.")
+            MsgBox("Please enter a postal code of length greater than 6.")
             Me.txt_postal.Text = ""
             Exit Sub
         End If
@@ -193,4 +193,13 @@
         End If
     End Sub
 
+    Private Sub btn_cancelnewclient_Click(sender As Object, e As EventArgs) Handles btn_cancelnewclient.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub AddNewClient_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
+    End Sub
 End Class

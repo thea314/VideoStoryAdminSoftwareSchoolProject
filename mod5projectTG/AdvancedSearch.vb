@@ -149,4 +149,14 @@
         End If
 
     End Function
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub AdvancedSearch_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
+    End Sub
 End Class

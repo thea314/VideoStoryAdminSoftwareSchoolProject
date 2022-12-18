@@ -2,6 +2,9 @@
 
     Public intAccess As Integer
     Public chosenUser As Integer
+    Dim username As String
+    Dim password As String
+    Dim confirmPassword As String
 
     Private Sub EditEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -43,8 +46,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_username.Text.Length < 5) Then
-            MsgBox("Please enter a username of length greater than 5.")
+        If (Me.txt_username.Text.Length < 4) Then
+            MsgBox("Please enter a username of length greater than 4.")
             Me.txt_username.Text = ""
             Exit Sub
         End If
@@ -89,9 +92,21 @@
             Exit Sub
         End If
 
-        If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length <> 7)) Then
-            MsgBox("Please enter a postal code of length equal to than 7.")
+        If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length < 6)) Then
+            MsgBox("Please enter a postal code of length less than 6.")
             Me.txt_postal.Text = ""
+            Exit Sub
+        End If
+
+        If (Me.mtxt_homephone.Text = "" Or (Me.mtxt_homephone.Text.Length < 7)) Then
+            MsgBox("Please enter a phone number of length of 10.")
+            Me.mtxt_homephone.Text = ""
+            Exit Sub
+        End If
+
+        If (Me.mtxt_cellphone.Text = "" Or (Me.mtxt_cellphone.Text.Length < 7)) Then
+            MsgBox("Please enter a cell number of length of 10.")
+            Me.mtxt_cellphone.Text = ""
             Exit Sub
         End If
 
@@ -156,13 +171,19 @@
             Exit Sub
         End If
 
-        If (Me.mtxt_homephone.Text = "" Or (Me.mtxt_homephone.Text.Length <> 10)) Then
+        If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length > 7)) Then
+            MsgBox("Please enter a postal code of length less than 7.")
+            Me.txt_postal.Text = ""
+            Exit Sub
+        End If
+
+        If (Me.mtxt_homephone.Text = "" Or (Me.mtxt_homephone.Text.Length > 12)) Then
             MsgBox("Please enter a phone number of length of 10.")
             Me.mtxt_homephone.Text = ""
             Exit Sub
         End If
 
-        If (Me.mtxt_cellphone.Text = "" Or (Me.mtxt_cellphone.Text.Length <> 10)) Then
+        If (Me.mtxt_cellphone.Text = "" Or (Me.mtxt_cellphone.Text.Length > 12)) Then
             MsgBox("Please enter a cell number of length of 10.")
             Me.mtxt_cellphone.Text = ""
             Exit Sub
@@ -177,20 +198,18 @@
         'set data for employee level
         Select Case combo_access.SelectedIndex
 
-            Case 1
+            Case 0
                 intAccess = 2
-            Case 2
+            Case 1
                 intAccess = 3
-            Case 3
+            Case 2
                 intAccess = 4
-            Case 4
+            Case 3
                 intAccess = 1
 
         End Select
 
-        Dim edit As DBManager = New DBManager()
-
-        edit.EditEmployeeSubmit(chosenUser)
+        ComparePasswordsEdit()
 
         MsgBox("Employee edited. Returning you to dashboard.")
         Me.Hide()
@@ -204,6 +223,7 @@
         Me.txt_employeeno.Text = user.EmployeeID
         Me.txt_username.Text = user.Username
         Me.txt_password.Text = user.Password
+        Me.txt_confirm.Text = user.Password
         Me.txt_fname.Text = user.FirstName
         Me.txt_lname.Text = user.LastName
         Me.date_dob.Value = user.DoB
@@ -340,5 +360,34 @@
             Exit Sub
 
         End If
+    End Sub
+
+    Function ComparePasswordsEdit()
+
+        password = Me.txt_password.Text
+        confirmPassword = Me.txt_confirm.Text
+
+        If (password <> confirmPassword) Then
+            MsgBox("Passwords do not match. Please try again.")
+            Me.txt_password.Text = ""
+            Me.txt_confirm.Text = ""
+
+            Exit Function
+        End If
+
+        Dim edit As DBManager = New DBManager()
+
+        edit.EditEmployeeSubmit(chosenUser)
+
+    End Function
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub EditEmployee_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
     End Sub
 End Class

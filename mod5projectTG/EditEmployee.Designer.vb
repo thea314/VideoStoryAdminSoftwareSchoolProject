@@ -23,8 +23,9 @@ Partial Class EditEmployee
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grp_system = New System.Windows.Forms.GroupBox()
+        Me.txt_confirm = New System.Windows.Forms.TextBox()
+        Me.lbl_confirm = New System.Windows.Forms.Label()
         Me.check_active = New System.Windows.Forms.CheckBox()
-        Me.lbl_blank = New System.Windows.Forms.Label()
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.lbl_password = New System.Windows.Forms.Label()
         Me.txt_username = New System.Windows.Forms.TextBox()
@@ -72,8 +73,9 @@ Partial Class EditEmployee
         '
         'grp_system
         '
+        Me.grp_system.Controls.Add(Me.txt_confirm)
+        Me.grp_system.Controls.Add(Me.lbl_confirm)
         Me.grp_system.Controls.Add(Me.check_active)
-        Me.grp_system.Controls.Add(Me.lbl_blank)
         Me.grp_system.Controls.Add(Me.txt_password)
         Me.grp_system.Controls.Add(Me.lbl_password)
         Me.grp_system.Controls.Add(Me.txt_username)
@@ -87,24 +89,32 @@ Partial Class EditEmployee
         Me.grp_system.TabStop = False
         Me.grp_system.Text = "System Information"
         '
+        'txt_confirm
+        '
+        Me.txt_confirm.Location = New System.Drawing.Point(113, 178)
+        Me.txt_confirm.Name = "txt_confirm"
+        Me.txt_confirm.Size = New System.Drawing.Size(155, 23)
+        Me.txt_confirm.TabIndex = 11
+        Me.txt_confirm.UseSystemPasswordChar = True
+        '
+        'lbl_confirm
+        '
+        Me.lbl_confirm.AutoSize = True
+        Me.lbl_confirm.Location = New System.Drawing.Point(6, 187)
+        Me.lbl_confirm.Name = "lbl_confirm"
+        Me.lbl_confirm.Size = New System.Drawing.Size(107, 15)
+        Me.lbl_confirm.TabIndex = 10
+        Me.lbl_confirm.Text = "Confirm Password:"
+        '
         'check_active
         '
         Me.check_active.AutoSize = True
-        Me.check_active.Location = New System.Drawing.Point(18, 239)
+        Me.check_active.Location = New System.Drawing.Point(18, 235)
         Me.check_active.Name = "check_active"
         Me.check_active.Size = New System.Drawing.Size(107, 19)
         Me.check_active.TabIndex = 7
         Me.check_active.Text = "Active Account"
         Me.check_active.UseVisualStyleBackColor = True
-        '
-        'lbl_blank
-        '
-        Me.lbl_blank.AutoSize = True
-        Me.lbl_blank.Location = New System.Drawing.Point(18, 196)
-        Me.lbl_blank.Name = "lbl_blank"
-        Me.lbl_blank.Size = New System.Drawing.Size(258, 15)
-        Me.lbl_blank.TabIndex = 6
-        Me.lbl_blank.Text = "Note: If left blank, default password is (herzing)."
         '
         'txt_password
         '
@@ -493,7 +503,6 @@ Partial Class EditEmployee
 
     Friend WithEvents grp_system As GroupBox
     Friend WithEvents check_active As CheckBox
-    Friend WithEvents lbl_blank As Label
     Friend WithEvents txt_password As TextBox
     Friend WithEvents lbl_password As Label
     Friend WithEvents txt_username As TextBox
@@ -534,4 +543,6 @@ Partial Class EditEmployee
     Friend WithEvents btn_cancel As Button
     Friend WithEvents mtxt_cellphone As MaskedTextBox
     Friend WithEvents mtxt_homephone As MaskedTextBox
+    Friend WithEvents txt_confirm As TextBox
+    Friend WithEvents lbl_confirm As Label
 End Class

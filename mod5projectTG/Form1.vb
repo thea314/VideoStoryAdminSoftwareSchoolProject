@@ -1,4 +1,7 @@
 ﻿Public Class Form1
+
+    Public loggedUser As User
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_dashboard.Click
         Me.Hide()
         dashboard.Show()
@@ -79,5 +82,23 @@
     Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
         Me.Hide()
         RentVideo.Show()
+    End Sub
+
+    Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click
+        Me.Hide()
+        ReturnVideo.Show()
+    End Sub
+
+
+    Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+
+        Dim logMeIn As DBManager = New DBManager()
+
+        logMeIn.Login()
+
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
     End Sub
 End Class

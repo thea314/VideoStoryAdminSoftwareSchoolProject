@@ -139,6 +139,9 @@ Public Class DBManagerVideo
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
 
+        Me.connect.Close()
+        Me.connect.Dispose()
+
     End Function
 
     Public Function PopulateVideoComboboxDelete()
@@ -168,6 +171,9 @@ Public Class DBManagerVideo
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
+
+        Me.connect.Close()
+        Me.connect.Dispose()
 
     End Function
 
@@ -199,10 +205,14 @@ Public Class DBManagerVideo
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
 
+        Me.connect.Close()
+        Me.connect.Dispose()
+
     End Function
 
     Function VideoExists(ByVal video As Integer) As Boolean
 
+        'determine if video id exists in database
         Me.connect = New MySqlConnection(connectionString)
         Me.connect.Open()
 
@@ -210,7 +220,7 @@ Public Class DBManagerVideo
 
         With cmd
 
-            .CommandText = "SELECT COUNT(*) FROM videos where video_id = @video;"
+            .CommandText = "SELECT COUNT(*) FROM videos WHERE video_id = @video;"
             .CommandType = CommandType.Text
             .Connection = Me.connect
             .Parameters.AddWithValue("@video", video)
@@ -254,6 +264,9 @@ Public Class DBManagerVideo
             adapter.Fill(datatable)
 
             Dim requestedVideo As New VideoItem(datatable.Rows(0))
+
+            Me.connect.Close()
+            Me.connect.Dispose()
 
             Return requestedVideo
 

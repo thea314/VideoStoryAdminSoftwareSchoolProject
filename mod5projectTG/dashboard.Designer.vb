@@ -22,44 +22,76 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.mainMenu = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VideoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.dgv_clients = New System.Windows.Forms.DataGridView()
-        Me.dgv_videos = New System.Windows.Forms.DataGridView()
-        Me.lbl_clienttext = New System.Windows.Forms.Label()
-        Me.lbl_videostext = New System.Windows.Forms.Label()
+        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
+        Me.ClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VideoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreateToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdvancedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RentToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReturnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dgv_clients = New System.Windows.Forms.DataGridView()
+        Me.dgv_videos = New System.Windows.Forms.DataGridView()
+        Me.lbl_clienttext = New System.Windows.Forms.Label()
+        Me.lbl_videostext = New System.Windows.Forms.Label()
+        Me.mainMenu.SuspendLayout()
         CType(Me.dgv_clients, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_videos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'mainMenu
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.ClientToolStripMenuItem, Me.VideoToolStripMenuItem, Me.SearchToolStripMenuItem, Me.RentToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(616, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.mainMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.ClientToolStripMenuItem, Me.VideoToolStripMenuItem, Me.SearchToolStripMenuItem, Me.RentToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.mainMenu.Location = New System.Drawing.Point(0, 0)
+        Me.mainMenu.Name = "mainMenu"
+        Me.mainMenu.Size = New System.Drawing.Size(616, 24)
+        Me.mainMenu.TabIndex = 0
+        Me.mainMenu.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangePasswordToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
+        '
+        'ChangePasswordToolStripMenuItem
+        '
+        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EmployeeToolStripMenuItem
         '
@@ -68,35 +100,142 @@ Partial Class dashboard
         Me.EmployeeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.EmployeeToolStripMenuItem.Text = "Employee"
         '
+        'ListToolStripMenuItem
+        '
+        Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
+        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.ListToolStripMenuItem.Text = "List"
+        '
+        'CreateToolStripMenuItem
+        '
+        Me.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem"
+        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.CreateToolStripMenuItem.Text = "Create"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
         'ClientToolStripMenuItem
         '
+        Me.ClientToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListToolStripMenuItem2, Me.NewToolStripMenuItem, Me.EditToolStripMenuItem2, Me.DeleteToolStripMenuItem2})
         Me.ClientToolStripMenuItem.Name = "ClientToolStripMenuItem"
         Me.ClientToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.ClientToolStripMenuItem.Text = "Client"
         '
+        'ListToolStripMenuItem2
+        '
+        Me.ListToolStripMenuItem2.Name = "ListToolStripMenuItem2"
+        Me.ListToolStripMenuItem2.Size = New System.Drawing.Size(107, 22)
+        Me.ListToolStripMenuItem2.Text = "List"
+        '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.NewToolStripMenuItem.Text = "New"
+        '
+        'EditToolStripMenuItem2
+        '
+        Me.EditToolStripMenuItem2.Name = "EditToolStripMenuItem2"
+        Me.EditToolStripMenuItem2.Size = New System.Drawing.Size(107, 22)
+        Me.EditToolStripMenuItem2.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem2
+        '
+        Me.DeleteToolStripMenuItem2.Name = "DeleteToolStripMenuItem2"
+        Me.DeleteToolStripMenuItem2.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem2.Text = "Delete"
+        '
         'VideoToolStripMenuItem
         '
+        Me.VideoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListToolStripMenuItem1, Me.CreateToolStripMenuItem1, Me.EditToolStripMenuItem1, Me.DeleteToolStripMenuItem1})
         Me.VideoToolStripMenuItem.Name = "VideoToolStripMenuItem"
         Me.VideoToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
         Me.VideoToolStripMenuItem.Text = "Video"
         '
+        'ListToolStripMenuItem1
+        '
+        Me.ListToolStripMenuItem1.Name = "ListToolStripMenuItem1"
+        Me.ListToolStripMenuItem1.Size = New System.Drawing.Size(108, 22)
+        Me.ListToolStripMenuItem1.Text = "List"
+        '
+        'CreateToolStripMenuItem1
+        '
+        Me.CreateToolStripMenuItem1.Name = "CreateToolStripMenuItem1"
+        Me.CreateToolStripMenuItem1.Size = New System.Drawing.Size(108, 22)
+        Me.CreateToolStripMenuItem1.Text = "Create"
+        '
+        'EditToolStripMenuItem1
+        '
+        Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(108, 22)
+        Me.EditToolStripMenuItem1.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem1
+        '
+        Me.DeleteToolStripMenuItem1.Name = "DeleteToolStripMenuItem1"
+        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(108, 22)
+        Me.DeleteToolStripMenuItem1.Text = "Delete"
+        '
         'SearchToolStripMenuItem
         '
+        Me.SearchToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuickToolStripMenuItem, Me.AdvancedToolStripMenuItem})
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
         Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.SearchToolStripMenuItem.Text = "Search"
         '
+        'QuickToolStripMenuItem
+        '
+        Me.QuickToolStripMenuItem.Name = "QuickToolStripMenuItem"
+        Me.QuickToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.QuickToolStripMenuItem.Text = "Quick"
+        '
+        'AdvancedToolStripMenuItem
+        '
+        Me.AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
+        Me.AdvancedToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.AdvancedToolStripMenuItem.Text = "Advanced"
+        '
         'RentToolStripMenuItem
         '
+        Me.RentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RentToolStripMenuItem1, Me.ReturnToolStripMenuItem})
         Me.RentToolStripMenuItem.Name = "RentToolStripMenuItem"
         Me.RentToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.RentToolStripMenuItem.Text = "Rent"
         '
+        'RentToolStripMenuItem1
+        '
+        Me.RentToolStripMenuItem1.Name = "RentToolStripMenuItem1"
+        Me.RentToolStripMenuItem1.Size = New System.Drawing.Size(109, 22)
+        Me.RentToolStripMenuItem1.Text = "Rent"
+        '
+        'ReturnToolStripMenuItem
+        '
+        Me.ReturnToolStripMenuItem.Name = "ReturnToolStripMenuItem"
+        Me.ReturnToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
+        Me.ReturnToolStripMenuItem.Text = "Return"
+        '
         'HelpToolStripMenuItem
         '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'dgv_clients
         '
@@ -134,42 +273,6 @@ Partial Class dashboard
         Me.lbl_videostext.TabIndex = 4
         Me.lbl_videostext.Text = "Videos out:"
         '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ListToolStripMenuItem
-        '
-        Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
-        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ListToolStripMenuItem.Text = "List"
-        '
-        'CreateToolStripMenuItem
-        '
-        Me.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem"
-        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CreateToolStripMenuItem.Text = "Create"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
         'dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -179,12 +282,12 @@ Partial Class dashboard
         Me.Controls.Add(Me.lbl_clienttext)
         Me.Controls.Add(Me.dgv_videos)
         Me.Controls.Add(Me.dgv_clients)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.mainMenu)
+        Me.MainMenuStrip = Me.mainMenu
         Me.Name = "dashboard"
         Me.Text = "dashboard"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.mainMenu.ResumeLayout(False)
+        Me.mainMenu.PerformLayout()
         CType(Me.dgv_clients, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_videos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -192,7 +295,7 @@ Partial Class dashboard
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents mainMenu As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientToolStripMenuItem As ToolStripMenuItem
@@ -210,4 +313,18 @@ Partial Class dashboard
     Friend WithEvents CreateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CreateToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents QuickToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdvancedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RentToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReturnToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem2 As ToolStripMenuItem
 End Class

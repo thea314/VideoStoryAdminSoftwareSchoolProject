@@ -59,4 +59,14 @@
         dashboard.Show()
 
     End Sub
+
+    Private Sub btn_cancelnewclient_Click(sender As Object, e As EventArgs) Handles btn_cancelnewclient.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub DeleteClient_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
+    End Sub
 End Class

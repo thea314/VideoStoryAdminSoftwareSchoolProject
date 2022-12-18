@@ -45,6 +45,8 @@ Partial Class DeleteEmployee
         Me.lbl_SIN = New System.Windows.Forms.Label()
         Me.lbl_emplyee_no = New System.Windows.Forms.Label()
         Me.grp_primary = New System.Windows.Forms.GroupBox()
+        Me.mtxt_cellphone = New System.Windows.Forms.MaskedTextBox()
+        Me.mtxt_homephone = New System.Windows.Forms.MaskedTextBox()
         Me.txt_postal = New System.Windows.Forms.TextBox()
         Me.txt_prov = New System.Windows.Forms.TextBox()
         Me.txt_city = New System.Windows.Forms.TextBox()
@@ -63,8 +65,6 @@ Partial Class DeleteEmployee
         Me.lbl_firstname = New System.Windows.Forms.Label()
         Me.btn_aaddnewEmployee = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.mtxt_homephone = New System.Windows.Forms.MaskedTextBox()
-        Me.mtxt_cellphone = New System.Windows.Forms.MaskedTextBox()
         Me.grp_system.SuspendLayout()
         Me.grp_hr.SuspendLayout()
         Me.grp_primary.SuspendLayout()
@@ -304,6 +304,22 @@ Partial Class DeleteEmployee
         Me.grp_primary.TabStop = False
         Me.grp_primary.Text = "Primary Information"
         '
+        'mtxt_cellphone
+        '
+        Me.mtxt_cellphone.Location = New System.Drawing.Point(100, 264)
+        Me.mtxt_cellphone.Mask = "(999) 000-0000"
+        Me.mtxt_cellphone.Name = "mtxt_cellphone"
+        Me.mtxt_cellphone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_cellphone.TabIndex = 17
+        '
+        'mtxt_homephone
+        '
+        Me.mtxt_homephone.Location = New System.Drawing.Point(100, 235)
+        Me.mtxt_homephone.Mask = "(999) 000-0000"
+        Me.mtxt_homephone.Name = "mtxt_homephone"
+        Me.mtxt_homephone.Size = New System.Drawing.Size(168, 23)
+        Me.mtxt_homephone.TabIndex = 16
+        '
         'txt_postal
         '
         Me.txt_postal.Location = New System.Drawing.Point(100, 207)
@@ -451,22 +467,6 @@ Partial Class DeleteEmployee
         Me.Label1.Size = New System.Drawing.Size(98, 15)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Delete Employee:"
-        '
-        'mtxt_homephone
-        '
-        Me.mtxt_homephone.Location = New System.Drawing.Point(100, 235)
-        Me.mtxt_homephone.Mask = "(999) 000-0000"
-        Me.mtxt_homephone.Name = "mtxt_homephone"
-        Me.mtxt_homephone.Size = New System.Drawing.Size(168, 23)
-        Me.mtxt_homephone.TabIndex = 16
-        '
-        'mtxt_cellphone
-        '
-        Me.mtxt_cellphone.Location = New System.Drawing.Point(100, 264)
-        Me.mtxt_cellphone.Mask = "(999) 000-0000"
-        Me.mtxt_cellphone.Name = "mtxt_cellphone"
-        Me.mtxt_cellphone.Size = New System.Drawing.Size(168, 23)
-        Me.mtxt_cellphone.TabIndex = 17
         '
         'DeleteEmployee
         '

@@ -2,10 +2,6 @@
 
     Dim selectedVideo As Integer
 
-    Private Sub QuickSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     'load poster for video
     Public Sub LoadImageFromUrl(ByRef url As String, ByVal pb As PictureBox)
 
@@ -24,6 +20,16 @@
     End Sub
 
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+
+        'don't search if both boxes are filled
+        If (txt_videoid.Text <> "" And txt_title.Text <> "") Then
+            MsgBox("Please enter only a title or a video id.")
+        End If
+
+        'make sure at least one field is filled
+        If (txt_videoid.Text = "" And txt_title.Text = "") Then
+            MsgBox("Please enter either a video id or a title.")
+        End If
 
         'if video id is entered, populate datagridview
         If (txt_videoid.Text <> "") Then
@@ -93,5 +99,15 @@
             Exit Sub
 
         End If
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub QuickSearch_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        dashboard.Show()
     End Sub
 End Class

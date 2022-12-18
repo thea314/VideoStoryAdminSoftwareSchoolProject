@@ -38,6 +38,12 @@ Partial Class Form1
         Me.btn_quick = New System.Windows.Forms.Button()
         Me.btn_advancedSearch = New System.Windows.Forms.Button()
         Me.btn_rent = New System.Windows.Forms.Button()
+        Me.btn_return = New System.Windows.Forms.Button()
+        Me.lbl_username = New System.Windows.Forms.Label()
+        Me.txt_username = New System.Windows.Forms.TextBox()
+        Me.lbl_password = New System.Windows.Forms.Label()
+        Me.txt_password = New System.Windows.Forms.TextBox()
+        Me.btn_login = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_dashboard
@@ -184,11 +190,67 @@ Partial Class Form1
         Me.btn_rent.Text = "Rent"
         Me.btn_rent.UseVisualStyleBackColor = True
         '
+        'btn_return
+        '
+        Me.btn_return.Location = New System.Drawing.Point(331, 365)
+        Me.btn_return.Name = "btn_return"
+        Me.btn_return.Size = New System.Drawing.Size(75, 23)
+        Me.btn_return.TabIndex = 16
+        Me.btn_return.Text = "Return"
+        Me.btn_return.UseVisualStyleBackColor = True
+        '
+        'lbl_username
+        '
+        Me.lbl_username.AutoSize = True
+        Me.lbl_username.Location = New System.Drawing.Point(525, 308)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(63, 15)
+        Me.lbl_username.TabIndex = 17
+        Me.lbl_username.Text = "Username:"
+        '
+        'txt_username
+        '
+        Me.txt_username.Location = New System.Drawing.Point(612, 300)
+        Me.txt_username.Name = "txt_username"
+        Me.txt_username.Size = New System.Drawing.Size(154, 23)
+        Me.txt_username.TabIndex = 18
+        '
+        'lbl_password
+        '
+        Me.lbl_password.AutoSize = True
+        Me.lbl_password.Location = New System.Drawing.Point(525, 354)
+        Me.lbl_password.Name = "lbl_password"
+        Me.lbl_password.Size = New System.Drawing.Size(60, 15)
+        Me.lbl_password.TabIndex = 19
+        Me.lbl_password.Text = "Password:"
+        '
+        'txt_password
+        '
+        Me.txt_password.Location = New System.Drawing.Point(612, 346)
+        Me.txt_password.Name = "txt_password"
+        Me.txt_password.Size = New System.Drawing.Size(154, 23)
+        Me.txt_password.TabIndex = 20
+        '
+        'btn_login
+        '
+        Me.btn_login.Location = New System.Drawing.Point(649, 385)
+        Me.btn_login.Name = "btn_login"
+        Me.btn_login.Size = New System.Drawing.Size(75, 23)
+        Me.btn_login.TabIndex = 21
+        Me.btn_login.Text = "Login"
+        Me.btn_login.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_login)
+        Me.Controls.Add(Me.txt_password)
+        Me.Controls.Add(Me.lbl_password)
+        Me.Controls.Add(Me.txt_username)
+        Me.Controls.Add(Me.lbl_username)
+        Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_rent)
         Me.Controls.Add(Me.btn_advancedSearch)
         Me.Controls.Add(Me.btn_quick)
@@ -208,6 +270,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -227,4 +290,10 @@ Partial Class Form1
     Friend WithEvents btn_quick As Button
     Friend WithEvents btn_advancedSearch As Button
     Friend WithEvents btn_rent As Button
+    Friend WithEvents btn_return As Button
+    Friend WithEvents lbl_username As Label
+    Friend WithEvents txt_username As TextBox
+    Friend WithEvents lbl_password As Label
+    Friend WithEvents txt_password As TextBox
+    Friend WithEvents btn_login As Button
 End Class

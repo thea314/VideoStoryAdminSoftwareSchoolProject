@@ -24,6 +24,7 @@ Partial Class displayemployees
     Private Sub InitializeComponent()
         Me.lbl_listemployeetext = New System.Windows.Forms.Label()
         Me.data_displayemp = New System.Windows.Forms.DataGridView()
+        Me.btn_close = New System.Windows.Forms.Button()
         CType(Me.data_displayemp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,14 +43,24 @@ Partial Class displayemployees
         Me.data_displayemp.Location = New System.Drawing.Point(14, 33)
         Me.data_displayemp.Name = "data_displayemp"
         Me.data_displayemp.RowTemplate.Height = 25
-        Me.data_displayemp.Size = New System.Drawing.Size(774, 405)
+        Me.data_displayemp.Size = New System.Drawing.Size(774, 378)
         Me.data_displayemp.TabIndex = 1
+        '
+        'btn_close
+        '
+        Me.btn_close.Location = New System.Drawing.Point(363, 417)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(75, 23)
+        Me.btn_close.TabIndex = 2
+        Me.btn_close.Text = "Close"
+        Me.btn_close.UseVisualStyleBackColor = True
         '
         'displayemployees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_displayemp)
         Me.Controls.Add(Me.lbl_listemployeetext)
         Me.Name = "displayemployees"
@@ -62,4 +73,5 @@ Partial Class displayemployees
 
     Friend WithEvents lbl_listemployeetext As Label
     Friend WithEvents data_displayemp As DataGridView
+    Friend WithEvents btn_close As Button
 End Class

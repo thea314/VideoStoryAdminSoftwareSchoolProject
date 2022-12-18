@@ -1,5 +1,7 @@
 ﻿Imports System.Net
 Imports System.Windows.Forms.Design
+Imports Google.Protobuf
+Imports Microsoft.Win32
 Imports MySql.Data.MySqlClient
 Imports MySqlConnector
 
@@ -320,5 +322,213 @@ Public Class DBManager
 
     End Function
 
+    Public Function Login()
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM users WHERE username = @user AND password = @pass"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", Form1.txt_username.Text)
+            .Parameters.AddWithValue("@pass", Form1.txt_password.Text)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        If count <> 0 Then
+            Form1.Hide()
+            Form1.loggedUser = GetUser(Form1.txt_username.Text)
+            dashboard.Show()
+        Else
+            MsgBox("Incorrect login details. Please try again.")
+            Form1.txt_username.Text = ""
+            Form1.txt_password.Text = ""
+        End If
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function GetUser(ByVal username As String) As User
+
+        Try
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT *
+                FROM users
+                WHERE username = @user
+                "
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+
+            cmd.Parameters.AddWithValue("@user", username)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            Dim userid As String = datatable.Rows(0)("employee_number")
+            Dim user As String = datatable.Rows(0)("username")
+            Dim firstname As String = datatable.Rows(0)("fname")
+            Dim lastname As String = datatable.Rows(0)("lname")
+            Dim dob As Date = datatable.Rows(0)("dob")
+            Dim address As String = datatable.Rows(0)("address")
+            Dim city As String = datatable.Rows(0)("city")
+            Dim province As String = datatable.Rows(0)("province")
+            Dim postalCode As String = datatable.Rows(0)("postal_code")
+            Dim homePhone As String = datatable.Rows(0)("home_phone")
+            Dim cellPhone As String = datatable.Rows(0)("cell_phone")
+            Dim startDate As Date = datatable.Rows(0)("start_date")
+            Dim sin As String = datatable.Rows(0)("sin")
+            Dim hourlyPay As String = datatable.Rows(0)("hourly_pay")
+            Dim education As String = datatable.Rows(0)("education")
+            Dim level As Integer = datatable.Rows(0)("level")
+            Dim status As Integer = datatable.Rows(0)("status")
+            Dim password As String = datatable.Rows(0)("password")
+
+            Dim newUser As New User(datatable.Rows(0))
+
+            Return newUser
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
+
+    Function CheckDuplicateUsername()
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM users WHERE username = @user"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", addEmployee.txt_username.Text)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+        If (count <> 0) Then
+            MsgBox("Duplicate username. Please try again.")
+            addEmployee.txt_username.Text = ""
+            Return True
+        End If
+
+        Return False
+
+    End Function
+
+    Function Logout()
+
+        Form1.loggedUser = Nothing
+
+        Form1.txt_username.Text = ""
+        Form1.txt_password.Text = ""
+
+        dashboard.Hide()
+        Form1.Show()
+
+    End Function
+
+    Public Sub DashboardDisplayClientsWithMoviesRented()
+
+        'display a list of clients with movies rented
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT CONCAT_WS("" "", clients.fname, clients.lname) 
+                FROM rents
+                INNER JOIN clients ON rents.client_fk = clients.client_id;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With dashboard.dgv_clients
+
+                .DataSource = datatable
+
+                .Columns(0).HeaderText = "Client Name"
+
+                .Columns(0).Width = 197
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Sub
+
+    Public Sub DashboardVideosRented()
+
+        'display a list of movies rented
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT videos.title 
+                FROM rents
+                INNER JOIN videos ON rents.video_fk = videos.video_id;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            With dashboard.dgv_videos
+
+                .DataSource = datatable
+
+                .Columns(0).HeaderText = "Video Title"
+
+                .Columns(0).Width = 197
+
+            End With
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Sub
 
 End Class

@@ -12,12 +12,14 @@
 
     Private Sub combo_editpicker_SelectedValueChanged(sender As Object, e As EventArgs) Handles combo_editpicker.SelectedValueChanged
 
+        'make sure input is numeric
         If (IsNumeric(combo_editpicker.SelectedValue)) Then
 
             Dim checkIfExists As DBManagerVideo = New DBManagerVideo()
 
             chosenVideo = combo_editpicker.SelectedValue
 
+            'make sure video exists
             If (checkIfExists.VideoExists(chosenVideo)) Then
 
                 Dim accessVideo As DBManagerVideo = New DBManagerVideo()
@@ -62,6 +64,11 @@
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub DeleteVideo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
         dashboard.Show()
     End Sub

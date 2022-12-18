@@ -76,8 +76,8 @@
             Exit Sub
         End If
 
-        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length < 8)) Then
-            MsgBox("Please enter a phone number of length greater than 8.")
+        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length < 7)) Then
+            MsgBox("Please enter a phone of length 10.")
             Me.mtxt_phone.Text = ""
             Exit Sub
         End If
@@ -131,32 +131,32 @@
             Exit Sub
         End If
 
-        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length < 8)) Then
-            MsgBox("Please enter a phone number of length greater than 8.")
+        If (Me.mtxt_phone.Text = "" Or (Me.mtxt_phone.Text.Length > 12)) Then
+            MsgBox("Please enter a phone number of length 10.")
             Me.mtxt_phone.Text = ""
             Exit Sub
         End If
 
-        If (Me.txt_address.Text = "" Or (Me.txt_address.Text.Length < 10)) Then
-            MsgBox("Please enter address of length greater than 10.")
+        If (Me.txt_address.Text = "" Or (Me.txt_address.Text.Length > 10)) Then
+            MsgBox("Please enter address of length less than 10.")
             Me.txt_address.Text = ""
             Exit Sub
         End If
 
-        If (Me.txt_city.Text = "" Or (Me.txt_city.Text.Length < 4)) Then
-            MsgBox("Please enter a phone number of length greater than 4.")
+        If (Me.txt_city.Text = "" Or (Me.txt_city.Text.Length > 50)) Then
+            MsgBox("Please enter a city of length less than 50.")
             Me.txt_city.Text = ""
             Exit Sub
         End If
 
-        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length < 2)) Then
-            MsgBox("Please enter a province of length greater than 2.")
+        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length > 50)) Then
+            MsgBox("Please enter a province of length less than 50.")
             Me.txt_prov.Text = ""
             Exit Sub
         End If
 
-        If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length < 6)) Then
-            MsgBox("Please enter a postal code of length greater than 5.")
+        If (Me.txt_postal.Text = "" Or (Me.txt_postal.Text.Length > 7)) Then
+            MsgBox("Please enter a postal code of length less than 7.")
             Me.txt_postal.Text = ""
             Exit Sub
         End If
@@ -248,6 +248,11 @@
     End Sub
 
     Private Sub btn_cancelnewclient_Click(sender As Object, e As EventArgs) Handles btn_cancelnewclient.Click
+        Me.Hide()
+        dashboard.Show()
+    End Sub
+
+    Private Sub EditClient_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
         dashboard.Show()
     End Sub
