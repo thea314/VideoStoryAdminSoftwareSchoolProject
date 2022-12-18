@@ -22,6 +22,7 @@ Partial Class displayemployees
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(displayemployees))
         Me.lbl_listemployeetext = New System.Windows.Forms.Label()
         Me.data_displayemp = New System.Windows.Forms.DataGridView()
         Me.btn_close = New System.Windows.Forms.Button()
@@ -70,6 +71,7 @@ Partial Class displayemployees
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_displayemp)
         Me.Controls.Add(Me.lbl_listemployeetext)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "displayemployees"
         Me.Text = "Employee List"
         CType(Me.data_displayemp, System.ComponentModel.ISupportInitialize).EndInit()

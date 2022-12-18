@@ -302,9 +302,10 @@ Partial Class dashboard
         Me.Controls.Add(Me.dgv_videos)
         Me.Controls.Add(Me.dgv_clients)
         Me.Controls.Add(Me.mainMenu)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mainMenu
         Me.Name = "dashboard"
-        Me.Text = "dashboard"
+        Me.Text = "Dashboard"
         Me.mainMenu.ResumeLayout(False)
         Me.mainMenu.PerformLayout()
         CType(Me.dgv_clients, System.ComponentModel.ISupportInitialize).EndInit()

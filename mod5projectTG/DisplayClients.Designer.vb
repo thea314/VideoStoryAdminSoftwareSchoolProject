@@ -22,6 +22,7 @@ Partial Class DisplayClients
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisplayClients))
         Me.lbl_list = New System.Windows.Forms.Label()
         Me.data_clients = New System.Windows.Forms.DataGridView()
         Me.btn_close = New System.Windows.Forms.Button()
@@ -70,8 +71,9 @@ Partial Class DisplayClients
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_clients)
         Me.Controls.Add(Me.lbl_list)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DisplayClients"
-        Me.Text = "DisplayClients"
+        Me.Text = "Display Clients"
         CType(Me.data_clients, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

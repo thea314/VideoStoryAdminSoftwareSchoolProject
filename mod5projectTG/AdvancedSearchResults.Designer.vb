@@ -22,6 +22,7 @@ Partial Class AdvancedSearchResults
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdvancedSearchResults))
         Me.lbl_searchResults = New System.Windows.Forms.Label()
         Me.data_advancedResults = New System.Windows.Forms.DataGridView()
         Me.btn_rent = New System.Windows.Forms.Button()
@@ -86,8 +87,9 @@ Partial Class AdvancedSearchResults
         Me.Controls.Add(Me.btn_rent)
         Me.Controls.Add(Me.data_advancedResults)
         Me.Controls.Add(Me.lbl_searchResults)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdvancedSearchResults"
-        Me.Text = "AdvancedSearchResults"
+        Me.Text = "Advanced Search Results"
         CType(Me.data_advancedResults, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

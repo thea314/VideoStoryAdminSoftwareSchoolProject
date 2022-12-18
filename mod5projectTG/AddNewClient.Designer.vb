@@ -22,6 +22,7 @@ Partial Class AddNewClient
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddNewClient))
         Me.grp_addnewclient = New System.Windows.Forms.GroupBox()
         Me.date_dob = New System.Windows.Forms.DateTimePicker()
         Me.mtxt_phone = New System.Windows.Forms.MaskedTextBox()
@@ -88,9 +89,10 @@ Partial Class AddNewClient
         '
         'date_dob
         '
-        Me.date_dob.Location = New System.Drawing.Point(82, 175)
+        Me.date_dob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_dob.Location = New System.Drawing.Point(120, 175)
         Me.date_dob.Name = "date_dob"
-        Me.date_dob.Size = New System.Drawing.Size(200, 25)
+        Me.date_dob.Size = New System.Drawing.Size(162, 25)
         Me.date_dob.TabIndex = 25
         '
         'mtxt_phone
@@ -309,8 +311,9 @@ Partial Class AddNewClient
         Me.ClientSize = New System.Drawing.Size(324, 469)
         Me.Controls.Add(Me.lbl_title)
         Me.Controls.Add(Me.grp_addnewclient)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddNewClient"
-        Me.Text = "AddNewClient"
+        Me.Text = "Add New Client"
         Me.grp_addnewclient.ResumeLayout(False)
         Me.grp_addnewclient.PerformLayout()
         Me.ResumeLayout(False)

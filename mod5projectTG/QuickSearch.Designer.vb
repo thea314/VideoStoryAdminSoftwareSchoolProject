@@ -22,6 +22,7 @@ Partial Class QuickSearch
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QuickSearch))
         Me.lbl_videoid = New System.Windows.Forms.Label()
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.btn_search = New System.Windows.Forms.Button()
@@ -381,8 +382,9 @@ Partial Class QuickSearch
         Me.Controls.Add(Me.lbl_quicksearch)
         Me.Controls.Add(Me.grp_results)
         Me.Controls.Add(Me.grp_search)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "QuickSearch"
-        Me.Text = "QuickSearch"
+        Me.Text = "Quick Search"
         Me.grp_search.ResumeLayout(False)
         Me.grp_search.PerformLayout()
         CType(Me.data_resultViewer, System.ComponentModel.ISupportInitialize).EndInit()

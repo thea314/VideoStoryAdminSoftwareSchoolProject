@@ -103,8 +103,9 @@ Partial Class Form1
         Me.Controls.Add(Me.lbl_password)
         Me.Controls.Add(Me.txt_username)
         Me.Controls.Add(Me.lbl_username)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Welcome to the Super Video Store!"
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

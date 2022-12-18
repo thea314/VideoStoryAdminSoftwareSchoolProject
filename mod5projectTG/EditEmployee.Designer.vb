@@ -22,6 +22,7 @@ Partial Class EditEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditEmployee))
         Me.grp_system = New System.Windows.Forms.GroupBox()
         Me.txt_confirm = New System.Windows.Forms.TextBox()
         Me.lbl_confirm = New System.Windows.Forms.Label()
@@ -522,8 +523,9 @@ Partial Class EditEmployee
         Me.Controls.Add(Me.grp_primary)
         Me.Controls.Add(Me.btn_aaddnewEmployee)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditEmployee"
-        Me.Text = "EditEmployee"
+        Me.Text = "Edit Employee"
         Me.grp_system.ResumeLayout(False)
         Me.grp_system.PerformLayout()
         Me.grp_hr.ResumeLayout(False)

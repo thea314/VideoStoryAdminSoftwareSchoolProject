@@ -22,6 +22,7 @@ Partial Class addEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(addEmployee))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_aaddnewEmployee = New System.Windows.Forms.Button()
         Me.grp_primary = New System.Windows.Forms.GroupBox()
@@ -169,9 +170,10 @@ Partial Class addEmployee
         '
         'date_dob
         '
-        Me.date_dob.Location = New System.Drawing.Point(68, 91)
+        Me.date_dob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_dob.Location = New System.Drawing.Point(100, 91)
         Me.date_dob.Name = "date_dob"
-        Me.date_dob.Size = New System.Drawing.Size(200, 27)
+        Me.date_dob.Size = New System.Drawing.Size(168, 27)
         Me.date_dob.TabIndex = 11
         '
         'txt_lname
@@ -299,7 +301,7 @@ Partial Class addEmployee
         Me.grp_hr.Controls.Add(Me.lbl_salary)
         Me.grp_hr.Controls.Add(Me.lbl_SIN)
         Me.grp_hr.Controls.Add(Me.lbl_emplyee_no)
-        Me.grp_hr.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.grp_hr.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.grp_hr.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.grp_hr.Location = New System.Drawing.Point(291, 44)
         Me.grp_hr.Name = "grp_hr"
@@ -310,9 +312,10 @@ Partial Class addEmployee
         '
         'date_start
         '
-        Me.date_start.Location = New System.Drawing.Point(78, 204)
+        Me.date_start.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_start.Location = New System.Drawing.Point(113, 204)
         Me.date_start.Name = "date_start"
-        Me.date_start.Size = New System.Drawing.Size(190, 25)
+        Me.date_start.Size = New System.Drawing.Size(155, 25)
         Me.date_start.TabIndex = 9
         '
         'lbl_start_date
@@ -320,7 +323,7 @@ Partial Class addEmployee
         Me.lbl_start_date.AutoSize = True
         Me.lbl_start_date.Location = New System.Drawing.Point(11, 207)
         Me.lbl_start_date.Name = "lbl_start_date"
-        Me.lbl_start_date.Size = New System.Drawing.Size(69, 17)
+        Me.lbl_start_date.Size = New System.Drawing.Size(72, 17)
         Me.lbl_start_date.TabIndex = 8
         Me.lbl_start_date.Text = "Start Date:"
         '
@@ -359,7 +362,7 @@ Partial Class addEmployee
         Me.lbl_education.AutoSize = True
         Me.lbl_education.Location = New System.Drawing.Point(11, 179)
         Me.lbl_education.Name = "lbl_education"
-        Me.lbl_education.Size = New System.Drawing.Size(68, 17)
+        Me.lbl_education.Size = New System.Drawing.Size(71, 17)
         Me.lbl_education.TabIndex = 3
         Me.lbl_education.Text = "Education:"
         '
@@ -368,7 +371,7 @@ Partial Class addEmployee
         Me.lbl_salary.AutoSize = True
         Me.lbl_salary.Location = New System.Drawing.Point(11, 151)
         Me.lbl_salary.Name = "lbl_salary"
-        Me.lbl_salary.Size = New System.Drawing.Size(46, 17)
+        Me.lbl_salary.Size = New System.Drawing.Size(48, 17)
         Me.lbl_salary.TabIndex = 2
         Me.lbl_salary.Text = "Salary:"
         '
@@ -377,7 +380,7 @@ Partial Class addEmployee
         Me.lbl_SIN.AutoSize = True
         Me.lbl_SIN.Location = New System.Drawing.Point(11, 123)
         Me.lbl_SIN.Name = "lbl_SIN"
-        Me.lbl_SIN.Size = New System.Drawing.Size(31, 17)
+        Me.lbl_SIN.Size = New System.Drawing.Size(32, 17)
         Me.lbl_SIN.TabIndex = 1
         Me.lbl_SIN.Text = "SIN:"
         '
@@ -386,7 +389,7 @@ Partial Class addEmployee
         Me.lbl_emplyee_no.AutoSize = True
         Me.lbl_emplyee_no.Location = New System.Drawing.Point(11, 91)
         Me.lbl_emplyee_no.Name = "lbl_emplyee_no"
-        Me.lbl_emplyee_no.Size = New System.Drawing.Size(93, 17)
+        Me.lbl_emplyee_no.Size = New System.Drawing.Size(95, 17)
         Me.lbl_emplyee_no.TabIndex = 0
         Me.lbl_emplyee_no.Text = "Employee No.:"
         '
@@ -401,7 +404,7 @@ Partial Class addEmployee
         Me.grp_system.Controls.Add(Me.lbl_username)
         Me.grp_system.Controls.Add(Me.combo_access)
         Me.grp_system.Controls.Add(Me.lbl_access)
-        Me.grp_system.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.grp_system.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.grp_system.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.grp_system.Location = New System.Drawing.Point(571, 44)
         Me.grp_system.Name = "grp_system"
@@ -423,7 +426,7 @@ Partial Class addEmployee
         Me.lbl_confirm.AutoSize = True
         Me.lbl_confirm.Location = New System.Drawing.Point(18, 184)
         Me.lbl_confirm.Name = "lbl_confirm"
-        Me.lbl_confirm.Size = New System.Drawing.Size(57, 17)
+        Me.lbl_confirm.Size = New System.Drawing.Size(59, 17)
         Me.lbl_confirm.TabIndex = 8
         Me.lbl_confirm.Text = "Confirm:"
         '
@@ -432,7 +435,7 @@ Partial Class addEmployee
         Me.check_active.AutoSize = True
         Me.check_active.Location = New System.Drawing.Point(18, 237)
         Me.check_active.Name = "check_active"
-        Me.check_active.Size = New System.Drawing.Size(111, 21)
+        Me.check_active.Size = New System.Drawing.Size(118, 21)
         Me.check_active.TabIndex = 7
         Me.check_active.Text = "Active Account"
         Me.check_active.UseVisualStyleBackColor = True
@@ -450,7 +453,7 @@ Partial Class addEmployee
         Me.lbl_password.AutoSize = True
         Me.lbl_password.Location = New System.Drawing.Point(18, 154)
         Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(67, 17)
+        Me.lbl_password.Size = New System.Drawing.Size(69, 17)
         Me.lbl_password.TabIndex = 4
         Me.lbl_password.Text = "Password:"
         '
@@ -466,7 +469,7 @@ Partial Class addEmployee
         Me.lbl_username.AutoSize = True
         Me.lbl_username.Location = New System.Drawing.Point(18, 128)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(70, 17)
+        Me.lbl_username.Size = New System.Drawing.Size(72, 17)
         Me.lbl_username.TabIndex = 2
         Me.lbl_username.Text = "Username:"
         '
@@ -484,7 +487,7 @@ Partial Class addEmployee
         Me.lbl_access.AutoSize = True
         Me.lbl_access.Location = New System.Drawing.Point(18, 99)
         Me.lbl_access.Name = "lbl_access"
-        Me.lbl_access.Size = New System.Drawing.Size(83, 17)
+        Me.lbl_access.Size = New System.Drawing.Size(85, 17)
         Me.lbl_access.TabIndex = 0
         Me.lbl_access.Text = "Access Level:"
         '
@@ -513,6 +516,7 @@ Partial Class addEmployee
         Me.Controls.Add(Me.grp_primary)
         Me.Controls.Add(Me.btn_aaddnewEmployee)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "addEmployee"
         Me.Text = "Add New Employee"
         Me.grp_primary.ResumeLayout(False)

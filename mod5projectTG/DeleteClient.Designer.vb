@@ -22,6 +22,7 @@ Partial Class DeleteClient
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeleteClient))
         Me.combo_clientpicker = New System.Windows.Forms.ComboBox()
         Me.grp_edit = New System.Windows.Forms.GroupBox()
         Me.date_dob = New System.Windows.Forms.DateTimePicker()
@@ -98,9 +99,10 @@ Partial Class DeleteClient
         'date_dob
         '
         Me.date_dob.Enabled = False
-        Me.date_dob.Location = New System.Drawing.Point(82, 175)
+        Me.date_dob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_dob.Location = New System.Drawing.Point(120, 175)
         Me.date_dob.Name = "date_dob"
-        Me.date_dob.Size = New System.Drawing.Size(200, 25)
+        Me.date_dob.Size = New System.Drawing.Size(162, 25)
         Me.date_dob.TabIndex = 25
         '
         'mtxt_phone
@@ -339,8 +341,9 @@ Partial Class DeleteClient
         Me.Controls.Add(Me.lbl_delete)
         Me.Controls.Add(Me.combo_clientpicker)
         Me.Controls.Add(Me.grp_edit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DeleteClient"
-        Me.Text = "DeleteClient"
+        Me.Text = "Delete Client"
         Me.grp_edit.ResumeLayout(False)
         Me.grp_edit.PerformLayout()
         Me.ResumeLayout(False)

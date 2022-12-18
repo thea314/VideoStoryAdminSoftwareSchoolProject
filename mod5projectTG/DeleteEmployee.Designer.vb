@@ -22,6 +22,7 @@ Partial Class DeleteEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeleteEmployee))
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.combo_employeePicker = New System.Windows.Forms.ComboBox()
         Me.grp_system = New System.Windows.Forms.GroupBox()
@@ -196,9 +197,10 @@ Partial Class DeleteEmployee
         '
         'date_start
         '
-        Me.date_start.Location = New System.Drawing.Point(78, 204)
+        Me.date_start.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_start.Location = New System.Drawing.Point(113, 204)
         Me.date_start.Name = "date_start"
-        Me.date_start.Size = New System.Drawing.Size(190, 25)
+        Me.date_start.Size = New System.Drawing.Size(155, 25)
         Me.date_start.TabIndex = 9
         '
         'lbl_start_date
@@ -352,9 +354,10 @@ Partial Class DeleteEmployee
         '
         'date_dob
         '
-        Me.date_dob.Location = New System.Drawing.Point(68, 91)
+        Me.date_dob.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_dob.Location = New System.Drawing.Point(100, 91)
         Me.date_dob.Name = "date_dob"
-        Me.date_dob.Size = New System.Drawing.Size(200, 25)
+        Me.date_dob.Size = New System.Drawing.Size(168, 25)
         Me.date_dob.TabIndex = 11
         '
         'txt_lname
@@ -501,8 +504,9 @@ Partial Class DeleteEmployee
         Me.Controls.Add(Me.grp_primary)
         Me.Controls.Add(Me.btn_aaddnewEmployee)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DeleteEmployee"
-        Me.Text = "DeleteEmployee"
+        Me.Text = "Delete Employee"
         Me.grp_system.ResumeLayout(False)
         Me.grp_system.PerformLayout()
         Me.grp_hr.ResumeLayout(False)

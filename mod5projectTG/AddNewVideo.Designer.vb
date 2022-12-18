@@ -22,6 +22,7 @@ Partial Class AddNewVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddNewVideo))
         Me.grp_videoInfo = New System.Windows.Forms.GroupBox()
         Me.txt_year = New System.Windows.Forms.TextBox()
         Me.txt_language = New System.Windows.Forms.TextBox()
@@ -306,8 +307,9 @@ Partial Class AddNewVideo
         Me.Controls.Add(Me.btn_addNewVideo)
         Me.Controls.Add(Me.grp_videoDetails)
         Me.Controls.Add(Me.grp_videoInfo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddNewVideo"
-        Me.Text = "AddNewVideo"
+        Me.Text = "Add New Video"
         Me.grp_videoInfo.ResumeLayout(False)
         Me.grp_videoInfo.PerformLayout()
         CType(Me.num_length, System.ComponentModel.ISupportInitialize).EndInit()

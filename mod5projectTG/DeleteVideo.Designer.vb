@@ -22,6 +22,7 @@ Partial Class DeleteVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeleteVideo))
         Me.combo_editpicker = New System.Windows.Forms.ComboBox()
         Me.lbl_picker = New System.Windows.Forms.Label()
         Me.btn_cancel = New System.Windows.Forms.Button()
@@ -334,8 +335,9 @@ Partial Class DeleteVideo
         Me.Controls.Add(Me.btn_deleteVideo)
         Me.Controls.Add(Me.grp_videoDetails)
         Me.Controls.Add(Me.grp_videoInfo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DeleteVideo"
-        Me.Text = "DeleteVideo"
+        Me.Text = "Delete Video"
         Me.grp_videoDetails.ResumeLayout(False)
         Me.grp_videoDetails.PerformLayout()
         Me.grp_videoInfo.ResumeLayout(False)

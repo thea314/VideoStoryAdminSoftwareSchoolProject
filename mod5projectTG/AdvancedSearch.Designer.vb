@@ -22,6 +22,7 @@ Partial Class AdvancedSearch
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdvancedSearch))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_length = New System.Windows.Forms.TextBox()
         Me.txt_year = New System.Windows.Forms.TextBox()
@@ -269,8 +270,9 @@ Partial Class AdvancedSearch
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_search)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdvancedSearch"
-        Me.Text = "AdvancedSearch"
+        Me.Text = "Advanced Search"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

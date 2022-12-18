@@ -22,6 +22,7 @@ Partial Class ReturnVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnVideo))
         Me.grp_return = New System.Windows.Forms.GroupBox()
         Me.btn_clear = New System.Windows.Forms.Button()
         Me.pic_poster = New System.Windows.Forms.PictureBox()
@@ -178,21 +179,29 @@ Partial Class ReturnVideo
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(205, 454)
+        Me.btn_return.BackColor = System.Drawing.Color.Teal
+        Me.btn_return.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_return.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_return.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_return.Location = New System.Drawing.Point(205, 443)
         Me.btn_return.Name = "btn_return"
-        Me.btn_return.Size = New System.Drawing.Size(75, 23)
+        Me.btn_return.Size = New System.Drawing.Size(75, 34)
         Me.btn_return.TabIndex = 2
         Me.btn_return.Text = "Return"
-        Me.btn_return.UseVisualStyleBackColor = True
+        Me.btn_return.UseVisualStyleBackColor = False
         '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(297, 454)
+        Me.btn_cancel.BackColor = System.Drawing.Color.Maroon
+        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_cancel.Location = New System.Drawing.Point(297, 443)
         Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cancel.Size = New System.Drawing.Size(75, 34)
         Me.btn_cancel.TabIndex = 3
         Me.btn_cancel.Text = "Cancel"
-        Me.btn_cancel.UseVisualStyleBackColor = True
+        Me.btn_cancel.UseVisualStyleBackColor = False
         '
         'lbl_returnvideo
         '
@@ -215,8 +224,9 @@ Partial Class ReturnVideo
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.grp_return)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ReturnVideo"
-        Me.Text = "ReturnVideo"
+        Me.Text = "Return Video"
         Me.grp_return.ResumeLayout(False)
         Me.grp_return.PerformLayout()
         CType(Me.pic_poster, System.ComponentModel.ISupportInitialize).EndInit()

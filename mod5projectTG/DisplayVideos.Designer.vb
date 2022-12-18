@@ -22,6 +22,7 @@ Partial Class DisplayVideos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisplayVideos))
         Me.lbl_videoslist = New System.Windows.Forms.Label()
         Me.data_videos = New System.Windows.Forms.DataGridView()
         Me.btn_close = New System.Windows.Forms.Button()
@@ -70,8 +71,9 @@ Partial Class DisplayVideos
         Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.data_videos)
         Me.Controls.Add(Me.lbl_videoslist)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DisplayVideos"
-        Me.Text = "DisplayVideos"
+        Me.Text = "Display Videos"
         CType(Me.data_videos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

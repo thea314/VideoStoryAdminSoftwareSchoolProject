@@ -280,7 +280,7 @@ Public Class DBManagerRent
             Me.connect.Open()
 
             Dim query As String =
-                "SELECT clients.client_number, CONCAT_WS("" "", clients.fname, clients.lname) AS ClientName
+                "SELECT clients.client_number, clients.fname, clients.lname
                                     FROM rents 
                                     INNER JOIN videos ON rents.video_fk = videos.video_id 
                                     INNER JOIN clients ON rents.client_fk = clients.client_id 
@@ -317,7 +317,7 @@ Public Class DBManagerRent
             Me.connect.Open()
 
             Dim query As String =
-                "SELECT rents.rent_date,                                     
+                "SELECT rents.rent_date                                     
                  FROM rents                                                                         
                  WHERE video_fk = @videoid;"
 

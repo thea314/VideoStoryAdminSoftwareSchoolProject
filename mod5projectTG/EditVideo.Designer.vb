@@ -22,6 +22,7 @@ Partial Class EditVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditVideo))
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_editVideo = New System.Windows.Forms.Button()
         Me.grp_videoDetails = New System.Windows.Forms.GroupBox()
@@ -97,9 +98,9 @@ Partial Class EditVideo
         '
         'txt_url
         '
-        Me.txt_url.Location = New System.Drawing.Point(79, 328)
+        Me.txt_url.Location = New System.Drawing.Point(89, 328)
         Me.txt_url.Name = "txt_url"
-        Me.txt_url.Size = New System.Drawing.Size(215, 25)
+        Me.txt_url.Size = New System.Drawing.Size(205, 25)
         Me.txt_url.TabIndex = 3
         '
         'lbl_url
@@ -332,8 +333,9 @@ Partial Class EditVideo
         Me.Controls.Add(Me.btn_editVideo)
         Me.Controls.Add(Me.grp_videoDetails)
         Me.Controls.Add(Me.grp_videoInfo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditVideo"
-        Me.Text = "EditVideo"
+        Me.Text = "Edit Video"
         Me.grp_videoDetails.ResumeLayout(False)
         Me.grp_videoDetails.PerformLayout()
         Me.grp_videoInfo.ResumeLayout(False)

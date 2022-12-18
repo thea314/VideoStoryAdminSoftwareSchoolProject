@@ -22,6 +22,7 @@ Partial Class RentVideo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RentVideo))
         Me.grp_video = New System.Windows.Forms.GroupBox()
         Me.rich_resume = New System.Windows.Forms.RichTextBox()
         Me.txt_director = New System.Windows.Forms.TextBox()
@@ -325,8 +326,9 @@ Partial Class RentVideo
         Me.Controls.Add(Me.grp_client)
         Me.Controls.Add(Me.pic_poster)
         Me.Controls.Add(Me.grp_video)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "RentVideo"
-        Me.Text = "RentVideo"
+        Me.Text = "Rent Video"
         Me.grp_video.ResumeLayout(False)
         Me.grp_video.PerformLayout()
         CType(Me.pic_poster, System.ComponentModel.ISupportInitialize).EndInit()
