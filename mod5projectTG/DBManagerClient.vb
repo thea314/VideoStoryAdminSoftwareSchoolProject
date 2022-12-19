@@ -16,7 +16,12 @@ Public Class DBManagerClient
 
             Dim query As String =
                 "SELECT client_number, fname, lname, email, phone, dob,
-                 address, city, province, postal_code, status
+                 address, city, province, postal_code, 
+                CASE 
+                    WHEN status = 0 THEN 'Inactive'
+                    WHEN status = 1 THEN 'Active'
+                    ELSE 'Invalid'
+                END
                  FROM clients ORDER BY client_id DESC"
 
             Dim datatable As New DataTable()

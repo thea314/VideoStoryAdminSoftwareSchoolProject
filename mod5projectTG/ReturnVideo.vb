@@ -4,6 +4,7 @@
 
     Private Sub ReturnVideo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'display rented movies to user
         Dim display As DBManagerRent = New DBManagerRent()
 
         display.DisplayRentedMovies()
@@ -12,9 +13,16 @@
 
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
 
+        'check to verify that video exists and if it has already been rented
         Dim videoExists As DBManagerVideo = New DBManagerVideo()
 
         Dim videoRented As DBManagerRent = New DBManagerRent()
+
+        If (Me.txt_videoid.Text = "") Then
+            MsgBox("Please enter a valid video id.")
+            txt_videoid.Text = ""
+            Exit Sub
+        End If
 
         If (videoExists.VideoExists(txt_videoid.Text)) Then
 
@@ -25,6 +33,7 @@
             Else
                 MsgBox("Video hasn't been rented. Please enter a new video id.")
                 txt_videoid.Text = ""
+                Exit Sub
             End If
 
         Else
@@ -79,7 +88,28 @@
 
     Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click
 
+        Dim askReturn As String = MsgBox("Are you sure you want to return this movie?", MsgBoxStyle.YesNo)
 
+        If (askReturn = vbYes) Then
+
+            Dim checkRowVideoId As Integer = data_videosout.SelectedRows(0).Cells(0).Value
+
+            Dim returnVideo As DBManagerRent = New DBManagerRent()
+
+            'set status to available in videos
+            returnVideo.ReturnChangeStatus(checkRowVideoId)
+
+            'remove rental from rents
+            returnVideo.DeletedAfterReturn(checkRowVideoId)
+
+            'refresh rented movies
+            returnVideo.DisplayRentedMovies()
+
+        Else
+            MsgBox("Please select a video to return.")
+            Exit Sub
+
+        End If
 
     End Sub
 
@@ -93,30 +123,58 @@
 
             If ((IsNumeric(checkRowVideoId)) And (checkRowVideoId <> Nothing)) Then
 
+                'load client info
                 Dim accessClient As DBManagerRent = New DBManagerRent()
 
                 Dim pickedClientFromGrid As Client = accessClient.GetClientFromRentedVideoId(checkRowVideoId)
 
                 PopulateClientData(pickedClientFromGrid)
 
+                'load rental date
                 Dim accessVideoRentalDate As DBManagerRent = New DBManagerRent()
 
-                accessVideoRentalDate.GetRentalDate(checkRowVideoId)
+                Dim rentalDate = accessVideoRentalDate.GetRentalDate(checkRowVideoId)
+
+                PopulateRentalData(rentalDate)
+
+                'display poster thumbnail
+                Dim accessVideoPoster As DBManagerRent = New DBManagerRent()
+
+                Dim posterLink = accessVideoPoster.GetVideoPoster(checkRowVideoId)
+
+                PopulatePoster(posterLink)
 
             End If
 
         End If
 
-
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+        dashboard.RefreshGrids()
         dashboard.Show()
     End Sub
 
     Private Sub ReturnVideo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+        dashboard.RefreshGrids()
         dashboard.Show()
+    End Sub
+
+    Function PopulatePoster(ByVal videoid As VideoItem)
+
+        LoadImageFromUrl(videoid.Photo, pic_poster)
+
+    End Function
+
+    Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
+
+        Me.txt_videoid.Text = ""
+
+        Dim display As DBManagerRent = New DBManagerRent()
+
+        display.DisplayRentedMovies()
+
     End Sub
 End Class

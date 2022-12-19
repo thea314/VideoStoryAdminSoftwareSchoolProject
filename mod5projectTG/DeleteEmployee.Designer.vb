@@ -87,7 +87,7 @@ Partial Class DeleteEmployee
         'combo_employeePicker
         '
         Me.combo_employeePicker.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.combo_employeePicker.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.combo_employeePicker.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.combo_employeePicker.FormattingEnabled = True
         Me.combo_employeePicker.Location = New System.Drawing.Point(130, 62)
         Me.combo_employeePicker.Name = "combo_employeePicker"

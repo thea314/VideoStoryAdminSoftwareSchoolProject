@@ -86,8 +86,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length < 4)) Then
-            MsgBox("Please enter a province name of length greater than 4.")
+        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length < 2)) Then
+            MsgBox("Please enter a province name of length greater than 2.")
             Me.txt_prov.Text = ""
             Exit Sub
         End If
@@ -116,8 +116,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_salary.Text = "" Or (Me.txt_salary.Text.Length < 4)) Then
-            MsgBox("Please enter an hourly wage of length greater than 4.")
+        If (Me.txt_salary.Text = "" Or (Me.txt_salary.Text.Length < 2)) Then
+            MsgBox("Please enter an hourly wage of length greater than 2.")
             Me.txt_salary.Text = ""
             Exit Sub
         End If

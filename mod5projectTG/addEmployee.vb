@@ -60,8 +60,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length < 4)) Then
-            MsgBox("Please enter a province name of length greater than 4.")
+        If (Me.txt_prov.Text = "" Or (Me.txt_prov.Text.Length < 2)) Then
+            MsgBox("Please enter a province name of length greater than 2.")
             Me.txt_prov.Text = ""
             Exit Sub
         End If
@@ -90,8 +90,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_salary.Text = "" Or (Me.txt_salary.Text.Length < 4)) Then
-            MsgBox("Please enter an hourly wage of length greater than 4.")
+        If (Me.txt_salary.Text = "" Or (Me.txt_salary.Text.Length < 2)) Then
+            MsgBox("Please enter an hourly wage of length greater than 2.")
             Me.txt_salary.Text = ""
             Exit Sub
         End If
@@ -178,13 +178,13 @@
         'set data for employee level
         Select Case combo_access.SelectedIndex
 
-            Case 1
+            Case 0
                 intAccess = 2
-            Case 2
+            Case 1
                 intAccess = 3
-            Case 3
+            Case 2
                 intAccess = 4
-            Case 4
+            Case 3
                 intAccess = 1
 
         End Select

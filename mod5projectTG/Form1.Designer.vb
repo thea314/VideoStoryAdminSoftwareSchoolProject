@@ -67,6 +67,7 @@ Partial Class Form1
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(154, 23)
         Me.txt_password.TabIndex = 20
+        Me.txt_password.UseSystemPasswordChar = True
         '
         'btn_login
         '

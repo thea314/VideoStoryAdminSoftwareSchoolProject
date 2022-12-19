@@ -58,7 +58,7 @@ Partial Class DeleteVideo
         'combo_editpicker
         '
         Me.combo_editpicker.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.combo_editpicker.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.combo_editpicker.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.combo_editpicker.FormattingEnabled = True
         Me.combo_editpicker.Location = New System.Drawing.Point(111, 53)
         Me.combo_editpicker.Name = "combo_editpicker"

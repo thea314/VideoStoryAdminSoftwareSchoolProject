@@ -30,7 +30,7 @@
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         Me.Hide()
-        DeleteClient.Show()
+        DeleteEmployee.Show()
     End Sub
 
     Private Sub ListToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ListToolStripMenuItem2.Click
@@ -121,11 +121,7 @@
             Me.mainMenu.Items.Remove(EditToolStripMenuItem2)
         End If
 
-        Dim clients As DBManager = New DBManager()
-
-        clients.DashboardDisplayClientsWithMoviesRented()
-
-        clients.DashboardVideosRented()
+        RefreshGrids()
 
     End Sub
 
@@ -139,5 +135,18 @@
 
     End Sub
 
+    Public Sub RefreshGrids()
 
+        Dim clients As DBManager = New DBManager()
+
+        clients.DashboardDisplayClientsWithMoviesRented()
+
+        clients.DashboardVideosRented()
+
+    End Sub
+
+    Private Sub ChangePasswordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangePasswordToolStripMenuItem.Click
+        Me.Hide()
+        ChangePassword.Show()
+    End Sub
 End Class

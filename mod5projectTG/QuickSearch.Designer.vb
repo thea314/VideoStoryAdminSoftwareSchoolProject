@@ -126,6 +126,7 @@ Partial Class QuickSearch
         Me.data_resultViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_resultViewer.Location = New System.Drawing.Point(291, 13)
         Me.data_resultViewer.Name = "data_resultViewer"
+        Me.data_resultViewer.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.data_resultViewer.RowTemplate.Height = 25
         Me.data_resultViewer.Size = New System.Drawing.Size(378, 107)
         Me.data_resultViewer.TabIndex = 7

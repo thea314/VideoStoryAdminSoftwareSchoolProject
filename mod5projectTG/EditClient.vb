@@ -137,8 +137,8 @@
             Exit Sub
         End If
 
-        If (Me.txt_address.Text = "" Or (Me.txt_address.Text.Length > 10)) Then
-            MsgBox("Please enter address of length less than 10.")
+        If (Me.txt_address.Text = "" Or (Me.txt_address.Text.Length > 100)) Then
+            MsgBox("Please enter address of length less than 100.")
             Me.txt_address.Text = ""
             Exit Sub
         End If

@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms.ComponentModel.Com2Interop
+﻿Imports System.Reflection
+Imports System.Windows.Forms.ComponentModel.Com2Interop
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
 Imports MySql.Data.Authentication
 Imports MySql.Data.MySqlClient
@@ -363,6 +364,69 @@ Public Class DBManagerRent
             cmd.ExecuteNonQuery()
             Me.connect.Close()
             Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Function DeletedAfterReturn(ByVal videoid As Integer)
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim cmd As New MySqlCommand()
+
+            With cmd
+
+                .CommandText = "DELETE FROM `rents` WHERE video_fk = @videoid;"
+                .CommandType = CommandType.Text
+                .Connection = Me.connect
+                .Parameters.AddWithValue("@videoid", videoid)
+
+            End With
+
+            cmd.ExecuteNonQuery()
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
+        End Try
+
+    End Function
+
+    Function GetVideoPoster(ByVal videoid As Integer) As VideoItem
+
+        Try
+
+            Me.connect = New MySqlConnection(connectionString)
+            Me.connect.Open()
+
+            Dim query As String =
+                "SELECT video_id, photo                                     
+                 FROM videos                                                                         
+                 WHERE video_id = @videoid;"
+
+            Dim datatable As New DataTable()
+
+            Dim cmd As New MySqlCommand(query, Me.connect)
+            cmd.Parameters.AddWithValue("@videoid", videoid)
+            Dim adapter As New MySqlDataAdapter(cmd)
+
+            adapter.Fill(datatable)
+
+            Dim requestedPoster As New VideoItem(-1, datatable.Rows(0)("photo"), "title", 2000, "Canada",
+                                                "English", 55, "blah", "drama", "Ford", "George Lucas", 1)
+
+
+            Me.connect.Close()
+            Me.connect.Dispose()
+
+            Return requestedPoster
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")

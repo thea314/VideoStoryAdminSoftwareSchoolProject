@@ -167,11 +167,14 @@ Partial Class ReturnVideo
         '
         'data_videosout
         '
+        Me.data_videosout.AllowUserToAddRows = False
+        Me.data_videosout.AllowUserToDeleteRows = False
         Me.data_videosout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_videosout.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_videosout.Location = New System.Drawing.Point(6, 69)
         Me.data_videosout.MultiSelect = False
         Me.data_videosout.Name = "data_videosout"
+        Me.data_videosout.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.data_videosout.RowTemplate.Height = 25
         Me.data_videosout.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_videosout.Size = New System.Drawing.Size(509, 163)

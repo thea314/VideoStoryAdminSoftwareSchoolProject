@@ -237,7 +237,7 @@ Partial Class EditVideo
         'lbl_director
         '
         Me.lbl_director.AutoSize = True
-        Me.lbl_director.Location = New System.Drawing.Point(13, 238)
+        Me.lbl_director.Location = New System.Drawing.Point(12, 238)
         Me.lbl_director.Name = "lbl_director"
         Me.lbl_director.Size = New System.Drawing.Size(60, 17)
         Me.lbl_director.TabIndex = 5
@@ -264,7 +264,7 @@ Partial Class EditVideo
         'lbl_year
         '
         Me.lbl_year.AutoSize = True
-        Me.lbl_year.Location = New System.Drawing.Point(13, 100)
+        Me.lbl_year.Location = New System.Drawing.Point(11, 100)
         Me.lbl_year.Name = "lbl_year"
         Me.lbl_year.Size = New System.Drawing.Size(38, 17)
         Me.lbl_year.TabIndex = 2
@@ -273,7 +273,7 @@ Partial Class EditVideo
         'lbl_genre
         '
         Me.lbl_genre.AutoSize = True
-        Me.lbl_genre.Location = New System.Drawing.Point(13, 68)
+        Me.lbl_genre.Location = New System.Drawing.Point(11, 68)
         Me.lbl_genre.Name = "lbl_genre"
         Me.lbl_genre.Size = New System.Drawing.Size(47, 17)
         Me.lbl_genre.TabIndex = 1
@@ -282,7 +282,7 @@ Partial Class EditVideo
         'lbl_title
         '
         Me.lbl_title.AutoSize = True
-        Me.lbl_title.Location = New System.Drawing.Point(13, 32)
+        Me.lbl_title.Location = New System.Drawing.Point(11, 32)
         Me.lbl_title.Name = "lbl_title"
         Me.lbl_title.Size = New System.Drawing.Size(36, 17)
         Me.lbl_title.TabIndex = 0
@@ -302,7 +302,7 @@ Partial Class EditVideo
         'combo_editpicker
         '
         Me.combo_editpicker.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.combo_editpicker.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.combo_editpicker.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.combo_editpicker.FormattingEnabled = True
         Me.combo_editpicker.Location = New System.Drawing.Point(108, 47)
         Me.combo_editpicker.Name = "combo_editpicker"

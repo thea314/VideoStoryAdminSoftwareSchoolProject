@@ -4,6 +4,7 @@ Imports Google.Protobuf
 Imports Microsoft.Win32
 Imports MySql.Data.MySqlClient
 Imports MySqlConnector
+Imports Org.BouncyCastle.Utilities
 
 Public Class DBManager
 
@@ -20,7 +21,13 @@ Public Class DBManager
 
             Dim query As String =
                 "SELECT employee_number, fname, lname, dob, address, city, province, postal_code,
-                home_phone, cell_phone, start_date, sin, hourly_pay, education, level, 
+                home_phone, cell_phone, start_date, sin, hourly_pay, education, 
+                CASE WHEN level = 4 THEN 'Admin'
+                    WHEN level = 3 THEN 'Level 3'
+                    WHEN level = 2 THEN 'Level 2'
+                    WHEN level = 1 THEN 'Level 1'
+                    ELSE 'Invalid'
+                    END,
                 CASE WHEN `status` = 1 THEN 'Activated' ELSE 'Not Activated' END AS `status`
                 FROM users;"
 
@@ -530,5 +537,27 @@ Public Class DBManager
         End Try
 
     End Sub
+
+    Public Function UpdatePassword(ByVal username As String)
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+        With cmd
+
+            .CommandText = "UPDATE `users` SET `password`= @password WHERE username = @user;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", username)
+            .Parameters.AddWithValue("@password", ChangePassword.txt_newPassword.Text)
+
+        End With
+
+        cmd.ExecuteNonQuery()
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+    End Function
 
 End Class
