@@ -59,17 +59,28 @@
         MsgBox("Client deleted. Returning you to the dashboard.")
 
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
 
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
     End Sub
 
     Private Sub DeleteVideo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
     End Sub
+
+    Function GetRefresh()
+
+        Dim populateCombo As DBManagerVideo = New DBManagerVideo()
+
+        populateCombo.PopulateVideoComboboxDelete()
+
+    End Function
 End Class

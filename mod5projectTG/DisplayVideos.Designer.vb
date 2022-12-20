@@ -42,10 +42,15 @@ Partial Class DisplayVideos
         '
         'data_videos
         '
+        Me.data_videos.AllowUserToAddRows = False
+        Me.data_videos.AllowUserToDeleteRows = False
         Me.data_videos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_videos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_videos.Location = New System.Drawing.Point(12, 44)
+        Me.data_videos.MultiSelect = False
         Me.data_videos.Name = "data_videos"
         Me.data_videos.RowTemplate.Height = 25
+        Me.data_videos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_videos.Size = New System.Drawing.Size(1010, 478)
         Me.data_videos.TabIndex = 1
         '

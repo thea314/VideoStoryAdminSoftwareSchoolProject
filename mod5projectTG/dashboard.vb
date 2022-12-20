@@ -85,6 +85,7 @@
 
     Private Sub RentToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RentToolStripMenuItem1.Click
         Me.Hide()
+        RentVideo.PopulateData()
         RentVideo.Show()
     End Sub
 
@@ -99,27 +100,7 @@
 
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        If (Form1.loggedUser.Level = 3) Then
-            Me.mainMenu.Items.Remove(EmployeeToolStripMenuItem)
-        End If
-
-        If (Form1.loggedUser.Level = 2) Then
-            Me.mainMenu.Items.Remove(EmployeeToolStripMenuItem)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem1)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem2)
-        End If
-
-        If (Form1.loggedUser.Level = 1) Then
-            Me.mainMenu.Items.Remove(EmployeeToolStripMenuItem)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem1)
-            Me.mainMenu.Items.Remove(DeleteToolStripMenuItem2)
-            Me.mainMenu.Items.Remove(EditToolStripMenuItem)
-            Me.mainMenu.Items.Remove(EditToolStripMenuItem1)
-            Me.mainMenu.Items.Remove(EditToolStripMenuItem2)
-        End If
+        PopulateMenus()
 
         RefreshGrids()
 
@@ -149,4 +130,42 @@
         Me.Hide()
         ChangePassword.Show()
     End Sub
+
+    Function PopulateMenus()
+
+        EmployeeToolStripMenuItem.Available = True
+        DeleteToolStripMenuItem.Available = True
+        DeleteToolStripMenuItem1.Available = True
+        DeleteToolStripMenuItem2.Available = True
+        EditToolStripMenuItem.Available = True
+        EditToolStripMenuItem1.Available = True
+        EditToolStripMenuItem2.Available = True
+
+        If (Form1.loggedUser.Level = 3) Then
+            EmployeeToolStripMenuItem.Available = False
+        End If
+
+        If (Form1.loggedUser.Level = 2) Then
+
+            EmployeeToolStripMenuItem.Available = False
+            DeleteToolStripMenuItem.Available = False
+            DeleteToolStripMenuItem1.Available = False
+            DeleteToolStripMenuItem2.Available = False
+
+        End If
+
+        If (Form1.loggedUser.Level = 1) Then
+
+            EmployeeToolStripMenuItem.Available = False
+            DeleteToolStripMenuItem.Available = False
+            DeleteToolStripMenuItem1.Available = False
+            DeleteToolStripMenuItem2.Available = False
+            EditToolStripMenuItem.Available = False
+            EditToolStripMenuItem1.Available = False
+            EditToolStripMenuItem2.Available = False
+
+        End If
+
+
+    End Function
 End Class

@@ -21,13 +21,12 @@
 
         pickedVideoFromGrid = accessVideo.GetVideo(selectedVideo)
 
-
-
     End Sub
 
     Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
 
         Me.Hide()
+        RentVideo.PopulateData()
         RentVideo.Show()
     End Sub
 

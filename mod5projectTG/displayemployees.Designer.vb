@@ -42,10 +42,15 @@ Partial Class displayemployees
         '
         'data_displayemp
         '
+        Me.data_displayemp.AllowUserToAddRows = False
+        Me.data_displayemp.AllowUserToDeleteRows = False
         Me.data_displayemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_displayemp.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_displayemp.Location = New System.Drawing.Point(14, 52)
+        Me.data_displayemp.MultiSelect = False
         Me.data_displayemp.Name = "data_displayemp"
         Me.data_displayemp.RowTemplate.Height = 25
+        Me.data_displayemp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_displayemp.Size = New System.Drawing.Size(774, 359)
         Me.data_displayemp.TabIndex = 1
         '

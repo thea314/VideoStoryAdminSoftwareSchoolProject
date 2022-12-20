@@ -57,8 +57,7 @@
 
         'populate text fields with info from database
         Me.txt_clientNo.Text = clientid.ClientNumber
-        Me.txt_clientName.Text = clientid.Fname & clientid.Lname
-
+        Me.txt_clientName.Text = clientid.Fname & " " & clientid.Lname
 
     End Function
 

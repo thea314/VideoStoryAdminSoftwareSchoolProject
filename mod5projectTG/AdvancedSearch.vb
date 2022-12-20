@@ -13,6 +13,17 @@
         dbManagerSearch.AdvancedSearch(queryList)
 
         Me.Hide()
+
+        Me.txt_title.Text = ""
+        Me.txt_year.Text = ""
+        Me.txt_length.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
         AdvancedSearchResults.Show()
 
     End Sub
@@ -152,11 +163,51 @@
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+
+        Me.txt_title.Text = ""
+        Me.txt_year.Text = ""
+        Me.txt_length.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
         dashboard.Show()
     End Sub
 
     Private Sub AdvancedSearch_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+
+        Me.txt_title.Text = ""
+        Me.txt_year.Text = ""
+        Me.txt_length.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
         dashboard.Show()
+    End Sub
+
+    Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
+
+        Me.txt_title.Text = ""
+        Me.txt_year.Text = ""
+        Me.txt_length.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
+    End Sub
+
+    Private Sub AdvancedSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

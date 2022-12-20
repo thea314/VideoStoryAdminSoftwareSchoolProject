@@ -351,6 +351,7 @@ Public Class DBManager
         If count <> 0 Then
             Form1.Hide()
             Form1.loggedUser = GetUser(Form1.txt_username.Text)
+            dashboard.PopulateMenus()
             dashboard.Show()
         Else
             MsgBox("Incorrect login details. Please try again.")
@@ -557,6 +558,34 @@ Public Class DBManager
         cmd.ExecuteNonQuery()
         Me.connect.Close()
         Me.connect.Dispose()
+
+    End Function
+
+    Function AccountStatus(ByVal username As String) As Boolean
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM users WHERE username = @user AND status = 1"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@user", username)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        Me.connect.Close()
+        Me.connect.Dispose()
+
+        If (count <> 0) Then
+            Return True
+        End If
+
+        Return False
 
     End Function
 

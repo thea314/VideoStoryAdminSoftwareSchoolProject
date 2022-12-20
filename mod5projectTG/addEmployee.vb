@@ -179,13 +179,13 @@
         Select Case combo_access.SelectedIndex
 
             Case 0
-                intAccess = 2
-            Case 1
-                intAccess = 3
-            Case 2
-                intAccess = 4
-            Case 3
                 intAccess = 1
+            Case 1
+                intAccess = 2
+            Case 2
+                intAccess = 3
+            Case 3
+                intAccess = 4
 
         End Select
 
@@ -337,15 +337,71 @@
 
         newUser.CreateNewEmployee()
 
+        Me.txt_employeeno.Text = ""
+        Me.txt_fname.Text = ""
+        Me.txt_lname.Text = ""
+        Me.txt_address.Text = ""
+        Me.txt_city.Text = ""
+        Me.txt_password.Text = ""
+        Me.txt_postal.Text = ""
+        Me.txt_prov.Text = ""
+        Me.txt_salary.Text = ""
+        Me.txt_sin.Text = ""
+        Me.txt_username.Text = ""
+        Me.txt_confirm.Text = ""
+        Me.combo_access.SelectedIndex = 0
+        Me.check_active.Checked = False
+        Me.combo_education.SelectedIndex = 0
+        Me.mtxt_cellphone.Text = ""
+        Me.mtxt_homephone.Text = ""
+
     End Function
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+
+        Me.txt_employeeno.Text = ""
+        Me.txt_fname.Text = ""
+        Me.txt_lname.Text = ""
+        Me.txt_address.Text = ""
+        Me.txt_city.Text = ""
+        Me.txt_password.Text = ""
+        Me.txt_postal.Text = ""
+        Me.txt_prov.Text = ""
+        Me.txt_salary.Text = ""
+        Me.txt_sin.Text = ""
+        Me.txt_username.Text = ""
+        Me.txt_confirm.Text = ""
+        Me.combo_access.SelectedIndex = 0
+        Me.check_active.Checked = False
+        Me.combo_education.SelectedIndex = 0
+        Me.mtxt_cellphone.Text = ""
+        Me.mtxt_homephone.Text = ""
+
         dashboard.Show()
     End Sub
 
     Private Sub addEmployee_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+
+        Me.txt_employeeno.Text = ""
+        Me.txt_fname.Text = ""
+        Me.txt_lname.Text = ""
+        Me.txt_address.Text = ""
+        Me.txt_city.Text = ""
+        Me.txt_password.Text = ""
+        Me.txt_postal.Text = ""
+        Me.txt_prov.Text = ""
+        Me.txt_salary.Text = ""
+        Me.txt_sin.Text = ""
+        Me.txt_username.Text = ""
+        Me.txt_confirm.Text = ""
+        Me.combo_access.SelectedIndex = 0
+        Me.check_active.Checked = False
+        Me.combo_education.SelectedIndex = 0
+        Me.mtxt_cellphone.Text = ""
+        Me.mtxt_homephone.Text = ""
+
         dashboard.Show()
     End Sub
 End Class

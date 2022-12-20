@@ -29,6 +29,7 @@ Partial Class QuickSearch
         Me.txt_videoid = New System.Windows.Forms.TextBox()
         Me.txt_title = New System.Windows.Forms.TextBox()
         Me.grp_search = New System.Windows.Forms.GroupBox()
+        Me.lbl_clear = New System.Windows.Forms.Button()
         Me.data_resultViewer = New System.Windows.Forms.DataGridView()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.grp_results = New System.Windows.Forms.GroupBox()
@@ -82,7 +83,7 @@ Partial Class QuickSearch
         '
         Me.btn_search.BackColor = System.Drawing.Color.Green
         Me.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_search.Location = New System.Drawing.Point(81, 92)
+        Me.btn_search.Location = New System.Drawing.Point(13, 92)
         Me.btn_search.Name = "btn_search"
         Me.btn_search.Size = New System.Drawing.Size(75, 28)
         Me.btn_search.TabIndex = 3
@@ -105,6 +106,7 @@ Partial Class QuickSearch
         '
         'grp_search
         '
+        Me.grp_search.Controls.Add(Me.lbl_clear)
         Me.grp_search.Controls.Add(Me.data_resultViewer)
         Me.grp_search.Controls.Add(Me.btn_cancel)
         Me.grp_search.Controls.Add(Me.txt_videoid)
@@ -121,13 +123,29 @@ Partial Class QuickSearch
         Me.grp_search.TabStop = False
         Me.grp_search.Text = "Enter your search:"
         '
+        'lbl_clear
+        '
+        Me.lbl_clear.BackColor = System.Drawing.Color.Navy
+        Me.lbl_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lbl_clear.Location = New System.Drawing.Point(111, 92)
+        Me.lbl_clear.Name = "lbl_clear"
+        Me.lbl_clear.Size = New System.Drawing.Size(75, 28)
+        Me.lbl_clear.TabIndex = 8
+        Me.lbl_clear.Text = "Clear"
+        Me.lbl_clear.UseVisualStyleBackColor = False
+        '
         'data_resultViewer
         '
+        Me.data_resultViewer.AllowUserToAddRows = False
+        Me.data_resultViewer.AllowUserToDeleteRows = False
         Me.data_resultViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_resultViewer.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_resultViewer.Location = New System.Drawing.Point(291, 13)
+        Me.data_resultViewer.MultiSelect = False
         Me.data_resultViewer.Name = "data_resultViewer"
         Me.data_resultViewer.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.data_resultViewer.RowTemplate.Height = 25
+        Me.data_resultViewer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_resultViewer.Size = New System.Drawing.Size(378, 107)
         Me.data_resultViewer.TabIndex = 7
         '
@@ -135,7 +153,7 @@ Partial Class QuickSearch
         '
         Me.btn_cancel.BackColor = System.Drawing.Color.Maroon
         Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancel.Location = New System.Drawing.Point(174, 92)
+        Me.btn_cancel.Location = New System.Drawing.Point(210, 92)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 28)
         Me.btn_cancel.TabIndex = 6
@@ -176,6 +194,7 @@ Partial Class QuickSearch
         '
         'txt_genre
         '
+        Me.txt_genre.Enabled = False
         Me.txt_genre.Location = New System.Drawing.Point(93, 174)
         Me.txt_genre.Name = "txt_genre"
         Me.txt_genre.Size = New System.Drawing.Size(144, 25)
@@ -427,4 +446,5 @@ Partial Class QuickSearch
     Friend WithEvents txt_genre As TextBox
     Friend WithEvents lbl_genre As Label
     Friend WithEvents lbl_quicksearch As Label
+    Friend WithEvents lbl_clear As Button
 End Class

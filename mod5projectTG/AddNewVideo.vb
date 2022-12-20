@@ -1,9 +1,4 @@
 ﻿Public Class AddNewVideo
-    Private Sub AddNewVideo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-    End Sub
 
     Private Sub btn_addNewVideo_Click(sender As Object, e As EventArgs) Handles btn_addNewVideo.Click
 
@@ -172,11 +167,35 @@
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_title.Text = ""
+        Me.txt_url.Text = ""
+        Me.txt_year.Text = ""
+        Me.num_length.Value = 1
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
         dashboard.Show()
     End Sub
 
     Private Sub AddNewVideo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+
+        Me.txt_country.Text = ""
+        Me.txt_director.Text = ""
+        Me.txt_genre.Text = ""
+        Me.txt_language.Text = ""
+        Me.txt_title.Text = ""
+        Me.txt_url.Text = ""
+        Me.txt_year.Text = ""
+        Me.num_length.Value = 1
+        Me.rich_actors.Text = ""
+        Me.rich_resume.Text = ""
+
         dashboard.Show()
     End Sub
 End Class

@@ -5,36 +5,8 @@
 
     Private Sub RentVideo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        PopulateData()
 
-        'populate client combobox
-        Dim populateCllientCombo As DBManagerClient = New DBManagerClient()
-
-        populateCllientCombo.PopulateClientComboBoxRent()
-
-        'populate video combobox
-        Dim populateVideoCombo As DBManagerVideo = New DBManagerVideo()
-
-        populateVideoCombo.PopulateVideoComboboxRent()
-
-        'populate videocombobox depending on if page was referred to by advanced search
-        'loop through contents of combobox to find the one clicked on in previous datagridview
-        If (AdvancedSearchResults.pickedVideoFromGrid Is Nothing) Then
-
-        Else
-
-            For Each item As System.Data.DataRowView In combo_videoid.Items
-
-                If (item.Row(1) = AdvancedSearchResults.pickedVideoFromGrid.VideoID) Then
-
-                    combo_videoid.SelectedItem = item
-                    Exit For
-
-                End If
-
-            Next
-
-            PopulateVideoData(AdvancedSearchResults.pickedVideoFromGrid)
-        End If
 
     End Sub
 
@@ -57,20 +29,39 @@
 
     Private Sub btn_rent_Click(sender As Object, e As EventArgs) Handles btn_rent.Click
 
-        'change status of video to rented
         Dim rentVideo As DBManagerRent = New DBManagerRent()
 
-        rentVideo.RentChangeStatus(chosenVideo)
+        'verify that video isn't already rented
+        If (rentVideo.VerifyRented(chosenVideo)) Then
 
-        'add rental to rents table
-        rentVideo.NewRental(chosenVideo)
+            'verify client is active and can rent videos
+            If (rentVideo.ClientActive(chosenUser)) Then
 
-        'show confirmation
-        MsgBox("Movie rented, returning you to main screen")
+                'change status of video to rented
+                rentVideo.RentChangeStatus(chosenVideo)
 
-        Me.Hide()
-        dashboard.RefreshGrids()
-        dashboard.Show()
+                'add rental to rents table
+                rentVideo.NewRental(chosenVideo)
+
+                'show confirmation
+                MsgBox("Movie rented, returning you to dashboard.")
+
+                Me.Hide()
+                dashboard.RefreshGrids()
+                dashboard.Show()
+
+            Else
+
+                MsgBox("Please activate client first.")
+
+                Me.Hide()
+                dashboard.RefreshGrids()
+                dashboard.Show()
+
+            End If
+        Else
+            MsgBox("Video already rented, please choose another.")
+        End If
 
 
     End Sub
@@ -170,4 +161,38 @@
         dashboard.RefreshGrids()
         dashboard.Show()
     End Sub
+
+    Function PopulateData()
+
+        'populate client combobox
+        Dim populateCllientCombo As DBManagerClient = New DBManagerClient()
+
+        populateCllientCombo.PopulateClientComboBoxRent()
+
+        'populate video combobox
+        Dim populateVideoCombo As DBManagerVideo = New DBManagerVideo()
+
+        populateVideoCombo.PopulateVideoComboboxRent()
+
+        'populate videocombobox depending on if page was referred to by advanced search
+        'loop through contents of combobox to find the one clicked on in previous datagridview
+        If (AdvancedSearchResults.pickedVideoFromGrid Is Nothing) Then
+
+        Else
+
+            For Each item As System.Data.DataRowView In combo_videoid.Items
+
+                If (item.Row(1) = AdvancedSearchResults.pickedVideoFromGrid.VideoID) Then
+
+                    combo_videoid.SelectedItem = item
+                    Exit For
+
+                End If
+
+            Next
+
+            PopulateVideoData(AdvancedSearchResults.pickedVideoFromGrid)
+        End If
+
+    End Function
 End Class

@@ -43,10 +43,15 @@ Partial Class AdvancedSearchResults
         '
         'data_advancedResults
         '
+        Me.data_advancedResults.AllowUserToAddRows = False
+        Me.data_advancedResults.AllowUserToDeleteRows = False
         Me.data_advancedResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_advancedResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_advancedResults.Location = New System.Drawing.Point(12, 52)
+        Me.data_advancedResults.MultiSelect = False
         Me.data_advancedResults.Name = "data_advancedResults"
         Me.data_advancedResults.RowTemplate.Height = 25
+        Me.data_advancedResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_advancedResults.Size = New System.Drawing.Size(1025, 244)
         Me.data_advancedResults.TabIndex = 1
         '

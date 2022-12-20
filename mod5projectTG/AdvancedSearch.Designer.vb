@@ -45,6 +45,7 @@ Partial Class AdvancedSearch
         Me.btn_search = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.lbl_advanced = New System.Windows.Forms.Label()
+        Me.btn_clear = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -225,11 +226,11 @@ Partial Class AdvancedSearch
         '
         'btn_search
         '
-        Me.btn_search.BackColor = System.Drawing.Color.Navy
+        Me.btn_search.BackColor = System.Drawing.Color.Green
         Me.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_search.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.btn_search.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_search.Location = New System.Drawing.Point(143, 592)
+        Me.btn_search.Location = New System.Drawing.Point(66, 592)
         Me.btn_search.Name = "btn_search"
         Me.btn_search.Size = New System.Drawing.Size(75, 34)
         Me.btn_search.TabIndex = 2
@@ -242,7 +243,7 @@ Partial Class AdvancedSearch
         Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.btn_cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_cancel.Location = New System.Drawing.Point(243, 592)
+        Me.btn_cancel.Location = New System.Drawing.Point(307, 592)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 34)
         Me.btn_cancel.TabIndex = 3
@@ -260,12 +261,26 @@ Partial Class AdvancedSearch
         Me.lbl_advanced.TabIndex = 4
         Me.lbl_advanced.Text = "Advanced Search:"
         '
+        'btn_clear
+        '
+        Me.btn_clear.BackColor = System.Drawing.Color.Navy
+        Me.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_clear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_clear.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_clear.Location = New System.Drawing.Point(180, 592)
+        Me.btn_clear.Name = "btn_clear"
+        Me.btn_clear.Size = New System.Drawing.Size(84, 34)
+        Me.btn_clear.TabIndex = 5
+        Me.btn_clear.Text = "Clear"
+        Me.btn_clear.UseVisualStyleBackColor = False
+        '
         'AdvancedSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(433, 638)
+        Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.lbl_advanced)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_search)
@@ -302,4 +317,5 @@ Partial Class AdvancedSearch
     Friend WithEvents txt_length As TextBox
     Friend WithEvents txt_year As TextBox
     Friend WithEvents lbl_advanced As Label
+    Friend WithEvents btn_clear As Button
 End Class

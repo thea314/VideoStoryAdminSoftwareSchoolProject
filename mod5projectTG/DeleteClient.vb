@@ -56,17 +56,29 @@
         MsgBox("Client deleted. Returning you to the dashboard.")
 
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
 
     End Sub
 
     Private Sub btn_cancelnewclient_Click(sender As Object, e As EventArgs) Handles btn_cancelnewclient.Click
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
     End Sub
 
     Private Sub DeleteClient_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+        GetRefresh()
         dashboard.Show()
     End Sub
+
+    Function GetRefresh()
+
+        Dim populateCombo As DBManagerClient = New DBManagerClient()
+
+        populateCombo.PopulateClientComboBoxDelete()
+
+    End Function
+
 End Class

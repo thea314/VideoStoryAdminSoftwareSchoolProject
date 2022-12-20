@@ -38,10 +38,6 @@ Public Class DBManagerRent
             Me.connect.Close()
             Me.connect.Dispose()
 
-            MsgBox("Film rented. Returning you to dashboard.")
-            AddNewClient.Hide()
-            dashboard.Show()
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
@@ -202,7 +198,7 @@ Public Class DBManagerRent
         Me.connect = New MySqlConnection(connectionString)
         Me.connect.Open()
 
-        Dim query As String = "SELECT COUNT(*) FROM videos WHERE video_id = @video;"
+        Dim query As String = "SELECT COUNT(*) FROM videos WHERE video_id = @video AND status = 1;"
 
         Dim cmd As New MySqlCommand(query, Me.connect)
 
@@ -431,6 +427,37 @@ Public Class DBManagerRent
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Connection Failed")
         End Try
+
+    End Function
+
+    Function ClientActive(ByVal clientid As String) As Boolean
+
+        Me.connect = New MySqlConnection(connectionString)
+        Me.connect.Open()
+
+        Dim cmd As New MySqlCommand()
+
+        With cmd
+
+            .CommandText = "SELECT COUNT(*) FROM clients where client_id = @clientid AND status = 1;"
+            .CommandType = CommandType.Text
+            .Connection = Me.connect
+            .Parameters.AddWithValue("@clientid", clientid)
+
+        End With
+
+        Dim count As Integer = CInt(cmd.ExecuteScalar())
+
+        'if video id exists, then return true
+        If (count <> 0) Then
+            Return True
+        Else
+            Return False
+            MsgBox("Client is inactive, please activate them before renting to them!")
+        End If
+
+        Me.connect.Close()
+        Me.connect.Dispose()
 
     End Function
 

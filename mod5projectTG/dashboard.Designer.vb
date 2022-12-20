@@ -81,19 +81,19 @@ Partial Class dashboard
         'ChangePasswordToolStripMenuItem
         '
         Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EmployeeToolStripMenuItem
@@ -106,25 +106,25 @@ Partial Class dashboard
         'ListToolStripMenuItem
         '
         Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
-        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.ListToolStripMenuItem.Text = "List"
         '
         'CreateToolStripMenuItem
         '
         Me.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem"
-        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.CreateToolStripMenuItem.Text = "Create"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ClientToolStripMenuItem
@@ -242,19 +242,29 @@ Partial Class dashboard
         '
         'dgv_clients
         '
+        Me.dgv_clients.AllowUserToAddRows = False
+        Me.dgv_clients.AllowUserToDeleteRows = False
         Me.dgv_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_clients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgv_clients.Location = New System.Drawing.Point(47, 228)
+        Me.dgv_clients.MultiSelect = False
         Me.dgv_clients.Name = "dgv_clients"
         Me.dgv_clients.RowTemplate.Height = 25
+        Me.dgv_clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_clients.Size = New System.Drawing.Size(240, 290)
         Me.dgv_clients.TabIndex = 1
         '
         'dgv_videos
         '
+        Me.dgv_videos.AllowUserToAddRows = False
+        Me.dgv_videos.AllowUserToDeleteRows = False
         Me.dgv_videos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_videos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgv_videos.Location = New System.Drawing.Point(337, 228)
+        Me.dgv_videos.MultiSelect = False
         Me.dgv_videos.Name = "dgv_videos"
         Me.dgv_videos.RowTemplate.Height = 25
+        Me.dgv_videos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_videos.Size = New System.Drawing.Size(240, 290)
         Me.dgv_videos.TabIndex = 2
         '

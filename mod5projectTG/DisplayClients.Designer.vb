@@ -42,10 +42,15 @@ Partial Class DisplayClients
         '
         'data_clients
         '
+        Me.data_clients.AllowUserToAddRows = False
+        Me.data_clients.AllowUserToDeleteRows = False
         Me.data_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_clients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.data_clients.Location = New System.Drawing.Point(13, 44)
+        Me.data_clients.MultiSelect = False
         Me.data_clients.Name = "data_clients"
         Me.data_clients.RowTemplate.Height = 25
+        Me.data_clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.data_clients.Size = New System.Drawing.Size(775, 399)
         Me.data_clients.TabIndex = 1
         '

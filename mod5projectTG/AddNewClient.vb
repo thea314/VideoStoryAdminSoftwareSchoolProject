@@ -195,11 +195,37 @@
 
     Private Sub btn_cancelnewclient_Click(sender As Object, e As EventArgs) Handles btn_cancelnewclient.Click
         Me.Hide()
+
+        Me.txt_address.Text = ""
+        Me.txt_city.Text = ""
+        Me.txt_client_no.Text = ""
+        Me.txt_email.Text = ""
+        Me.txt_fname.Text = ""
+        Me.txt_lname.Text = ""
+        Me.txt_postal.Text = ""
+        Me.txt_prov.Text = ""
+        Me.CheckBox_active.Checked = False
+        Me.mtxt_phone.Text = ""
+
         dashboard.Show()
     End Sub
 
     Private Sub AddNewClient_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+
+        Me.txt_address.Text = ""
+        Me.txt_city.Text = ""
+        Me.txt_client_no.Text = ""
+        Me.txt_email.Text = ""
+        Me.txt_fname.Text = ""
+        Me.txt_lname.Text = ""
+        Me.txt_postal.Text = ""
+        Me.txt_prov.Text = ""
+        Me.CheckBox_active.Checked = False
+        Me.mtxt_phone.Text = ""
+
         dashboard.Show()
     End Sub
+
+
 End Class

@@ -199,13 +199,13 @@
         Select Case combo_access.SelectedIndex
 
             Case 0
-                intAccess = 2
-            Case 1
-                intAccess = 3
-            Case 2
-                intAccess = 4
-            Case 3
                 intAccess = 1
+            Case 1
+                intAccess = 2
+            Case 2
+                intAccess = 3
+            Case 3
+                intAccess = 4
 
         End Select
 

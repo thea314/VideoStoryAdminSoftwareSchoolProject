@@ -103,11 +103,33 @@
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Hide()
+
+        Me.txt_videoid.Text = ""
+        Me.txt_title.Text = ""
+        data_resultViewer.DataSource = Nothing
+        data_resultViewer.Refresh()
+
         dashboard.Show()
     End Sub
 
     Private Sub QuickSearch_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
+
+        Me.txt_videoid.Text = ""
+        Me.txt_title.Text = ""
+        data_resultViewer.DataSource = Nothing
+        data_resultViewer.Refresh()
+
         dashboard.Show()
+    End Sub
+
+    Private Sub lbl_clear_Click(sender As Object, e As EventArgs) Handles lbl_clear.Click
+
+        Me.txt_videoid.Text = ""
+        Me.txt_title.Text = ""
+
+        data_resultViewer.DataSource = Nothing
+        data_resultViewer.Refresh()
+
     End Sub
 End Class
